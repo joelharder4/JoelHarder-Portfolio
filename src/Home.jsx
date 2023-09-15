@@ -8,7 +8,10 @@ function Home() {
             <div className="line"></div>
             <div className="line"></div>
         </div>
-        <h1 className="name">Joel Harder</h1>
+        <div>
+            <h1 className="name">Joel<br/>Harder</h1>
+            <p className="monospace">Computer Science Student & Software Developer</p>
+        </div>
     </>);
 }
 
