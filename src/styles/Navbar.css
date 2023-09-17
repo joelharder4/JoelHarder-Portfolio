@@ -1,0 +1,31 @@
+.navlink a {
+    color: #CFCFCF;
+    text-align: center;
+    font-family: "Lalazer", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    padding: 15px;
+    font-weight: 700;
+    line-height: 100%; /* 20px */
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    transition: color 0.5s;
+
+    &:hover {
+        color: #8b8b8b;
+    }
+}
+
+.navlink {
+    cursor: pointer;
+    position: sticky;
+    padding: 5px;
+    margin: 20px;
+    margin-left: 90px;
+    display: inline-block;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+}

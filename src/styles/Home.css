@@ -8,10 +8,9 @@
   box-sizing: border-box !important;
 }
 
-
 .monospace {
   color: #CFCFCF;
-  font-family: 'Roboto Mono';
+  font-family: "Roboto Mono", monospace, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -19,27 +18,42 @@
   letter-spacing: -0.45px;
   position: absolute;
   left: 7vw;
-  margin-top: calc(15vh + 300px);
+  margin-top: calc(22vh + 300px);
 }
 
+.btnContainer {
+  margin-top: 85vh;
+  position: absolute;
+  width: 100%;
+}
 
 .name {
-  margin-top: 15vh;
+  margin-top: 22vh;
   margin-left: 5vw;
   position: absolute;
-  font-family: lalezar, sans-serif;
+  font-family: "Lalezar", sans-serif;
   font-size: 196px;
   font-style: normal;
   font-weight: 400;
   line-height: 80%;
 
-  background: linear-gradient(90deg, #FFF 0%, #989898 100%);
+  background: linear-gradient(100deg, #f1f1f1 10%, #8b8b8b 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* text-shadow: 12px 8px 4px rgba(0, 0, 0, 0.50); */
 }
 
+.shadow {
+  margin-top: 22vh;
+  margin-left: 5vw;
+  position: absolute;
+  font-family: "Lalezar", sans-serif;
+  font-size: 196px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%;
+  text-shadow: 12px 8px 4px rgb(0, 0, 0);
+}
 
 html, body {
   height: 100%;
@@ -54,11 +68,19 @@ body {
   color: #000;
   line-height: 1.6;
   position: relative;
-  font-family: 'lalezarregular', sans-serif;
+  font-family: "Lalezar", sans-serif;
   overflow: hidden;
 }
 
-.backgroundLines {
+
+
+
+
+
+
+
+
+/* .backgroundLines {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,4 +135,4 @@ body {
   100% {
     top: 110%;
   }
-}
+} */
