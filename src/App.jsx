@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -16,7 +17,7 @@ function App() {
         <Route path="/ai" element={<AI />} />
       </Routes>
 
-      <Navbar/>
+      
     </div>
   );
 }

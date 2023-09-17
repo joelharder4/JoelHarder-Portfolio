@@ -18,17 +18,17 @@
   letter-spacing: -0.45px;
   position: absolute;
   left: 7vw;
-  margin-top: calc(22vh + 300px);
+  margin-top: calc(14vh + 310px);
 }
 
 .btnContainer {
-  margin-top: 85vh;
+  margin-top: 80vh;
   position: absolute;
   width: 100%;
 }
 
 .name {
-  margin-top: 22vh;
+  margin-top: 14vh;
   margin-left: 5vw;
   position: absolute;
   font-family: "Lalezar", sans-serif;
@@ -44,7 +44,7 @@
 }
 
 .shadow {
-  margin-top: 22vh;
+  margin-top: 14vh;
   margin-left: 5vw;
   position: absolute;
   font-family: "Lalezar", sans-serif;
@@ -60,19 +60,23 @@ html, body {
 }
 
 body {
-  display: table;
+  /* display: table; */
   width: 100%;
   height: 100%;
   /* background-color: #292929; */
-  background: linear-gradient(180deg, #303030 0%, #0D0D0D 100%);
+  /* background: linear-gradient(180deg, #303030 0%, #0D0D0D 100%); */
+  background: radial-gradient(119.08% 83.09% at 0% 33.64%, #4A4A4A 0%, #0D0D0D 100%);
   color: #000;
   line-height: 1.6;
   position: relative;
   font-family: "Lalezar", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-
+.panel {
+  width: 100vw;
+  height: 100vh;
+}
 
 
 
