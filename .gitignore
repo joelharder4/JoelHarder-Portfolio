@@ -5,6 +5,7 @@
 /.yarn
 /.pnp
 .pnp.js
+/.firebase
 
 # testing
 /coverage
@@ -26,3 +27,6 @@ yarn-error.log*
 .pnp.cjs
 .pnp.loader.mjs
 yarn.lock
+
+firebase.json
+.firebaserc

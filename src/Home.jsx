@@ -7,12 +7,24 @@ import phpLogo from "./img/logos/php.png";
 import mysqlLogo from "./img/logos/mysql.png";
 import "./styles/Home.css";
 import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { useState } from "react";
 const { useRef, useLayoutEffect } = React;
 gsap.registerPlugin( useLayoutEffect, useRef, ScrollTrigger);
 
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#2F679E',
+        light: '#1976D2',
+        dark: '#213A52',
+        contrastText: '#CFCFCF',
+      },
+    },
+  });
 
 
 function Home() {
@@ -52,10 +64,8 @@ function Home() {
         const ctx = gsap.context((self) => {
         const logos = self.selector('.logo');
         logos.forEach((logo, i) => {
-            gsap.fromTo(logo, {
-                    css: {"opacity": "0"}
-                }, {
-                    css: {"opacity": "1"},
+            gsap.from(logo, {
+                    css: {"opacity": "0"},
                     duration: 2,
                     scrollTrigger: {
                         trigger: logo,
@@ -78,7 +88,9 @@ function Home() {
                 <p className="monospace">Computer Science Student & Software Developer</p>
             </div>
             <div className="btnContainer">
-                <Button variant="outlined" sx={cssButton} onClick={scrollToDetails}>My Experience</Button>
+                <ThemeProvider theme={theme}>
+                    <Button variant="contained" sx={cssButton} onClick={scrollToDetails} color="primary">My Experience</Button>
+                </ThemeProvider>
             </div>
         </div>
         <div className="panel2">
