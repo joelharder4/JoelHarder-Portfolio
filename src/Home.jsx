@@ -10,10 +10,11 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Fab } from "@mui/material";
+import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 // import { useState } from "react";
 const { useRef, useLayoutEffect } = React;
 gsap.registerPlugin( useLayoutEffect, useRef, ScrollTrigger);
-
 
 const theme = createTheme({
     palette: {
@@ -26,28 +27,28 @@ const theme = createTheme({
     },
   });
 
-
 function Home() {
-    // const [showDetails, setShowDetails] = useState(false);
+    // const [showScrollTopVisible, setShowScrollTopVisible] = useState(false);
     const title = useRef();
-    const scrollTo = useRef();
+    const panel1 = useRef();
+    const panel2 = useRef();
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.fromTo(
                 ".name", 
                 {css: {"opacity": "0", "marginLeft": "40vw"}}, 
-                {css: {"opacity": "1", "marginLeft": "5vw"}, duration: 2}
+                {css: {"opacity": "1", "marginLeft": "0"}, duration: 2}
             );
             gsap.fromTo(
                 ".shadow", 
                 {css: {"opacity": "0", "marginLeft": "40vw"}}, 
-                {css: {"opacity": "1", "marginLeft": "5vw"}, duration: 2}
+                {css: {"opacity": "1", "marginLeft": "0"}, duration: 2}
             );
             gsap.fromTo(
                 ".monospace", 
-                {css: {"opacity": "0", "marginTop": "100vh"}}, 
-                {css: {"opacity": "1", "marginTop": "calc(25vh + 310px)"}, duration: 1.5, delay: 1}
+                {css: {"opacity": "0", "marginTop": "min(100vw, 100vh)"}}, 
+                {css: {"opacity": "1", "marginTop": "min(25vw, 33vh)"}, duration: 1.5, delay: 1}
             );
         }, title);
         
@@ -55,7 +56,11 @@ function Home() {
     }, []);
 
     function scrollToDetails() {
-        scrollTo.current.scrollIntoView({behavior: 'smooth'});
+        panel2.current.scrollIntoView({behavior: 'smooth'});
+    }
+
+    function scrollToTop() {
+        panel1.current.scrollIntoView({behavior: 'smooth'});
     }
 
     const main = useRef();
@@ -69,7 +74,7 @@ function Home() {
                     duration: 2,
                     scrollTrigger: {
                         trigger: logo,
-                        toggleActions: "restart restart restart restart"
+                        toggleActions: "restart resume resume resume"
                     },
                     delay: 0.2 * i
                 }
@@ -80,9 +85,27 @@ function Home() {
     }, []);
 
 
-    return (<>
-        <div className="panel1">
-            <div ref={title}>
+    useLayoutEffect(() => {
+        const ctx = gsap.context((self) => {
+            const button = self.selector('.scrollToTop');
+            gsap.from(button, {
+                    css: {"opacity": "0", "cursor": "default"},
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: self.selector(".panel2"),
+                        start: "500px",
+                        toggleActions: "restart none none reverse"
+                    }
+                }
+            );
+        }, panel2); // <- Scope!
+        return () => ctx.revert(); // <- Cleanup!
+    }, []);
+
+
+    return (<div className="homepage">
+        <div className="panel1" ref={panel1}>
+            <div ref={title} style={{paddingLeft: "5vw", paddingTop: "25vh"}}>
                 <h1 className="shadow">Joel<br/>Harder</h1>
                 <h1 className="name">Joel<br/>Harder</h1>
                 <p className="monospace">Computer Science Student & Software Developer</p>
@@ -93,7 +116,7 @@ function Home() {
                 </ThemeProvider>
             </div>
         </div>
-        <div className="panel2">
+        <div className="panel2" ref={panel2}>
             <div className="iconContainer" ref={main}>
                 <img className="logo" src={pythonLogo} alt="Python Programming language logo"/>
                 <img className="logo" src={javascriptLogo} alt="Javascript Programming language logo"/>
@@ -102,13 +125,19 @@ function Home() {
                 <img className="logo" src={phpLogo} alt="PHP Programming language logo"/>
                 <img className="logo" src={mysqlLogo} alt="mySQL Programming language logo"/>
             </div>
-            <div className="textContainer" ref={scrollTo}>
-                <p>
-                    {jobExperience}
-                </p>
+            <div className="textContainer">
+                <p>{jobExperience}</p>
+                {/* {jobExperience.split("\n\n").map((paragraph, i) => {
+                    return <p key={i}>{paragraph}</p>
+                })} */}
+            </div>
+            <div style={{position: "fixed", top: "90vh", left: "90vw"}} className="scrollToTop">
+                <Fab aria-label="Top" color="#CFCFCF" size="small" onClick={scrollToTop}>
+                    <UpIcon />
+                </Fab>
             </div>
         </div>
-    </>);
+    </div>);
 }
 
 
@@ -124,11 +153,16 @@ const cssButton = {
     "fontWeight": "700",
 }
 
-const jobExperience = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum ante et odio vehicula vestibulum. Aenean quis luctus leo, eget ultricies elit. Sed sit amet vehicula ex. Donec eu cursus ligula, eu sodales mi. In erat ex, pulvinar laoreet justo malesuada, eleifend semper est. Cras molestie eros vitae risus ultrices dictum. Donec et mattis magna. Praesent in sapien eu sapien porttitor tincidunt.
+const jobExperience = `I'm Joel, a dedicated computer science student at the University of Guelph, currently in my third year of a five-year Computer Science Bachelor's degree program with Co-op and I will graduate in 2026. My journey in the world of technology has been amazing so far, and I'm thrilled to share my experience with you.
 
-Nam consectetur leo elit, in iaculis mi commodo scelerisque. Duis et sollicitudin velit. Aliquam tincidunt congue euismod. Donec at congue risus. Suspendisse tincidunt scelerisque justo nec aliquam. In iaculis arcu vel viverra imperdiet. Donec at dignissim leo. Vivamus ut luctus tortor, a consectetur ex. Donec cursus varius enim sit amet sodales. Nullam posuere elit et leo finibus pellentesque. Praesent eleifend volutpat accumsan.
+During my Co-op placement at Tulip Retail (September to December, 2023), I had the incredible opportunity to immerse myself in the world of Software Development. This experience was pivotal in learning to apply my academic knowledge in a real workplace. At Tulip Retail, I delved into a wide array of technologies, including PHP, React, MySQL, and various general software development tools such as JIRA, Git, and experience working with a CI/CD framework. Working collaboratively with my team, we delivered full-stack projects that not only met but often exceeded expectations.
 
-Sed eu diam vel ipsum mollis pretium. Suspendisse magna nulla, viverra ut euismod sit amet, lacinia eu enim. Suspendisse potenti. Sed iaculis justo id est egestas iaculis. Nullam ornare, dui sed sollicitudin vehicula, risus metus tincidunt ligula, a maximus sapien mauris ut ex. In non faucibus ante, in luctus est. Nam convallis, velit id tristique condimentum, dui justo aliquet urna, at tristique massa odio sit amet ipsum. Duis eu vehicula tortor, vitae sollicitudin turpis. Pellentesque suscipit lectus non ligula mattis, id pulvinar nisi eleifend. Proin posuere pretium quam. Donec dapibus in nunc non convallis. Aliquam nec interdum ligula. Sed sed vestibulum orci, eget congue erat.
-`;
+My university education has been a valuable foundation for my technical knowledge. Throughout my studies, I've had the privilege of exploring a diverse range of programming languages, from the foundational C and Python to the versatile Java, HTML, CSS, and the world of database management with SQLite. These courses have equipped me with a strong theoretical understanding of computer science principles, which I've been able to apply in practical settings.
+
+In addition to academics, I've also taken the initiative to develop my own personal projects. A particular project which stands out and that I am very proud of is this Website! It was developed using React.js, HTML, CSS, and it is hosted using Google's Firebase hosting. Another notable highlight was my participation in a Hackathon at the University of Waterloo. This event named Olypihack pushed me to sharpen my skills in HTML, CSS, React JS, and Python while collaborating in a group environment.
+
+As I continue to grow and learn in the ever-evolving field of computer science, I am excited to embark on new challenges and collaborations. My goal is to contribute my skills, creativity, and dedication to innovative projects, making a positive impact in the world of technology.
+
+Thank you for visiting my website, and if you're interested in discussing potential employment opportunities or learning more about my journey, please don't hesitate to reach out by using the "contact me" option on the navigation bar. I also encourage you to explore the other sections of my website. On the "About Me" page, you can discover more about my hobbies and personality beyond Software Development. The "Projects" page showcases a comprehensive list of the significant technical projects I've created. The "Stories" page is where I share my personal experiments with ChatGPT and other intriguing small projects. Lastly, on the "Reports" page, you will find my final work term reports from my co-op placements, offering insights into my professional growth.`;
 
 export default Home;

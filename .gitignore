@@ -27,6 +27,7 @@ yarn-error.log*
 .pnp.cjs
 .pnp.loader.mjs
 yarn.lock
+CNAME
 
 firebase.json
 .firebaserc

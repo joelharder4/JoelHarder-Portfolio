@@ -3,7 +3,8 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 import About from "./About";
 import Projects from "./Projects";
-import AI from "./AI";
+import Stories from "./Stories"
+import Reports from "./Reports"
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -12,12 +13,12 @@ function App() {
       <Navbar/>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/ai" element={<AI />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/reports" element={<Reports />} />
       </Routes>
-
-      
     </div>
   );
 }

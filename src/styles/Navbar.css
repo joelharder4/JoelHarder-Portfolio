@@ -1,4 +1,10 @@
-.navlink a {
+
+.navbar * {
+    margin: 0; 
+    padding: 0;
+}
+
+.navbar .navlink a {
     color: #CFCFCF;
     text-align: center;
     font-family: "Lalazer", sans-serif;
@@ -17,15 +23,15 @@
     }
 }
 
-.navlink {
+/* .navlink {
     cursor: pointer;
     position: sticky;
     padding: 10px;
     margin: 10px 10px 5px 10px;
     display: inline-block;
-}
+} */
 
-.navbar {
+/* .navbar {
     width: 100%;
     height: min-content;
     position: fixed;
@@ -33,4 +39,62 @@
     text-align: right;
     background-color: #223A52;
     box-shadow: 0px 2px 3px 1px #223A52;
+} */
+
+
+.navlink {
+    width: 100%;
+    height: 100%;
+    padding: 6px 16px 6px 16px;
+    text-decoration: none;
+    color: #202020;
+    font-family: "Lalazer", sans-serif;
 }
+
+.navbar {
+    background-color: #202020;
+    position: fixed;
+    z-index: 99;
+
+    border-bottom: 2px solid;
+    border-color: #363636;
+
+    width: 100%;
+    /* width: calc(100% - 16px);
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px; */
+}
+
+.navbar .contactMe {
+    float: right;
+    padding: 6px;
+}
+
+.navbar .centerBar {
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 96px);
+    height: 48px;
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar .navName {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Lalezar", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    color: #CFCFCF;
+
+    padding-top: 16px;
+}
+
+.navbar .navMenu {
+    float: left;
+}
+
+
