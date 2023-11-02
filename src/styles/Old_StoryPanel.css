@@ -1,0 +1,48 @@
+.storyPanel {
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.storyPanel .title {
+    font-family: "Lalezar", sans-serif;
+    font-size: min(6vw, 10vh);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    text-align: center;
+    color: #CFCFCF;
+    text-shadow: 0.5vw 8px 4px rgb(0, 0, 0);
+    
+    margin-bottom: 5vh;
+    margin-top: 60px;
+}
+
+.storyPanel .screenshot {
+    width: auto;
+    height: 70vmin;
+    position: absolute;
+    left: 55vw;
+    top: 25vh;
+
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* .storyPanel .descBox {
+    width: 50vw;
+    height: 70vh;
+    margin-left: 10vw;
+    margin-bottom: 0;
+} */
+
+/* .storyPanel .description {
+    white-space: pre-wrap;
+    color: #CFCFCF;
+    font-family: "Lalazer", sans-serif;
+    font-style: normal;
+    text-align: justify;
+    line-height: 1.8;
+
+    font-size: calc(100% * (50vw / 20));
+    max-width: 100%;
+} */

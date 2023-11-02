@@ -1,0 +1,110 @@
+.stories html {
+    /* overflow-y: scroll; */
+    height: 100%;
+    /* -webkit-overflow-scrolling: touch; */
+}
+
+.stories body {
+    position: relative;
+    overflow-y: show;
+}
+
+
+html,
+body {
+    margin: 0;
+    background: #202020;
+}
+
+.stories .container {
+    width: 600vw;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stories .firstContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+    background: #202020;
+}
+
+.stories .panel {
+    width: 100vw;
+    height: 100vh;
+}
+
+.stories .title {
+    font-family: "Lalezar", sans-serif;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 80%;
+    text-align: center;
+    color: #CFCFCF;
+    text-shadow: 8px 4px 2px rgb(0, 0, 0);
+    
+    margin-bottom: 20px;
+    margin-top: 20vh;
+}
+
+.stories .description {
+    color: #CFCFCF;
+    text-align: center;
+    font-family: "Lalazer", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 135%;
+
+    width: 60vw;
+}
+
+.stories .scrollMessage {
+    position: absolute;
+    margin-top: 90vh;
+
+    opacity: 0.2;
+    color: #CFCFCF;
+    text-align: center;
+    font-family: "Lalazer", sans-serif;
+    font-size: min(1.5vw, 2.5vh);
+    font-style: normal;
+    line-height: 135%;
+}
+
+.stories .storyList {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+.orange {
+    background: #6d3304;
+}
+
+.blue {
+    background-color: #223A52;
+}
+
+.green {
+    background-color: #325226;
+}
+
+.red {
+    background-color: #570101;
+}
+
+.purple {
+    background-color: #1a0d33;
+}
+
+.pink {
+    background-color: #550d4b;
+}
