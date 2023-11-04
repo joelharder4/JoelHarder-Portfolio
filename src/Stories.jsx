@@ -28,11 +28,11 @@ const StoryPanel = ({storyNum = 0, date = ""}) => {
 		<Grid item xs={4}>
 			<Grid container sx={{fontFamily: ["Lalazer", "sans-serif"]}}>
 				<Grid item xs={12}>
-					<ButtonBase sx={{ width: "100%", height: "350px", borderRadius: "2%" }} href="/stories">
+					<ButtonBase sx={{ width: "100%", height: "40vh", borderRadius: "2%" }} href={"/stories/" + storyNum.toString()}>
 						<Img alt="complex" src={thumbnails[storyNum]} />
 					</ButtonBase>
 				</Grid>
-				<Grid item xs={8}>
+				<Grid item xs={9}>
 					<Link 
 						href={"/stories"} 
 						style={{ width: "100%", textDecoration: "none" }}
@@ -52,7 +52,7 @@ const StoryPanel = ({storyNum = 0, date = ""}) => {
 						</Typography>
 					</Link>
 				</Grid>
-				<Grid item xs={4}>
+				<Grid item xs={3}>
 					<Typography variant="subtitle1" style={{ color: "#CFCFCF", opacity: "0.5", marginTop: "10px" }} align="right">
 						{date}
 					</Typography>
