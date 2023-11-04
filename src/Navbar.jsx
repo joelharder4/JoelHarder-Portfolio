@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
+import avatarImg from "./img/avatar_photo.png";
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -72,7 +73,7 @@ function Navbar() {
           <div className="contactMe">
             <Tooltip title="Contact Me">
               <IconButton onClick={handleOpenContactMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" sx={{"width": "36px", "height": "36px"}}/>
+                <Avatar alt="Remy Sharp" src={avatarImg} sx={{"width": "36px", "height": "36px"}}/>
               </IconButton>
             </Tooltip>
             <Menu

@@ -62,19 +62,6 @@ body {
     width: 60vw;
 }
 
-.stories .scrollMessage {
-    position: absolute;
-    margin-top: 90vh;
-
-    opacity: 0.2;
-    color: #CFCFCF;
-    text-align: center;
-    font-family: "Lalazer", sans-serif;
-    font-size: min(1.5vw, 2.5vh);
-    font-style: normal;
-    line-height: 135%;
-}
-
 .stories .storyList {
     width: 100%;
     text-align: center;

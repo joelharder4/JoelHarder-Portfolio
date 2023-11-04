@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Home";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.jsx";
 import About from "./About";
 import Projects from "./Projects";
 import Stories from "./Stories"
