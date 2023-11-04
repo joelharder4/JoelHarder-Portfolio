@@ -70,8 +70,8 @@ function Stories() {
 		<div className="firstContainer">
 			<h1 className="title">Short AI Stories</h1>
 			<p className="description">{pageDescription}</p>
-			<h1 style={{margin: "150px calc(66vw - 100px) 2px 0", color: "#CFCFCF", alignItems: "left", textAlign: "left", zIndex: "100"}}>Stories</h1>
-			<hr style={{width: "66vw", border: "0", borderTop: "1px solid #CFCFCF", opacity: "0.25", margin: "0 0 0 0"}}/>
+			<h1 style={{margin: "150px calc(66vw - 100px) 2px 0", color: "#CFCFCF", alignItems: "left", textAlign: "left", zIndex: "2"}}>Stories</h1>
+			<hr style={{width: "66vw", border: "0", borderTop: "2px solid #363636", margin: "0 0 0 0"}}/>
 		</div>
 		<Box sx={{width: "100%", margin: "15px 0 200px 0"}}>
 			<Grid 
