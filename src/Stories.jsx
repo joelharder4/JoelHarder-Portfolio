@@ -23,7 +23,7 @@ const Img = styled('img')({
 
 const GridBreak = () => {return <Box sx={{width: "100%"}}/>};
 
-const StoryPanel = ({storyNum = 0, shortDesc = "", date = ""}) => {
+const StoryPanel = ({storyNum = 0, date = ""}) => {
 	return (
 		<Grid item xs={4}>
 			<Grid container sx={{fontFamily: ["Lalazer", "sans-serif"]}}>
@@ -48,7 +48,7 @@ const StoryPanel = ({storyNum = 0, shortDesc = "", date = ""}) => {
 							variant="body2"
 							style={{ color: "#CFCFCF", height: "40px", overflow: "hidden", opacity: "0.5" }}
 						>
-							{shortDesc}
+							{teasers[storyNum]}
 						</Typography>
 					</Link>
 				</Grid>
@@ -84,29 +84,24 @@ function Stories() {
 				<StoryPanel
 					storyNum={0}
 					date={"November 3, 2023"}
-					shortDesc={"This is a very short description that can go up to two lines long! Isn't that cool?"}
 				/>
 				<StoryPanel
 					storyNum={1}
 					date={"November 3, 2023"}
-					shortDesc={"This is a very short description that can go up to two lines long! Isn't that cool?"}
 				/>
 				<GridBreak/>
 				<StoryPanel
 					storyNum={2}
 					date={"November 3, 2023"}
-					shortDesc={"This is a very short description that can go up to two lines long! Isn't that cool?"}
 				/>
 				<StoryPanel
 					storyNum={3}
 					date={"November 3, 2023"}
-					shortDesc={"This is a very short description that can go up to two lines long! Isn't that cool?"}
 				/>
 				<GridBreak/>
 				<StoryPanel
 					storyNum={4}
 					date={"November 3, 2023"}
-					shortDesc={"This is a very short description that can go up to two lines long! Isn't that cool?"}
 				/>
 			</Grid>
 		</Box>
@@ -123,7 +118,13 @@ const titles = [
     "Turning ChatGPT into a Conspiracy Theorist", // 4
 ];
 
-
+const teasers = [
+	"I made a prompt that convinced ChatGPT to never give a real response to anything you say, no matter what!",
+	"What I recommend using AI image generators for when playing Dungeons and Dragons online.",
+	"The story of how I got ChatGPT to act as if it forgot what it was talking about.",
+	"I have a number of reasons I don't love Apple, so I made a prompt that turns ChatGPT into a their biggest hater!",
+	"Using the instructions I made, ChatGPT will try to convince you that ridiculous conspiracy theories are real!"
+];
 
 
 const thumbnails = [
