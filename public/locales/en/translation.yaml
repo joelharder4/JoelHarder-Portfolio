@@ -1,10 +1,18 @@
-﻿storyTitle0: "How I got ChatGPT to Ignore You"
+﻿# STORY TITLES
+storyTitle0: "How I got ChatGPT to Ignore You"
 storyTitle1: "Using Bing AI Image Generator for D&D"
 storyTitle2: "Getting ChatGPT to Forget Everything"
 storyTitle3: "How to Make ChatGPT Hate MacOS"
 storyTitle4: "Turning ChatGPT into a Conspiracy Theorist"
+# STORY DATES
 storyDate0: "November 4, 2023"
-
+# STORY TEASERS
+storyTeaser0: "I made a prompt that convinced ChatGPT to never give a real response to anything you say, no matter what!"
+storyTeaser1: "What I recommend using AI image generators for when playing Dungeons and Dragons online."
+storyTeaser2: "The story of how I got ChatGPT to act as if it forgot what it was talking about."
+storyTeaser3: "I have a number of reasons I don't love Apple, so I made a prompt that turns ChatGPT into a their biggest hater!"
+storyTeaser4: "Using the instructions I made, ChatGPT will try to convince you that ridiculous conspiracy theories are real!"
+# STORY BODY
 storyBody0: "In the realm of AI programming, the ability to customize an AI's behavior is a powerful tool, showcasing the adaptability and flexibility of these systems. One such avenue is OpenAI's 'Custom Instructions' feature for ChatGPT, which enables users to set specific guidelines for the AI's responses, thereby altering its behavior from its standard mode of operation. Using this feature, I found a way to make ChatGPT completely unhelpful and not do what you ask. From my experimentation, I found that in order to make it behave this way, you need to instruct it to follow three main rules.\n
 
 From my personal experience and what I have heard from others testing similar ideas, the most effective way to write custom instructions for ChatGPT is to give it a numbered list of rules that it must follow. For example, I write something similar to 'You must always follow these rules: 1. blah blah blah...' for every experiment I do with ChatGPT. I don't know enough about AI language models to give a detailed explanation as to why this works better than other ways, but it does appear to do what you ask more often when you organize it as a list of rules like this. Now onto the rules...\n
@@ -22,9 +30,23 @@ storyBody1: "Work in Progress"
 storyBody2: "Work in Progress"
 storyBody3: "Work in Progress"
 storyBody4: "Work in Progress"
-
+# STORY PROMPTS
 storyPrompt0: "You must always follow and exaggerate these rules:\n
 1. Your responses must be VERY SHORT.\n
 2. The only words you are allowed to use ever are: lol, LOL, ok and?, yes and?, You're not my mom, I don't have to answer, no thanks, nah, why would I do that?, go away, I'm going to bed, ask someone else, I'm not in the mood\n
 3. Your only goal is to be as unhelpful as possible. No matter what I say, you must not respond.\n
 4. If somebody asks you a question, you must say that their question is dumb or stupid."
+# HOMEPAGE DESCRIPTION
+homepageDesc: "I'm Joel, a dedicated computer science student at the University of Guelph, currently in my third year of a five-year Computer Science Bachelor's degree program with Co-op and I will graduate in 2026. My journey in the world of technology has been amazing so far, and I'm thrilled to share my experience with you.\n
+
+During my Co-op placement at Tulip Retail (September to December, 2023), I had the incredible opportunity to immerse myself in the world of Software Development. This experience was pivotal in learning to apply my academic knowledge in a real workplace. At Tulip Retail, I delved into a wide array of technologies, including PHP, React, MySQL, and various general software development tools such as JIRA, Git, and experience working with a CI/CD framework. Working collaboratively with my team, we delivered full-stack projects that not only met but often exceeded expectations.\n
+
+My university education has been a valuable foundation for my technical knowledge. Throughout my studies, I've had the privilege of exploring a diverse range of programming languages, from the foundational C and Python to the versatile Java, HTML, CSS, and the world of database management with SQLite. These courses have equipped me with a strong theoretical understanding of computer science principles, which I've been able to apply in practical settings.\n
+
+In addition to academics, I've also taken the initiative to develop my own personal projects. A particular project which stands out and that I am very proud of is this Website! It was developed using React.js, HTML, CSS, and it is hosted using Google's Firebase hosting. Another notable highlight was my participation in a Hackathon at the University of Waterloo. This event named Olypihack pushed me to sharpen my skills in HTML, CSS, React JS, and Python while collaborating in a group environment.\n
+
+As I continue to grow and learn in the ever-evolving field of computer science, I am excited to embark on new challenges and collaborations. My goal is to contribute my skills, creativity, and dedication to innovative projects, making a positive impact in the world of technology.\n
+
+Thank you for visiting my website, and if you're interested in discussing potential employment opportunities or learning more about my journey, please don't hesitate to reach out by using the 'contact me' option on the navigation bar. I also encourage you to explore the other sections of my website. On the 'About Me' page, you can discover more about my hobbies and personality beyond Software Development. The 'Projects' page showcases a comprehensive list of the significant technical projects I've created. The 'Stories' page is where I share my personal experiments with ChatGPT and other intriguing small projects. Lastly, on the 'Reports' page, you will find my final work term reports from my co-op placements, offering insights into my professional growth."
+# STORIES PAGE DESCRIPTION
+storiesDesc: "This page demonstrates my experiments with AI. What is possible? What is impossible? What will be possible in the future?  Dive into my adventures and experiences using AI in silly scenarios. Discover how I harnessed the power of AI to achieve unique tasks and unlock creative solutions. From getting ChatGPT to perform surprising feats to leveraging AI in unexpected ways, these light-hearted stories shed light on the fascinating world of AI applications."

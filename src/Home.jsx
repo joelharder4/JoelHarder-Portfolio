@@ -12,9 +12,22 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Fab } from "@mui/material";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useTranslation } from "react-i18next";
 // import { useState } from "react";
 const { useRef, useLayoutEffect } = React;
 gsap.registerPlugin( useLayoutEffect, useRef, ScrollTrigger);
+
+const cssButton = {
+    "marginLeft": "auto",
+    "marginRight": "auto",
+    "display": "block",
+    "width": "Max-content",
+    "textTransform": "none",
+    "fontFamily": ("Lalazer", "sans-serif"),
+    "letterSpacing": "-0.3px",
+    "fontSize": "18px",
+    "fontWeight": "700",
+}
 
 const theme = createTheme({
     palette: {
@@ -28,7 +41,7 @@ const theme = createTheme({
   });
 
 function Home() {
-    // const [showScrollTopVisible, setShowScrollTopVisible] = useState(false);
+    const { t } = useTranslation();
     const title = useRef();
     const panel1 = useRef();
     const panel2 = useRef();
@@ -126,10 +139,7 @@ function Home() {
                 <img className="logo" src={mysqlLogo} alt="mySQL Programming language logo"/>
             </div>
             <div className="textContainer">
-                <p>{jobExperience}</p>
-                {/* {jobExperience.split("\n\n").map((paragraph, i) => {
-                    return <p key={i}>{paragraph}</p>
-                })} */}
+                <p>{t("homepageDesc")}</p>
             </div>
             <div style={{position: "fixed", top: "90vh", left: "90vw"}} className="scrollToTop">
                 <Fab aria-label="Top" color="#CFCFCF" size="small" onClick={scrollToTop}>
@@ -139,30 +149,5 @@ function Home() {
         </div>
     </div>);
 }
-
-
-const cssButton = {
-    "marginLeft": "auto",
-    "marginRight": "auto",
-    "display": "block",
-    "width": "Max-content",
-    "textTransform": "none",
-    "fontFamily": ("Lalazer", "sans-serif"),
-    "letterSpacing": "-0.3px",
-    "fontSize": "18px",
-    "fontWeight": "700",
-}
-
-const jobExperience = `I'm Joel, a dedicated computer science student at the University of Guelph, currently in my third year of a five-year Computer Science Bachelor's degree program with Co-op and I will graduate in 2026. My journey in the world of technology has been amazing so far, and I'm thrilled to share my experience with you.
-
-During my Co-op placement at Tulip Retail (September to December, 2023), I had the incredible opportunity to immerse myself in the world of Software Development. This experience was pivotal in learning to apply my academic knowledge in a real workplace. At Tulip Retail, I delved into a wide array of technologies, including PHP, React, MySQL, and various general software development tools such as JIRA, Git, and experience working with a CI/CD framework. Working collaboratively with my team, we delivered full-stack projects that not only met but often exceeded expectations.
-
-My university education has been a valuable foundation for my technical knowledge. Throughout my studies, I've had the privilege of exploring a diverse range of programming languages, from the foundational C and Python to the versatile Java, HTML, CSS, and the world of database management with SQLite. These courses have equipped me with a strong theoretical understanding of computer science principles, which I've been able to apply in practical settings.
-
-In addition to academics, I've also taken the initiative to develop my own personal projects. A particular project which stands out and that I am very proud of is this Website! It was developed using React.js, HTML, CSS, and it is hosted using Google's Firebase hosting. Another notable highlight was my participation in a Hackathon at the University of Waterloo. This event named Olypihack pushed me to sharpen my skills in HTML, CSS, React JS, and Python while collaborating in a group environment.
-
-As I continue to grow and learn in the ever-evolving field of computer science, I am excited to embark on new challenges and collaborations. My goal is to contribute my skills, creativity, and dedication to innovative projects, making a positive impact in the world of technology.
-
-Thank you for visiting my website, and if you're interested in discussing potential employment opportunities or learning more about my journey, please don't hesitate to reach out by using the "contact me" option on the navigation bar. I also encourage you to explore the other sections of my website. On the "About Me" page, you can discover more about my hobbies and personality beyond Software Development. The "Projects" page showcases a comprehensive list of the significant technical projects I've created. The "Stories" page is where I share my personal experiments with ChatGPT and other intriguing small projects. Lastly, on the "Reports" page, you will find my final work term reports from my co-op placements, offering insights into my professional growth.`;
 
 export default Home;
