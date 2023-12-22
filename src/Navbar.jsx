@@ -10,7 +10,7 @@ import avatarImg from "./img/avatar_photo.png";
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ["Home", "About", "Projects", "Stories", "Reports"];
+const pages = ["Home",   "Stories", "Reports"]; //"About", "Projects",
 
 
 function Navbar() {

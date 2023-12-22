@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Button from "@mui/material/Button";
 
 import example0 from "./img/screenshots/chat_gpt_ignore_prompt.png"
+import example1 from "./img/screenshots/bing_ai_for_dnd.png"
 
 const Img = styled('img')({
 	objectFit: 'cover',
@@ -26,6 +27,7 @@ function StoryPage() {
     let body = t(`storyBody${storyNum}`, "");
     let date = t(`storyDate${storyNum}`, "");
     let prompt = t(`storyPrompt${storyNum}`, "");
+    let hasPrompt = prompt ? true : false;
     let example = exampleScreenshots[storyNum];
 
     useEffect(() => {
@@ -44,8 +46,8 @@ function StoryPage() {
             setIsHovering(false);
         };
     
-            button.addEventListener('mouseenter', onMouseEnter);
-            button.addEventListener('mouseleave', onMouseLeave);
+        button.addEventListener('mouseenter', onMouseEnter);
+        button.addEventListener('mouseleave', onMouseLeave);
     
         return () => {
             button.removeEventListener('mouseenter', onMouseEnter);
@@ -53,50 +55,57 @@ function StoryPage() {
         };
       }, []);
 
-    return (<>
-        <Button variant="text" sx={{margin: "100px 0 0 calc(70vw + 50px)", position: "absolute", zIndex: 3, "textTransform": "none",}} href="/stories">
-            Other Stories
-        </Button>
-        <Box sx={{ width: "100%", height: "max-content", margin: "150px 0 0 0", position: "absolute" }} align="center">
-            <Typography 
-                variant="h2" 
-                style={{ color: "#CFCFCF", fontFamily: ["Lalazer", "sans-serif"], fontWeight: "800", width: "60%", marginBottom: "80px" }}
-            >
-                {title ? title : "This Story Does Not Exist"}
-            </Typography>
-
-            <Typography 
-                variant="subtitle1" 
-                style={{ color: "#CFCFCF", fontFamily: ["Lalazer", "sans-serif"], margin: "-50px 0 0 70vw", whiteSpace: "pre-wrap", fontSize: "20px", fontWeight: "400", opacity: "0.5", position: "absolute" }}
-            >
-                {date ? date : "Unknown Date"}
-            </Typography>
-
-            {example ? <>
-                {isHovering ? <BodyText style={{position: "absolute", fontSize: "18px", textAlign: "center", margin: "35vh 0 0 20%"}}>Click to Copy Custom Instructions</BodyText> : null}
-                <ButtonBase 
-                    onClick={() => {navigator.clipboard.writeText(prompt)}}
-                    ref={buttonRef}
-                    sx={{
-                        margin: "50px 0 0 0",
-                        width: 'auto',
-                        height: '60vw',
-                        maxHeight: '1000px'
-                    }}
+    return (
+        <Box sx={{ width: "100%", height: "max-content", position: "absolute" }} align="center">
+            <Button variant="text" sx={{margin: "60px 0 0 20%", position: "absolute", zIndex: 3, "textTransform": "none",}} href="/stories">
+                Other Stories
+            </Button>
+            
+            <Box sx={{ width: "55vw", height: "max-content", margin: "110px 0 0 0", position: "relative", background: "#303030" }} align="center">
+                {/* the title */}
+                <Typography 
+                    variant="h3" 
+                    style={{ color: "#CFCFCF", fontFamily: ["Lalazer", "sans-serif"], fontWeight: "800", width: "90%", marginBottom: "80px", paddingTop: "80px" }}
                 >
-                    <Img src={example}/>
-                </ButtonBase>
-                </> : null}
+                    {title ? title : "This Story Does Not Exist"}
+                </Typography>
 
-            <BodyText style={{ margin: "50px 0 200px 0" }}>
-                {body ? body : "This Story Does Not Exist"}
-            </BodyText>
+                {/* the date */}
+                <Typography 
+                    variant="subtitle1" 
+                    style={{ color: "#CFCFCF", fontFamily: ["Lalazer", "sans-serif"], margin: "-50px 0 0 75%", whiteSpace: "pre-wrap", fontSize: "20px", fontWeight: "400", opacity: "0.5", position: "absolute" }}
+                >
+                    {date ? date : "Unknown Date"}
+                </Typography>
+
+                {/* the example image */}
+                {example ? <>{hasPrompt ? <>
+                    {isHovering ? <BodyText style={{width: "100%", position: "absolute", fontSize: "18px", textAlign: "center", margin: "20vw 0 0 0", padding: "none"}}>Click to Copy Custom Instructions</BodyText> : null}
+                    <ButtonBase 
+                        onClick={() => {navigator.clipboard.writeText(prompt)}}
+                        ref={buttonRef}
+                        sx={{
+                            margin: "50px 0 0 0",
+                            width: 'auto',
+                            height: '40vw',
+                            maxHeight: '1000px'
+                        }}
+                    >
+                        <Img src={example}/>
+                    </ButtonBase>
+                    </> : <Img src={example} sx={{width: "80%"}} />}</> : null}
+
+                <BodyText style={{ margin: "50px 0 200px 0", width: "70%", paddingBottom: "150px" }}>
+                    {body ? body : "This Story Does Not Exist"}
+                </BodyText>
+            </Box>
         </Box>
-    </>);
+    );
 }
 export default StoryPage;
 
 
 const exampleScreenshots = [
-    example0
+    example0,
+    example1,
 ];
