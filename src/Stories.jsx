@@ -50,19 +50,19 @@ const StoryPanel = ({storyNum = -1}) => {
 							variant="h6"
 							style={{ color: "#CFCFCF", marginTop: "10px" }}
 						>
-							{title ? title : "Story does not exist"}
+							{title || "Story does not exist"}
 						</Typography>
 						<Typography
 							variant="body2"
 							style={{ color: "#CFCFCF", height: "40px", overflow: "hidden", opacity: "0.5" }}
 						>
-							{teaser ? teaser : "Something went wrong"}
+							{teaser || "Something went wrong"}
 						</Typography>
 					</Link>
 				</Grid>
 				<Grid item xs={3}>
 					<Typography variant="subtitle1" style={{ color: "#CFCFCF", opacity: "0.5", marginTop: "10px" }} align="right">
-						{date ? date : "Unknown Date"}
+						{date || "Unknown Date"}
 					</Typography>
 				</Grid>
 			</Grid>

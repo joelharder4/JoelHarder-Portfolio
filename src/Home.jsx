@@ -6,6 +6,7 @@ import reactLogo from "./img/logos/react.png";
 import phpLogo from "./img/logos/php.png";
 import mysqlLogo from "./img/logos/mysql.png";
 import "./styles/Home.css";
+import BodyText from "./BodyText";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { gsap } from "gsap";
@@ -138,9 +139,9 @@ function Home() {
                 <img className="logo" src={phpLogo} alt="PHP Programming language logo"/>
                 <img className="logo" src={mysqlLogo} alt="mySQL Programming language logo"/>
             </div>
-            <div className="textContainer">
-                <p>{t("homepageDesc")}</p>
-            </div>
+            <BodyText style={{ margin: "50px 0 200px 0", width: "70%", paddingBottom: "150px" }}>
+                {t("homepageDesc")}
+            </BodyText>
             <div style={{position: "fixed", top: "90vh", left: "90vw"}} className="scrollToTop">
                 <Fab aria-label="Top" color="#CFCFCF" size="small" onClick={scrollToTop}>
                     <UpIcon />

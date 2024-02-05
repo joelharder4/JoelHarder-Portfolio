@@ -5,7 +5,8 @@ import About from "./About";
 import Projects from "./Projects";
 import Stories from "./Stories"
 import StoryPage from "./StoryPage.jsx";
-import Reports from "./Reports"
+import Reports from "./Reports";
+import ReportPage from "./ReportPage.jsx";
 import { Route, Routes } from "react-router-dom";
 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/stories" element={<Stories />} />
             <Route path="/stories/:storyNum" element={<StoryPage />} />
             <Route path="/reports" element={<Reports />} />
+            <Route path="/reports/:reportNum" element={<ReportPage />} />
         </Routes>
         </div>
     );
