@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Fab } from "@mui/material";
+import { Fab, Box } from "@mui/material";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useTranslation } from "react-i18next";
 // import { useState } from "react";
@@ -139,9 +139,13 @@ function Home() {
                 <img className="logo" src={phpLogo} alt="PHP Programming language logo"/>
                 <img className="logo" src={mysqlLogo} alt="mySQL Programming language logo"/>
             </div>
-            <BodyText style={{ margin: "50px 0 200px 0", width: "70%", paddingBottom: "150px" }}>
-                {t("homepageDesc")}
-            </BodyText>
+            <Box sx={{ width: "100%", height: "max-content", position: "absolute" }} align="center">
+                <Box sx={{ width: "55vw", height: "max-content", margin: "80px 0 100px 0", position: "relative", background: "#303030" }} align="center">
+                    <BodyText style={{ padding: "100px 100px 100px 100px" }}>
+                        {t("homepageDesc")}
+                    </BodyText>
+                </Box>
+            </Box>
             <div style={{position: "fixed", top: "90vh", left: "90vw"}} className="scrollToTop">
                 <Fab aria-label="Top" color="#CFCFCF" size="small" onClick={scrollToTop}>
                     <UpIcon />
