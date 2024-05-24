@@ -1,19 +1,19 @@
 // import React from "react";
-import "./styles/Navbar.css";
-import { Link } from "react-router-dom";
+import './styles/Navbar.css';
+import { Link } from 'react-router-dom';
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
-import avatarImg from "./img/avatar_photo.png";
+import avatarImg from './img/avatar_photo.png';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ["Home", "Projects",  "Stories", "Reports"]; //"About", 
+const pages = ['Home', 'Projects',  'Stories', 'Reports']; //"About", 
 
 
-function Navbar() {
+const Navbar = () => {
     const [anchorNavEl, setAnchorNavEl] = React.useState(null);
     const [anchorContactEl, setAnchorContactEl] = React.useState(null);
     const [emailCopyAlert, setEmailCopyAlert] = React.useState(null);
@@ -46,11 +46,11 @@ function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon style={{"color": "#CFCFCF"}}/>
+              <MenuIcon style={{'color': '#CFCFCF'}}/>
             </IconButton>
             <Menu
               id="basic-menu"
-              sx={{"& .MuiMenu-paper": { backgroundColor: "#CFCFCF", }}}
+              sx={{'& .MuiMenu-paper': { backgroundColor: '#CFCFCF', }}}
               anchorEl={anchorNavEl}
               open={Boolean(anchorNavEl)}
               onClose={handleCloseNavMenu}
@@ -59,8 +59,8 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{"padding": "0 0 0 0"}}>
-                  <Link className="navlink" to={"/" + page.toLowerCase()}>{page}</Link>
+                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{'padding': '0 0 0 0'}}>
+                  <Link className="navlink" to={'/' + page.toLowerCase()}>{page}</Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -73,11 +73,11 @@ function Navbar() {
           <div className="contactMe">
             <Tooltip title="Contact Me">
               <IconButton onClick={handleOpenContactMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={avatarImg} sx={{"width": "36px", "height": "36px"}}/>
+                <Avatar alt="Remy Sharp" src={avatarImg} sx={{'width': '36px', 'height': '36px'}}/>
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "32px", "& .MuiMenu-paper": { backgroundColor: "#CFCFCF" } }}
+              sx={{ mt: '32px', '& .MuiMenu-paper': { backgroundColor: '#CFCFCF' } }}
               id="menu-appbar"
               anchorEl={anchorContactEl}
               anchorOrigin={{
@@ -92,14 +92,14 @@ function Navbar() {
               open={Boolean(anchorContactEl)}
               onClose={handleCloseContactMenu}
             >
-              <MenuItem key="email" onClick={() => {navigator.clipboard.writeText("joelharder4@gmail.com"); setEmailCopyAlert(true);}}>
-                {emailCopyAlert ? "Copied" : "Email"}
+              <MenuItem key="email" onClick={() => {navigator.clipboard.writeText('joelharder4@gmail.com'); setEmailCopyAlert(true);}}>
+                {emailCopyAlert ? 'Copied' : 'Email'}
               </MenuItem>
-              <MenuItem key="linkedin" onClick={handleCloseContactMenu} sx={{padding: "0 0 0 0"}}>
+              <MenuItem key="linkedin" onClick={handleCloseContactMenu} sx={{padding: '0 0 0 0'}}>
                 <Link 
-                  to={"https://www.linkedin.com/in/joel-harder/"} 
-                  target={"_blank"} 
-                  style={{textDecoration: "none", color: "inherit", width: "100%", height: "100%", padding: "6px 16px 6px 16px"}}
+                  to={'https://www.linkedin.com/in/joel-harder/'} 
+                  target={'_blank'} 
+                  style={{textDecoration: 'none', color: 'inherit', width: '100%', height: '100%', padding: '6px 16px 6px 16px'}}
                 >
                   LinkedIn
                 </Link>

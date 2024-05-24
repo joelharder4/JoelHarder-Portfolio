@@ -6,14 +6,14 @@ class StoryModel {
     storyNum;
 
     // string
-    title = "";
+    title = '';
 
     // string
-    body = "";
+    body = '';
 
     // string
     // example: "November 4, 2023"
-    date = "";
+    date = '';
 
     // string
     // example: "follow these rules: ..."

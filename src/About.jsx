@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
-export default function About() {
+const About = () => {
     return (<>
-        <h1 color="FFFFFF"><br/>This page isn't done yet, as you could probably guess</h1>
+        <h1 color="FFFFFF"><br/>This page isnt done yet, as you could probably guess</h1>
     </>);
 }
+
+export default About;
