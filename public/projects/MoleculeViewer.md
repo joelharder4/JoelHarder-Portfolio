@@ -1,6 +1,6 @@
 # Molecule Viewer
-> Course: **CIS\*2750**<br>
-> Author: **Joel Harder**<br>
+> Course: **CIS\*2750**
+> Author: **Joel Harder**
 > Last Edited: **April 5, 2023**
 
 ## About this Project
@@ -28,10 +28,10 @@ Once the server is running, open `http://localhost:<port#>/` in your preferred b
 ## Screenshots
 
 ### Home Page
-![A screenshot of the home page](../img/thumbnails/bing_ai_for_dnd.jpg?raw=true "Home Page")
+![A screenshot of the home page](../img/screenshots/bing_ai_for_dnd.png?raw=true "Home Page")
 
 ### Molecule Database
-![A screenshot of the page that lists all molecules in the database](../img/thumbnails/chatgpt_is_confused.jpg?raw=true "Molecule Database")
+![A screenshot of the page that lists all molecules in the database](../img/screenshots/bing_ai_for_dnd.png?raw=true "Molecule Database")
 
 ### Element Database
-![A screenshot of the page that lists all elements in the database](../img/screenshots/chat_gpt_ignore_prompt.png?raw=true "Element Database")
+![A screenshot of the page that lists all elements in the database](../img/screenshots/bing_ai_for_dnd.png?raw=true "Element Database")

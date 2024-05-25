@@ -1,17 +1,10 @@
 import React from 'react';
-import pythonLogo from './img/logos/python.png';
-import javascriptLogo from './img/logos/javascript.png';
-import htmlLogo from './img/logos/html.png';
-import reactLogo from './img/logos/react.png';
-import phpLogo from './img/logos/php.png';
-import mysqlLogo from './img/logos/mysql.png';
 import './styles/Home.css';
-import BodyText from './BodyText';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Fab, Box } from '@mui/material';
+import { Fab } from '@mui/material';
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useTranslation } from 'react-i18next';
 const { useRef, useLayoutEffect } = React;
@@ -129,22 +122,22 @@ const Home = () => {
                 </ThemeProvider>
             </div>
         </div>
-        <div className="panel2" ref={panel2}>
-            <div className="iconContainer" ref={main}>
-                <img className="logo" src={pythonLogo} alt="Python Programming language logo"/>
-                <img className="logo" src={javascriptLogo} alt="Javascript Programming language logo"/>
-                <img className="logo" src={htmlLogo} alt="HTML Programming language logo"/>
-                <img className="logo" src={reactLogo} alt="React Programming language logo"/>
-                <img className="logo" src={phpLogo} alt="PHP Programming language logo"/>
-                <img className="logo" src={mysqlLogo} alt="mySQL Programming language logo"/>
+        <div className="panel2 pt-14" ref={panel2}>
+            <div className="flex flex-row gap-8 w-full justify-center my-4 h-14 md:h-20 lg:h-32" ref={main}>
+                <img className="logo" src={'/img/logos/python.png'} alt="Python Programming language logo"/>
+                <img className="logo" src={'/img/logos/javascript.png'} alt="Javascript Programming language logo"/>
+                <img className="logo" src={'/img/logos/html.png'} alt="HTML Programming language logo"/>
+                <img className="logo" src={'/img/logos/react.png'} alt="React Programming language logo"/>
+                <img className="logo" src={'/img/logos/php.png'} alt="PHP Programming language logo"/>
+                <img className="logo" src={'/img/logos/mysql.png'} alt="mySQL Programming language logo"/>
             </div>
-            <Box sx={{ width: '100%', height: 'max-content', position: 'absolute' }} align="center">
-                <Box sx={{ width: '55vw', height: 'max-content', margin: '80px 0 100px 0', position: 'relative', background: '#303030' }} align="center">
-                    <BodyText style={{ padding: '100px 100px 100px 100px' }}>
+            <div className='w-full flex items-center justify-center my-16'>
+                <div className='w-[90vw] md:w-[80vw] lg:w-[70vw] bg-[#303030]'>
+                    <p className="p-16 md:p-20 text-sm md:text-lg lg:text-xl font-thin font-['Lalezar'] text-[#CFCFCF] whitespace-pre-wrap">
                         {t('homepageDesc')}
-                    </BodyText>
-                </Box>
-            </Box>
+                    </p>
+                </div>
+            </div>
             <div style={{position: 'fixed', top: '90vh', left: '90vw'}} className="scrollToTop">
                 <Fab aria-label="Top" color="#CFCFCF" size="small" onClick={scrollToTop}>
                     <UpIcon />

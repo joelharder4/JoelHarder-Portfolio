@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
 import { useTranslation } from 'react-i18next';
 
-import thumbnail0 from '../img/thumbnails/chatgpt_ignore_you.jpg';
-
 const thumbnails = {
-    'test': thumbnail0,
+    'test': '/img/thumbnails/chatgpt_ignore_you.jpg',
+	'MoleculeViewer': '/img/thumbnails/angry_mac_hater.jpg',
 };
 
-const ProjectCard = ({projectName = ''}) => {
+const ProjectCard = ({project = ''}) => {
     const { t } = useTranslation();
 
     const Img = styled('img')({
@@ -22,16 +21,17 @@ const ProjectCard = ({projectName = ''}) => {
         borderRadius: '2%',
     });
 
-	const linkTo = '/projects/' + projectName.toString();
-    let teaser = t(`${projectName}Teaser`, '');
-    let date = t(`${projectName}Date`, '');
+	const linkTo = '/projects/' + project.toString();
+	let title = t(`${project}Title`, '');
+    let teaser = t(`${project}Teaser`, '');
+    let date = t(`${project}Date`, '');
 
 	return (
 		<Grid item xs={4}>
 			<Grid container sx={{fontFamily: ['Lalazer', 'sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '15rem', borderRadius: '2%' }} href={linkTo}>
-						<Img alt="complex" src={thumbnails[projectName]} />
+						<Img alt="complex" src={thumbnails[project]} />
 					</ButtonBase>
 				</Grid>
 				<Grid item xs={7} md={8}>
@@ -41,7 +41,7 @@ const ProjectCard = ({projectName = ''}) => {
 						underline="none"
 					>
 						<p className="mt-4 text-[#CFCFCF] text-xl">
-							{projectName || 'Unnamed Project'}
+							{title || 'Unnamed Project'}
 						</p>
 						<p className="text-[#CFCFCF] text-sm overflow-hidden h-10 opacity-50">
 							{teaser || 'Something went wrong'}

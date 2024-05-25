@@ -8,6 +8,7 @@ import StoryPage from './StoryPage.jsx';
 import Reports from './Reports';
 import ReportPage from './ReportPage.jsx';
 import { Route, Routes } from 'react-router-dom';
+import ProjectPage from './ProjectPage.jsx';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="home" index element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="projects" element={<Projects />} />
+                    <Route path="projects/:projectName" element={<ProjectPage />} />
                     <Route path="stories" element={<Stories />} />
                     <Route path="stories/:storyNum" element={<StoryPage />} />
                     <Route path="reports" element={<Reports />} />

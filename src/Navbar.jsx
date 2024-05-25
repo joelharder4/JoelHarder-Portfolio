@@ -1,4 +1,3 @@
-// import React from "react";
 import './styles/Navbar.css';
 import { Link } from 'react-router-dom';
 import * as React from 'react';
@@ -6,7 +5,6 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
-import avatarImg from './img/avatar_photo.png';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -36,7 +34,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar">
+        <div className="navbar top-0">
           <div className="navMenu">
             <IconButton
               size="large"
@@ -73,7 +71,7 @@ const Navbar = () => {
           <div className="contactMe">
             <Tooltip title="Contact Me">
               <IconButton onClick={handleOpenContactMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={avatarImg} sx={{'width': '36px', 'height': '36px'}}/>
+                <Avatar alt="Contact Me" src={'/img/avatar_photo.png'} sx={{'width': '36px', 'height': '36px'}}/>
               </IconButton>
             </Tooltip>
             <Menu

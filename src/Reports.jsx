@@ -5,9 +5,10 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
-// import { useTranslation } from "react-i18next";
 
-import thumbnail0 from './img/thumbnails/tulip_retail.png';
+const thumbnails = [
+	'/img/thumbnails/tulip_retail.png'
+];
 
 const Img = styled('img')({
 	margin: 'none',
@@ -96,9 +97,5 @@ const Reports = () => {
 		</Box>
 	</div>);
 }
-
-const thumbnails = [
-	thumbnail0
-];
 
 export default Reports;

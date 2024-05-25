@@ -6,7 +6,9 @@ import BodyText from './BodyText';
 import gsap from 'gsap';
 import Button from '@mui/material/Button';
 
-import example0 from './img/thumbnails/tulip_retail.png';
+const exampleScreenshots = [
+    '/img/thumbnails/tulip_retail.png'
+];
 
 const Img = styled('img')({
 	objectFit: 'cover',
@@ -105,7 +107,3 @@ export default StoryPage;
 const title = 'Tulip Retail - Software Developer'
 const date = 'January 12, 2024'
 const hasPrompt = false
-
-const exampleScreenshots = [
-    example0
-];

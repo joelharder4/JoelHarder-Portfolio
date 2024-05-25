@@ -6,9 +6,6 @@ import BodyText from './BodyText';
 import gsap from 'gsap';
 import Button from '@mui/material/Button';
 
-import example0 from './img/screenshots/chat_gpt_ignore_prompt.png'
-import example1 from './img/screenshots/bing_ai_for_dnd.png'
-
 const Img = styled('img')({
 	objectFit: 'cover',
     border: '1px solid #363636',
@@ -106,6 +103,6 @@ export default StoryPage;
 
 
 const exampleScreenshots = [
-    example0,
-    example1,
+    '/img/screenshots/chat_gpt_ignore_prompt.png',
+    '/img/screenshots/bing_ai_for_dnd.png',
 ];

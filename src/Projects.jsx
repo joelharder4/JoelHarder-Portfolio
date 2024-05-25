@@ -10,16 +10,16 @@ const Projects = () => {
             Until this is finished, you can view most of my projects on https://github.com/joelharder4
             </p>
 
-			<div className="mt-20 lg:w-[75vw] md:w-[85vw] sm:w-[70vw]">
+			<div className="mt-20 lg:w-[75vw] md:w-[85vw] w-[70vw]">
 				<h1 className="w-full items-left text-left z-10 text-2xl">Projects</h1>
 				<hr className="w-full border-t-2  border-[#363636]"/>
 
 				<div className="mt-4 w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 flex">
-					<ProjectCard projectName="test"/>
-					<ProjectCard projectName="test"/>
-					<ProjectCard projectName="test"/>
-					<ProjectCard projectName="test"/>
-					<ProjectCard projectName="test"/>
+					<ProjectCard project="MoleculeViewer"/>
+					<ProjectCard project="test"/>
+					<ProjectCard project="test"/>
+					<ProjectCard project="test"/>
+					<ProjectCard project="test"/>
 				</div>
 			</div>
 		</div>

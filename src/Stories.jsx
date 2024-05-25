@@ -3,15 +3,16 @@ import React from 'react';
 import { Grid, styled } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import { useTranslation } from 'react-i18next';
 
-import thumbnail0 from './img/thumbnails/chatgpt_ignore_you.jpg';
-import thumbnail1 from './img/thumbnails/bing_ai_for_dnd.jpg';
-import thumbnail2 from './img/thumbnails/chatgpt_is_confused.jpg';
-import thumbnail3 from './img/thumbnails/angry_mac_hater.jpg';
-import thumbnail4 from './img/thumbnails/conspiracy_theory_chatgpt.jpg';
+const thumbnails = [
+	'/img/thumbnails/chatgpt_ignore_you.jpg',
+	'/img/thumbnails/bing_ai_for_dnd.jpg',
+	'/img/thumbnails/chatgpt_is_confused.jpg',
+	'/img/thumbnails/angry_mac_hater.jpg',
+	'/img/thumbnails/conspiracy_theory_chatgpt.jpg',
+];
 
 const Img = styled('img')({
 	margin: 'none',
@@ -21,8 +22,6 @@ const Img = styled('img')({
 	width: '100%',
 	borderRadius: '2%',
   });
-
-const GridBreak = () => {return <Box sx={{width: '100%'}}/>};
 
 const StoryPanel = ({storyNum = -1}) => {
 	const { t } = useTranslation();
@@ -79,45 +78,22 @@ const Stories = () => {
 		<div className="firstContainer">
 			<h1 className="title">Short AI Stories</h1>
 			<p className="description"> {t('storiesDesc')} </p>
-			<h1 style={{margin: '150px calc(66vw - 100px) 2px 0', color: '#CFCFCF', alignItems: 'left', textAlign: 'left', zIndex: '2'}}>Stories</h1>
-			<hr style={{width: '66vw', border: '0', borderTop: '2px solid #363636', margin: '0 0 0 0'}}/>
 		</div>
-		<Box sx={{width: '100%', margin: '15px 0 200px 0'}}>
-			<Grid 
-				container 
-				rowSpacing={8} 
-				columnSpacing={{ xs: 1, sm: 2, md: 4 }}
-				justifyContent={'center'}
-				alignItems={'top'}
-			>
-				<StoryPanel
-					storyNum={0}
-				/>
-				<StoryPanel
-					storyNum={1}
-				/>
-				<GridBreak/>
-				<StoryPanel
-					storyNum={2}
-				/>
-				<StoryPanel
-					storyNum={3}
-				/>
-				<GridBreak/>
-				<StoryPanel
-					storyNum={4}
-				/>
-			</Grid>
-		</Box>
+		<div className='flex flex-col w-full items-center'>
+			<div className="mt-20 lg:w-[75vw] md:w-[85vw] w-[70vw] font-['Lalezar'] text-[#CFCFCF]">
+				<h1 className="w-full items-left text-left z-10 text-2xl">Stories</h1>
+				<hr className="w-full border-t-2 border-[#363636]"/>
+
+				<div className="mt-4 w-full grid md:grid-cols-2 grid-cols-1 gap-8 flex">
+					<StoryPanel storyNum={0}/>
+					<StoryPanel storyNum={1}/>
+					<StoryPanel storyNum={2}/>
+					<StoryPanel storyNum={3}/>
+					<StoryPanel storyNum={4}/>
+				</div>
+			</div>
+		</div>
 	</div>);
 }
-
-const thumbnails = [
-	thumbnail0,
-	thumbnail1,
-	thumbnail2,
-	thumbnail3,
-	thumbnail4,
-];
 
 export default Stories;
