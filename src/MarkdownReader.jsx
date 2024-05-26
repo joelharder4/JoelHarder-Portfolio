@@ -7,10 +7,74 @@ const MarkdownReader = ({ filePath, className = '' }) => {
   useEffect(() => {
     fetch(filePath)
       .then(response => response.text())
-      .then(text => {console.log(text);setMarkdown(text)})
+      .then(text => {setMarkdown(text)})
   }, [filePath]);
 
-  return <ReactMarkdown className={className + ' whitespace-pre-wrap font-[sans-serif] [&_h1]:text-5xl [&_h2]:text-3xl [&_h3]:text-2xl [&_p]:text-lg'}>{markdown}</ReactMarkdown>;
+  const Link = ({children, href}) => {
+    return (
+      <a href={href} target="_blank" rel='noreferrer' className='underline'>
+        {children}
+      </a>
+    );
+  };
+
+  const h1 = ({children}) => {
+    return (
+      <h1 className='text-5xl text-center font-bold'>
+        {children}
+      </h1>
+    );
+  };
+
+  const h2 = ({children}) => {
+    return (
+      <h2 className='text-3xl font-semibold'>
+        {children}
+      </h2>
+    );
+  };
+
+  const h3 = ({children}) => {
+    return (
+      <h3 className='text-2xl font-semibold'>
+        {children}
+      </h3>
+    );
+  };
+
+  const p = ({children}) => {
+    return (
+      <p className='text-lg'>
+        {children}
+      </p>
+    );
+  };
+
+  const code = ({children}) => {
+    return (
+      <code className='bg-[#262626] p-1'>
+        {children}
+      </code>
+    );
+  };
+
+  const blockquote = ({children}) => {
+    return (
+      <blockquote className='px-6 bg-[#444444] border-l-2'>
+        {children}
+      </blockquote>
+    );
+  };
+
+  const pre = ({children}) => {
+    return (
+      <pre className='bg-[#262626] p-2'>
+        {children}
+      </pre>
+    );
+  };
+
+  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, p: p, code: code, blockquote: blockquote, pre: pre }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
 };
 
 export default MarkdownReader;

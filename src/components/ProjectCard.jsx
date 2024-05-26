@@ -1,37 +1,28 @@
-import React from 'react';
-import { Grid, styled } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
-import { useTranslation } from 'react-i18next';
-
-const thumbnails = {
-    'test': '/img/thumbnails/chatgpt_ignore_you.jpg',
-	'MoleculeViewer': '/img/thumbnails/angry_mac_hater.jpg',
-};
 
 const ProjectCard = ({project = ''}) => {
-    const { t } = useTranslation();
+	const [projectInfo, setProjectInfo] = useState({});
+	const filePath = `/projects/${project}/${project}.json`;
 
-    const Img = styled('img')({
-        margin: 'none',
-        display: 'block',
-        objectFit: 'cover',
-        height: '100%',
-        width: '100%',
-        borderRadius: '2%',
-    });
+	useEffect(() => {
+		fetch(filePath)
+		.then((response) => response.text())
+		.then((text) => {
+			setProjectInfo(JSON.parse(text))
+		})
+	}, [filePath]);
 
 	const linkTo = '/projects/' + project.toString();
-	let title = t(`${project}Title`, '');
-    let teaser = t(`${project}Teaser`, '');
-    let date = t(`${project}Date`, '');
 
 	return (
 		<Grid item xs={4}>
 			<Grid container sx={{fontFamily: ['Lalazer', 'sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '15rem', borderRadius: '2%' }} href={linkTo}>
-						<Img alt="complex" src={thumbnails[project]} />
+						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md	' />
 					</ButtonBase>
 				</Grid>
 				<Grid item xs={7} md={8}>
@@ -41,16 +32,16 @@ const ProjectCard = ({project = ''}) => {
 						underline="none"
 					>
 						<p className="mt-4 text-[#CFCFCF] text-xl">
-							{title || 'Unnamed Project'}
+							{projectInfo['title'] || 'Unnamed Project'}
 						</p>
 						<p className="text-[#CFCFCF] text-sm overflow-hidden h-10 opacity-50">
-							{teaser || 'Something went wrong'}
+							{projectInfo['teaser'] || 'Something went wrong'}
 						</p>
 					</Link>
 				</Grid>
 				<Grid item xs={5} md={4}>
                     <p className="text-[#CFCFCF] opacity-50 mt-4 text-right md:text-xs text-sm">
-                        {date || 'Unknown Date'}
+                        {projectInfo['date'] || 'Unknown Date'}
                     </p>
 				</Grid>
 			</Grid>
