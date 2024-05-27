@@ -47,7 +47,7 @@ const Home = () => {
                 {css: {'opacity': '1', 'marginLeft': '0'}, duration: 2}
             );
             gsap.fromTo(
-                '.shadow', 
+                '.nameShadow', 
                 {css: {'opacity': '0', 'marginLeft': '40vw'}}, 
                 {css: {'opacity': '1', 'marginLeft': '0'}, duration: 2}
             );
@@ -112,7 +112,7 @@ const Home = () => {
     return (<div className="homepage">
         <div className="panel1" ref={panel1}>
             <div ref={title} style={{paddingLeft: '5vw', paddingTop: '25vh'}}>
-                <h1 className="shadow">Joel<br/>Harder</h1>
+                <h1 className="nameShadow">Joel<br/>Harder</h1>
                 <h1 className="name">Joel<br/>Harder</h1>
                 <p className="monospace">Computer Science Student & Software Developer</p>
             </div>

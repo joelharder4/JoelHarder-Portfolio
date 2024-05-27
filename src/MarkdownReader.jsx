@@ -20,7 +20,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h1 = ({children}) => {
     return (
-      <h1 className='text-5xl text-center font-bold'>
+      <h1 className='text-5xl text-center font-bold py-4'>
         {children}
       </h1>
     );
@@ -28,7 +28,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h2 = ({children}) => {
     return (
-      <h2 className='text-3xl font-semibold'>
+      <h2 className='text-3xl font-semibold pt-6'>
         {children}
       </h2>
     );
@@ -36,7 +36,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h3 = ({children}) => {
     return (
-      <h3 className='text-2xl font-semibold'>
+      <h3 className='text-2xl font-semibold pt-6'>
         {children}
       </h3>
     );

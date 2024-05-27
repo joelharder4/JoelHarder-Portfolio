@@ -19,19 +19,19 @@ const ProjectCard = ({project = ''}) => {
 
 	return (
 		<Grid item xs={4}>
-			<Grid container sx={{fontFamily: ['Lalazer', 'sans-serif']}}>
+			<Grid container spacing={2} sx={{fontFamily: ['sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '15rem', borderRadius: '2%' }} href={linkTo}>
 						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md	' />
 					</ButtonBase>
 				</Grid>
-				<Grid item xs={7} md={8}>
+				<Grid item xs>
 					<Link 
 						to={linkTo}
 						style={{ width: '100%', textDecoration: 'none' }}
 						underline="none"
 					>
-						<p className="mt-4 text-[#CFCFCF] text-xl">
+						<p className="text-[#CFCFCF] text-xl">
 							{projectInfo['title'] || 'Unnamed Project'}
 						</p>
 						<p className="text-[#CFCFCF] text-sm overflow-hidden h-10 opacity-50">
@@ -39,8 +39,8 @@ const ProjectCard = ({project = ''}) => {
 						</p>
 					</Link>
 				</Grid>
-				<Grid item xs={5} md={4}>
-                    <p className="text-[#CFCFCF] opacity-50 mt-4 text-right md:text-xs text-sm">
+				<Grid item xs="auto">
+                    <p className="text-[#CFCFCF] opacity-50 text-right md:text-xs text-sm">
                         {projectInfo['date'] || 'Unknown Date'}
                     </p>
 				</Grid>

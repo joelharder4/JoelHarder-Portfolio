@@ -33,34 +33,28 @@ const StoryPanel = ({storyNum = -1}) => {
 
 	return (
 		<Grid item xs={4}>
-			<Grid container sx={{fontFamily: ['Lalazer', 'sans-serif']}}>
+			<Grid container spacing={2} sx={{fontFamily: ['sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '40vh', borderRadius: '2%' }} href={linkTo}>
 						<Img alt="complex" src={thumbnails[storyNum]} />
 					</ButtonBase>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid item xs>
 					<Link 
 						to={linkTo}
 						style={{ width: '100%', textDecoration: 'none' }}
 						underline="none"
 					>
-						<Typography
-							variant="h6"
-							style={{ color: '#CFCFCF', marginTop: '10px' }}
-						>
-							{title || 'Story does not exist'}
-						</Typography>
-						<Typography
-							variant="body2"
-							style={{ color: '#CFCFCF', height: '40px', overflow: 'hidden', opacity: '0.5' }}
-						>
+						<p className="text-[#CFCFCF] text-xl">
+							{title || 'Unnamed Story'}
+						</p>
+						<p className="text-[#CFCFCF] lg:text-sm text-xs overflow-hidden lg:h-10 h-12 opacity-50">
 							{teaser || 'Something went wrong'}
-						</Typography>
+						</p>
 					</Link>
 				</Grid>
-				<Grid item xs={3}>
-					<Typography variant="subtitle1" style={{ color: '#CFCFCF', opacity: '0.5', marginTop: '10px' }} align="right">
+				<Grid item xs="auto">
+					<Typography variant="subtitle1" style={{ color: '#CFCFCF', opacity: '0.5' }} align="right">
 						{date || 'Unknown Date'}
 					</Typography>
 				</Grid>

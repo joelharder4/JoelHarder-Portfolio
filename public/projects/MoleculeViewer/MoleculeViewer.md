@@ -24,23 +24,23 @@ Finally, using HTML, CSS, and Javscript with jQuery, I created a frontend for th
 ### Home Page
 Here is what the home page of my webserver looks like. I am very proud of the ui design, which I planned in a Figma project before programming in HTML.
 
-![A screenshot of the home page](./home_page.png?raw=true "Home Page")
+![A screenshot of the home page](/projects/MoleculeViewer/home_page.png?raw=true "Home Page")
 
 ### Element Database
 This is the page that shows all of the elements currently in the database and any information associated with them. The Colour1, 2, and 3 are three colours used to display the molecule where it fades from Colour1 in the corner, to Colour2 in the middle, and then fades to Colour3 in the opposite corner.
 
-![A screenshot of the page that lists all elements in the database](./element_database.png?raw=true "Element Database")
+![A screenshot of the page that lists all elements in the database](/projects/MoleculeViewer/element_database.png?raw=true "Element Database")
 
 ### Molecule Database
 This page shows all Molecules currently in the database with the option to view or delete them. It also lets you upload new molecules by selecting an SDF file from your computer and giving it a name.
 
-![A screenshot of the page that lists all molecules in the database](./molecule_database.png?raw=true "Molecule Database")
+![A screenshot of the page that lists all molecules in the database](/projects/MoleculeViewer/molecule_database.png?raw=true "Molecule Database")
 
 ### View Molecules
 Here you can view any molecule and input a rotation amount to rotate them.
 
-![A screenshot of the page that displays a caffeine molecule](./view_caffeine.png?raw=true)
-![A screenshot of the page that displays a rotated isopentanol molecule](./view_rotated_isopentanol.png?raw=true)
+![A screenshot of the page that displays a caffeine molecule](/projects/MoleculeViewer/view_caffeine.png?raw=true)
+![A screenshot of the page that displays a rotated isopentanol molecule](/projects/MoleculeViewer/view_rotated_isopentanol.png?raw=true)
 
 
 ## Additional Information
