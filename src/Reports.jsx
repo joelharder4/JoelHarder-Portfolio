@@ -1,7 +1,6 @@
 import './styles/Stories.css';
 import React from 'react';
-import { Grid, styled } from '@mui/material';
-import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
@@ -9,15 +8,6 @@ import ButtonBase from '@mui/material/ButtonBase';
 const thumbnails = [
 	'/img/thumbnails/tulip_retail.png'
 ];
-
-const Img = styled('img')({
-	margin: 'none',
-	display: 'block',
-	objectFit: 'cover',
-	height: '100%',
-	width: '100%',
-	borderRadius: '2%',
-  });
 
 // const GridBreak = () => {return <Box sx={{width: "100%"}}/>};
 
@@ -37,7 +27,7 @@ const ReportPanel = ({storyNum = -1}) => {
 			<Grid container sx={{fontFamily: ['Lalazer', 'sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '40vh', borderRadius: '2%' }} href={linkTo}>
-						<Img alt="complex" src={thumbnails[storyNum]} />
+						<img alt="complex" src={thumbnails[storyNum]} className='m-0 block object-cover h-full w-full rounded-md border-2'/>
 					</ButtonBase>
 				</Grid>
 				<Grid item xs={9}>
@@ -46,24 +36,18 @@ const ReportPanel = ({storyNum = -1}) => {
 						style={{ width: '100%', textDecoration: 'none' }}
 						underline="none"
 					>
-						<Typography
-							variant="h6"
-							style={{ color: '#CFCFCF', marginTop: '10px' }}
-						>
-							{title}
-						</Typography>
-						<Typography
-							variant="body2"
-							style={{ color: '#CFCFCF', height: '40px', overflow: 'hidden', opacity: '0.5' }}
-						>
-							{teaser}
-						</Typography>
+						<p className="text-primary text-xl">
+							{title || 'Unnamed Project'}
+						</p>
+						<p className="text-primary text-sm overflow-hidden h-10 opacity-50">
+							{teaser || 'Something went wrong'}
+						</p>
 					</Link>
 				</Grid>
 				<Grid item xs={3}>
-					<Typography variant="subtitle1" style={{ color: '#CFCFCF', opacity: '0.5', marginTop: '10px' }} align="right">
-						{date}
-					</Typography>
+					<p className="text-primary opacity-50 text-right md:text-xs text-sm">
+                        {date || 'Unknown Date'}
+                    </p>
 				</Grid>
 			</Grid>
 		</Grid>
@@ -75,27 +59,30 @@ const ReportPanel = ({storyNum = -1}) => {
 const Reports = () => {
 	// const { t } = useTranslation();
 
-	return (<div className="stories">
-		<div className="firstContainer">
-			<h1 className="title">Work Term Reports</h1>
-			<p className="description"> This page is filled with reflections on aspects of my work term experiences, highlighting what I did and what learned. </p>
-			<h1 style={{margin: '150px calc(66vw - 100px) 2px 20px', color: '#CFCFCF', alignItems: 'left', textAlign: 'left', zIndex: '2'}}>Reports</h1>
-			<hr style={{width: '66vw', border: '0', borderTop: '2px solid #363636', margin: '0 0 0 0'}}/>
+	return (
+    <div className="stories text-primary">
+      <div className="flex flex-col items-center h-min">
+        <h1 className="drop-shadow-xl mt-40 mb-6 text-8xl text-center font-['Lalezar']">Work Term Reports</h1>
+        <p className="text-center font-['Lalezar'] text-xl w-[60vw]"> This page is filled with reflections on aspects of my work term experiences, highlighting what I did and what learned. </p>
+        
+		<div className="mt-20 lg:w-[75vw] md:w-[85vw] w-[70vw]">
+			<h1 className="w-full items-left text-left z-10 text-2xl font-['Lalezar']">Reports</h1>
+			<hr className="w-full border-t-2  border-[#363636]"/>
 		</div>
-		<Box sx={{width: '100%', margin: '15px 0 200px 0'}}>
-			<Grid 
-				container 
-				rowSpacing={8} 
-				columnSpacing={{ xs: 1, sm: 2, md: 4 }}
-				justifyContent={'center'}
-				alignItems={'top'}
-			>
-				<ReportPanel
-					storyNum={0}
-				/>
-			</Grid>
-		</Box>
-	</div>);
+      </div>
+      <Box sx={{width: '100%', margin: '15px 0 200px 0'}}>
+        <Grid 
+          container 
+          rowSpacing={8} 
+          columnSpacing={{ xs: 1, sm: 2, md: 4 }}
+          justifyContent={'center'}
+          alignItems={'top'}
+        >
+          <ReportPanel storyNum={0}/>
+        </Grid>
+      </Box>
+    </div>
+  );
 }
 
 export default Reports;

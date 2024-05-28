@@ -2,21 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx}", "./public/index.html"],
   theme: {
-    // backgroundColor: (theme) => ({
-    //   ...theme('colors'),
-    //   primary: '#FFFFFF',
-    //   secondary: '#F5F5F5',
-    //   tertiary: '#1E2A69',
-    // }),
     extend: {
       colors: {
-        primary: '#007BFF',
-        secondary: '#4195CC',
+        primary: '#4195CC',
+        secondary: '#007BFF',
         tertiary: '#41CC7A',
       },
       textColor: {
         primary: '#343A40',
-        secondary: '#6C757D',
+        secondary: '#6AA9D4',
       }
     },
   },

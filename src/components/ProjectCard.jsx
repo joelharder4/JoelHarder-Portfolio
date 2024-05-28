@@ -22,7 +22,7 @@ const ProjectCard = ({project = ''}) => {
 			<Grid container spacing={2} sx={{fontFamily: ['sans-serif']}}>
 				<Grid item xs={12}>
 					<ButtonBase sx={{ width: '100%', height: '15rem', borderRadius: '2%' }} href={linkTo}>
-						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md	' />
+						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md border-2' />
 					</ButtonBase>
 				</Grid>
 				<Grid item xs>
@@ -31,16 +31,16 @@ const ProjectCard = ({project = ''}) => {
 						style={{ width: '100%', textDecoration: 'none' }}
 						underline="none"
 					>
-						<p className="text-[#CFCFCF] text-xl">
+						<p className="text-primary text-xl">
 							{projectInfo['title'] || 'Unnamed Project'}
 						</p>
-						<p className="text-[#CFCFCF] text-sm overflow-hidden h-10 opacity-50">
+						<p className="text-primary text-sm overflow-hidden h-10 opacity-50">
 							{projectInfo['teaser'] || 'Something went wrong'}
 						</p>
 					</Link>
 				</Grid>
 				<Grid item xs="auto">
-                    <p className="text-[#CFCFCF] opacity-50 text-right md:text-xs text-sm">
+                    <p className="text-primary opacity-50 text-right md:text-xs text-sm">
                         {projectInfo['date'] || 'Unknown Date'}
                     </p>
 				</Grid>
