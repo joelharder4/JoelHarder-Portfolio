@@ -5,13 +5,13 @@ const NavbarV2 = () => {
     <div className="w-full absolute top-0 h-16 text-primary z-50">
       <div className="flex w-full h-full items-center justify-center">
         <div className="md:w-[80%] w-[95%] h-full flex align-middle items-center">
-          <h1 className="text-4xl font-['Lalezar'] mt-2">
+          <h1 className="text-4xl md:block hidden font-['Lalezar'] mt-2">
             Joel Harder
           </h1>
           <div className="grow">
-            <div className="flex float-right md:gap-8 gap-4 font-bold">
+            <div className="flex md:float-right items-center justify-center md:gap-8 gap-6 font-bold">
                 <NavLink 
-                  to="/home"
+                  to="/"
                   style={({ isActive }) => ({
                     borderBottom: isActive ? '1px solid rgb(52, 58, 64)' : 'none',
                   })}

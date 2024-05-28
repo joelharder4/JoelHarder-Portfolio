@@ -36,7 +36,7 @@ const HomeV2 = () => {
             </div>
             
           </div>
-          <div className="max-w-96 w-fit md:mr-12">
+          <div className="max-w-96 md:w-fit w-[80vw] md:mr-12">
             <img
               alt="A picture of Joel Harder (as the Rizz God)"
               src="/img/rizz_god.jpg"
@@ -45,7 +45,7 @@ const HomeV2 = () => {
           </div>
         </div>
       </div>
-      <div className="w-full mt-48 bg-gray-200 flex flex-col justify-center items-center">
+      <div className="w-full md:mt-48 mt-72 bg-gray-200 flex flex-col justify-center items-center">
         <h1 className='lg:text-6xl md:text-4xl text-2xl text-primary my-8 text-center'>
           Some of the Technologies I Know
         </h1>

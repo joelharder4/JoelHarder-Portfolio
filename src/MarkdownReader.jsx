@@ -52,7 +52,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const code = ({children}) => {
     return (
-      <code className='bg-[#262626] p-1'>
+      <code className='bg-gray-700 text-white p-1 rounded-sm'>
         {children}
       </code>
     );
@@ -60,7 +60,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const blockquote = ({children}) => {
     return (
-      <blockquote className='px-6 bg-[#444444] border-l-2'>
+      <blockquote className='px-6 bg-gray-300 border-l-4 border-gray-700'>
         {children}
       </blockquote>
     );
@@ -68,13 +68,21 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const pre = ({children}) => {
     return (
-      <pre className='bg-[#262626] p-2'>
+      <pre className='bg-gray-700 p-2'>
         {children}
       </pre>
     );
   };
 
-  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, p: p, code: code, blockquote: blockquote, pre: pre }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
+  const img = ({src, children}) => {
+    return (
+      <img src={src} className='mx-auto'>
+        {children}
+      </img>
+    );
+  };
+
+  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, p: p, code: code, blockquote: blockquote, pre: pre, img: img }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
 };
 
 export default MarkdownReader;
