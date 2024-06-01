@@ -2,6 +2,7 @@
 > Author: **Joel Harder**
 > Created for Course: **CIS\*3750**
 > Last Edited: **March 25, 2024**
+> Team Members: **Myron Ladyjenko, Eric Buys, Ben Sengupta, Joshua Fonseca, Gavin Eugenio**
 > Website: [tucon.ca](https://tucon.ca/)
 > Github: [github.com/tutor-conn/tucon](https://github.com/tutor-conn/tucon)
 

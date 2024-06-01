@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -57,26 +56,6 @@ const HomeV2 = () => {
           <img className="mx-auto" src='/img/logos/php.png' alt="PHP Programming language logo"/>
           <img className="mx-auto" src='/img/logos/mysql.png' alt="mySQL Programming language logo"/>
         </div>
-      </div>
-      <div className="w-full flex items-center justify-center text-primary mt-16">
-        <footer className="w-full justify-between py-6 px-10 flex-col flex">
-          <div className="gap-2 flex items-center flex-col justify-start">
-            <p className="text-4xl font-semibold text-center">Joel Harder</p>
-
-            <div className="flex items-center flex-row">
-              <NavLink to="/about" className="mx-3">About</NavLink>
-              <NavLink to="/projects" className="mx-3">Projects</NavLink>
-              <NavLink to="/stories" className="mx-3">Stories</NavLink>
-              <NavLink to="/reports" className="mx-3">Reports</NavLink>
-            </div>
-          </div>
-          <div className="w-full h-0 flex my-6 items-start border-[#d9d9d9] border-solid border-2" />
-          <div className="w-full flex items-center justify-between md:flex-row lg:flex-row flex-col">
-            <p>
-              © 2024 Joel Harder, All Rights Reserved.
-            </p>
-          </div>
-        </footer>
       </div>
     </div>
   );

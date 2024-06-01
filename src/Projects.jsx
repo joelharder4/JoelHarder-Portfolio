@@ -8,13 +8,14 @@ const Projects = () => {
 	const projects = [
 		'MoleculeViewer',
 		'Tucon',
+		'StudyBuddy',
 	]
 
     return (
-		<div className="font-['Lalezar'] text-primary h-[100vh]">
+		<div className="font-['Lalezar'] text-primary min-h-[100vh]">
 			<div className="flex flex-col items-center w-full mb-16">
-				<h1 className="drop-shadow-xl mt-40 mb-6 text-8xl text-center">Coding Portfolio</h1>
-				<p className="text-center font-thin text-xl w-[60vw]"> {t('projectsDesc')} </p>
+				<h1 className="drop-shadow-xl mt-40 mb-6 md:text-8xl text-6xl text-center">Coding Portfolio</h1>
+				<p className="text-center font-thin md:text-xl text-lg md:w-[60vw] w-[85vw]"> {t('projectsDesc')} </p>
 
 				<div className="mt-20 lg:w-[75vw] md:w-[85vw] w-[70vw]">
 					<h1 className="w-full items-left text-left z-10 text-2xl">Projects</h1>
