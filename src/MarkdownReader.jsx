@@ -42,9 +42,17 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   };
 
+  const h4 = ({children}) => {
+    return (
+      <h4 className='md:text-md text-sm text-center mt-[-18px]'>
+        {children}
+      </h4>
+    );
+  };
+
   const p = ({children}) => {
     return (
-      <p className='text-lg'>
+      <p className='md:text-lg text-sm text-justify'>
         {children}
       </p>
     );
@@ -82,7 +90,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   };
 
-  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, p: p, code: code, blockquote: blockquote, pre: pre, img: img }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
+  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, h4: h4, p: p, code: code, blockquote: blockquote, pre: pre, img: img }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
 };
 
 export default MarkdownReader;

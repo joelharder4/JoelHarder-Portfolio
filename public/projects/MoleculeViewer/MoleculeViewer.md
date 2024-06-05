@@ -1,5 +1,4 @@
 # Molecule Viewer
-> Author: **Joel Harder**
 > Created for Course: **CIS\*2750**
 > Last Edited: **April 5, 2023**
 > Github: [github.com/joelharder4/MoleculeViewer](https://github.com/joelharder4/MoleculeViewer/)

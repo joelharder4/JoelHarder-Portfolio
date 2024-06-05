@@ -15,7 +15,7 @@ import ProjectPage from './ProjectPage.jsx';
 const App = () => {
   return (
     <div className="App">
-      <div className='flex flex-col'>
+      <div className='flex flex-col min-h-[100vh]'>
         <NavbarV2/>
         <Routes>
           <Route path="/"> 

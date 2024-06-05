@@ -12,7 +12,7 @@ const About = () => {
             About Joel
           </h1>
           <div>
-            <p className='text-justify whitespace-pre-wrap text-sm md:text-xl lg:text-2xl'>
+            <p className='text-justify whitespace-pre-wrap text-sm md:text-lg'>
               <img src='/img/hiking_cropped.png' alt='Me on a hike' className='max-w-[30vw] border-4 border-primary float-left mr-8'/>
               
               <div>{t('homepageDesc')}</div>

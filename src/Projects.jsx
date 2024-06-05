@@ -9,6 +9,8 @@ const Projects = () => {
 		'MoleculeViewer',
 		'Tucon',
 		'StudyBuddy',
+		'Hoi4DoubleEverything',
+		'WordFrequencySearch',
 	]
 
     return (
