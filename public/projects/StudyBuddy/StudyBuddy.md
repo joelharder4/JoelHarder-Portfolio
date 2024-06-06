@@ -4,11 +4,21 @@
 > Team Members: **Daniel Wang, Kirisan Suthanthireswaran**
 > Github: [github.com/DanWang725/Hawkhacks-2024](https://github.com/DanWang725/Hawkhacks-2024)
 
+## Background
+This project was created by me and 2 others for the Hawkhacks 2024 hackathon. The hackathon took place in person at Wilfred Laurier University from May 17th to May 19th. We had 36 hours to create a project that would make a positive impact. There wasn't a whole lot of time to sleep, but it was a great experience where I learned a lot and was able to build this amazing project that I am very proud of.
+
 ## Inspirations
 As ChatGPT has become an integral part of our daily lives, we found that many were not testing its capabilities effectively. Such a powerful tool is often shunned within the academic space as its misuse has given it a negative reputation. We found that AI could be beneficial to the academic world and we wished to bring light to how its moderate and safe usage can help students study and improve their learning. The arising issue with AI models is that they often provide answers in a short and concise manner, not leaving room for deeper thought and understanding. Notes are difficult to study with, as we become familiar with our habits and methods of studying which leaves us stunted with methods to prepare for upcoming exams. Thus came the idea to integrate AI with our test preparation, allowing it to create intensive and meaningful questions to help us question and reaffirm our knowledge through a new lens.
 
 ## What it Does 
 Our project "Study Buddy" allows users to upload their notes to our advanced database so that ChatGPT can help develop and create various test questions to help promote their learning. By allowing users to share and explore the test creations of others, our website provides an all-inclusive website that can help them prepare themselves for their future tests and exams. 
+
+## Screenshots
+![A screenshot of the home page](/projects/StudyBuddy/home_page.png?raw=true "Home Page")
+#### *The Home Page*
+
+![A screenshot of the test creation page](/projects/StudyBuddy/create_test.png?raw=true "Create Test Page")
+#### *The Create Test Page*
 
 ## How We Built It 
 Study Buddy was built from a variety of languages: we used ReactJS for our front end webpages, Python + Flask for our backend, and a MySQL database on a docker image. Early stage planning involved discussion on the design of the database and what information would be integral to be shown to others. 
