@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavbarV2 = () => {
+const Navbar = () => {
   return (
     <div className="w-full fixed top-0 h-16 text-primary z-50 bg-white border-b-2">
       <div className="flex w-full h-full items-center justify-center">
@@ -35,14 +35,14 @@ const NavbarV2 = () => {
                 >
                   Stories
                 </NavLink>
-                <NavLink 
+                {/* <NavLink 
                   to="/reports"
                   style={({ isActive }) => ({
                     borderBottom: isActive ? '1px solid rgb(52, 58, 64)' : 'none',
                   })}
                 >
                   Reports
-                </NavLink>
+                </NavLink> */}
                 <NavLink 
                   to="/about"
                   style={({ isActive }) => ({
@@ -60,4 +60,4 @@ const NavbarV2 = () => {
   );
 };
 
-export default NavbarV2;
+export default Navbar;

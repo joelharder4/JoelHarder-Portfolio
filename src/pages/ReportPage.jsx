@@ -2,7 +2,7 @@ import { ButtonBase, Typography, styled } from '@mui/material';
 import React, { useRef, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import BodyText from './BodyText';
+import BodyText from '../components/BodyText';
 import gsap from 'gsap';
 import Button from '@mui/material/Button';
 

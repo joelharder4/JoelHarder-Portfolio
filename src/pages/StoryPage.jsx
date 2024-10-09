@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import MarkdownReader from './MarkdownReader';
+import MarkdownReader from '../services/MarkdownReader';
 
 
 const StoryPage = () => {

@@ -1,7 +1,7 @@
 import './styles/Stories.css';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import StoryCard from './components/StoryCard';
+import StoryCard from './components/cards/StoryCard';
 
 const Stories = () => {
 	const { t } = useTranslation();
