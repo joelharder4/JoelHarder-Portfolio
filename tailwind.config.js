@@ -12,6 +12,12 @@ module.exports = {
         primary: '#343A40',
         secondary: '#6AA9D4',
       },
+      fontFamily: {
+        'ibm-mono': ['IBM Plex Mono', 'monospace'],
+      },
+      backgroundImage: {
+        'bash-terminal': "url('/public/img/bash_terminal.png')",
+      },
       keyframes: {
         scroll: {
           '0%': { transform: 'translateX(0)' },
