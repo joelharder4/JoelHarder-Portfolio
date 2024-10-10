@@ -17,7 +17,7 @@ const Home = () => {
                 Hi! I&apos;m <font className='text-secondary'>Joel Harder</font>
               </p>
               <p className="px-12 pb-12 text-xl lg:text-2xl">
-                I am a <font className='text-secondary'>Computer Science</font> Student at the University of Guelph and Software Developer interested in front-end.
+                I am a <font className='text-secondary'>Computer Science</font> Student at the University of Guelph, and a Software Developer interested in front-end.
               </p>
             </div>
             <div className='w-full flex flex-row items-center justify-center gap-6 mt-4'>
