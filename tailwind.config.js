@@ -11,7 +11,16 @@ module.exports = {
       textColor: {
         primary: '#343A40',
         secondary: '#6AA9D4',
-      }
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        scroll: 'scroll 25s linear infinite',
+      },
     },
   },
   plugins: [],

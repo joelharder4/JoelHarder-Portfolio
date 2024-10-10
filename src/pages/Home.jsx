@@ -1,5 +1,8 @@
+import React from 'react';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import ScrollingImages from '../components/ScrollingImages';
+import logos from '../logos';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -14,7 +17,7 @@ const Home = () => {
                 Hi! I&apos;m <font className='text-secondary'>Joel Harder</font>
               </p>
               <p className="px-12 pb-12 text-xl lg:text-2xl">
-                I am a <font className='text-secondary'>Computer Science</font> Student at the University of Guelph and Software Developer specializing in front-end.
+                I am a <font className='text-secondary'>Computer Science</font> Student at the University of Guelph and Software Developer interested in front-end.
               </p>
             </div>
             <div className='w-full flex flex-row items-center justify-center gap-6 mt-4'>
@@ -44,19 +47,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:mt-48 mt-72 bg-gray-200 flex flex-col justify-center items-center">
-        <h1 className='lg:text-6xl md:text-4xl text-2xl text-primary my-8 text-center'>
-          Some of the Technologies I Know
-        </h1>
-        <div className="pb-12 px-4 grid lg:grid-cols-3 grid-cols-2 lg:gap-12 gap-4">
-          <img className="mx-auto" src='/img/logos/python.png' alt="Python Programming language logo"/>
-          <img className="mx-auto" src='/img/logos/javascript.png' alt="Javascript Programming language logo"/>
-          <img className="mx-auto" src='/img/logos/html.png' alt="HTML Programming language logo"/>
-          <img className="mx-auto" src='/img/logos/react.png' alt="React Programming language logo"/>
-          <img className="mx-auto" src='/img/logos/php.png' alt="PHP Programming language logo"/>
-          <img className="mx-auto" src='/img/logos/mysql.png' alt="mySQL Programming language logo"/>
-        </div>
-      </div>
+      <ScrollingImages images={logos}
+      />
     </div>
   );
 };
