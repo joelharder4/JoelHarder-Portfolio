@@ -1,18 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Terminal from '../components/emulator/Terminal.jsx';
-import { useTerminal } from '../tools/useTerminal.jsx';
-// import { useTranslation } from 'react-i18next';
+import useTerminal from '../tools/useTerminal.jsx';
 
 const About = () => {
-  // const { t } = useTranslation();
-
   const {
     history,
     pushToHistory,
     setTerminalRef,
     resetTerminal,
+    currentDir,
+    changeDirectory,
+    listDirectory,
   } = useTerminal();
 
+  const terminalCommands = useMemo(() => ({
+    'help': async () => {
+      pushToHistory(
+        <div>hi aww</div>
+      );
+    },
+    'nocommand': async () => {
+      pushToHistory(
+        <div>Command not found. Use `help` to see a list of all supported commands.</div>
+      );
+    },
+    'clear': async () => {
+      resetTerminal();
+    },
+    'ls': async () => {
+      const files = listDirectory();
+      pushToHistory(
+        files.map((file, index) => {
+          return <div key={`file-${index}`}>{file}</div>
+        })
+      );
+    },
+    'cd': async (args) =>{
+      changeDirectory(args[0]);
+    }
+  }), [pushToHistory, resetTerminal, listDirectory, changeDirectory]);
 
   useEffect(() => {
     resetTerminal();
@@ -22,7 +48,7 @@ const About = () => {
         <div>Use `help` to see a list of all supported commands.</div>
       </>
     );
-  }, []);
+  }, [resetTerminal, pushToHistory]);
 
   return (
     <div className='text-primary mt-32'>
@@ -30,30 +56,13 @@ const About = () => {
         <Terminal 
           history={history}
           ref={setTerminalRef}
-          promptLabel='$'
+          commands={terminalCommands}
+          prompt={`${currentDir} $ `}
+          pushToHistory={pushToHistory}
         />
       </div>
     </div>
-  )
-
-  // return (
-  //   <div className='mt-28 w-full font-sans text-primary'>
-  //     <div className='w-full flex items-center justify-center'>
-  //       <div className='w-[90vw] md:w-[75vw] flex flex-col gap-16'>
-  //         <h1 className='md:text-8xl text-6xl font-semibold text-secondary font-["Lalezar"]'>
-  //           About Joel
-  //         </h1>
-  //         <div>
-  //           <p className='text-justify whitespace-pre-wrap text-sm md:text-lg'>
-  //             <img src='/img/hiking_cropped.png' alt='Me on a hike' className='max-w-[30vw] border-4 border-primary float-left mr-8'/>
-              
-  //             <div>{t('homepageDesc')}</div>
-  //           </p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
-}
+  );
+};
 
 export default About;

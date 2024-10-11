@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="font-['Lalezar'] text-primary bg-white">
-      <div className="w-full h-[100vh]">
+      <div className="w-full min-h-[100vh] pb-8">
         <div className="w-fit flex md:flex-row flex-col-reverse lg:gap-16 gap-12 items-center mx-auto md:pt-[30vh] pt-[15vh]">
           <div className='md:w-full w-[90%] flex flex-col md:ml-8 items-center'>
             <div className="bg-gray-200 md:max-w-[700px] w-full">

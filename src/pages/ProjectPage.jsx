@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import MarkdownReader from '../services/MarkdownReader';
+import MarkdownReader from '../tools/MarkdownReader';
 import { Button } from '@mui/material';
 
 const ProjectPage = () => {
