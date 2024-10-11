@@ -17,7 +17,7 @@ const ScrollingImages = ({ images }) => {
               src={image.path}
               title={image.name}
               alt={`logo of ${image.name}`}
-              className="w-auto h-48 object-cover mx-4"
+              className="w-auto h-24 md:h-48 object-cover mx-2 md:mx-4"
             />
         ))}
       </div>
