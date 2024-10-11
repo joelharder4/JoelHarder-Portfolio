@@ -7,8 +7,8 @@ const files = {
     'web-development.txt': 'React.js, Next.js, Tailwind CSS',
   },
   'contact/': {
-    'email.txt': 'joelharder4@gmail.com',
-    'phone.txt': '(+1) 226-218-9358',
+    'email.txt': 'My email address is: joelharder4@gmail.com',
+    'phone.txt': 'You can contact me on my mobile phone: (+1) 226-218-9358.',
     'linkedin.txt': 'https://www.linkedin.com/in/joel-harder/',
   },
   'hobbies/': {
@@ -83,8 +83,7 @@ const useTerminal = () => {
 
 
 
-  const getDirectory = (path) => {
-    // remove "~/"
+  const getDirectory = useCallback((path) => {
     const cleanPath = path?.replace(/^~\//, '');
     const pathParts = cleanPath.split('/').filter(Boolean);
     let dir = files;
@@ -97,7 +96,17 @@ const useTerminal = () => {
     }
 
     return dir;
-  };
+  }, []);
+
+
+  const getFile = useCallback((path) => {
+    const cleanPath = path?.replace(/^~\//, '');
+    const pathParts = cleanPath.split('/').filter(Boolean);
+    const file = pathParts.pop();
+    let dir = getDirectory(pathParts.join('/'));
+
+    return dir[file];
+  }, [getDirectory]);
 
 
   const changeDirectory = useCallback((dir) => {
@@ -110,7 +119,6 @@ const useTerminal = () => {
 
     } else {
 
-      // Try to move into the specified subdirectory
       const newDir = currentDir + dir + '/';
       const directory = getDirectory(newDir);
       if (directory) {
@@ -119,7 +127,7 @@ const useTerminal = () => {
         pushToHistory(`cd: ${dir}: No such directory`);
       }
     }
-  }, [currentDir, pushToHistory]);
+  }, [getDirectory, currentDir, pushToHistory]);
 
 
 
@@ -132,7 +140,21 @@ const useTerminal = () => {
 
     const content = Object.keys(directory);
     return content.length ? content : 'No files or directories';
-  }, [currentDir]);
+  }, [getDirectory, currentDir]);
+
+
+
+  const getFileContent = useCallback((filepath) => {
+    const file = getFile(filepath);
+    if (!file) {
+      return `File '${filepath}' not found.`;
+    }
+    if (typeof(file) != 'string') {
+      return `'${filepath}' is not a readable file.`;
+    }
+
+    return file;
+  }, [getFile]);
 
 
   return {
@@ -144,8 +166,10 @@ const useTerminal = () => {
     resetTerminal,
     currentDir,
     getDirectory,
+    getFile,
     changeDirectory,
     listDirectory,
+    getFileContent,
   };
 };
 

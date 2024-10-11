@@ -11,17 +11,39 @@ const About = () => {
     currentDir,
     changeDirectory,
     listDirectory,
+    getFileContent,
   } = useTerminal();
 
   const terminalCommands = useMemo(() => ({
-    'help': async () => {
-      pushToHistory(
-        <div>hi aww</div>
-      );
+    'help': async (args) => {
+      const commandDescriptions = (
+        args[0] === '--secret' || args[0] === '-s'
+      ) ? {
+        'yippee': 'Yippee!!!',
+      } : {
+        'help [--secret]': 'Shows a list of all supported commands.',
+        'clear': 'Clears all previous commands in the terminal.',
+        'ls': 'Lists all folders and files in the current directory.',
+        'cd [dir]': 'Changes the current directory to [dir] if it exists. Parent directory is `..`',
+        'pwd': 'Prints the current directory path.',
+        'cat [file]': 'Prints the content of the file [file].',
+      }
+
+      pushToHistory(<>
+        {/* <div>Type &apos;help name&apos; to find out more about the function &apos;name&apos;.</div> */}
+        {Object.entries(commandDescriptions).map(([command, description]) => {
+          return (
+            <div className='flex w-full' key={`command-desc-${command}`}>
+              <p className='w-40'>{command}</p>
+              <p className='text-left'>{description}</p>
+            </div>
+          );
+        })}
+      </>);
     },
     'nocommand': async () => {
       pushToHistory(
-        <div>Command not found. Use `help` to see a list of all supported commands.</div>
+        <div>Command not found. Use &apos;help&apos; to see a list of all supported commands.</div>
       );
     },
     'clear': async () => {
@@ -35,10 +57,32 @@ const About = () => {
         })
       );
     },
-    'cd': async (args) =>{
+    'cd': async (args) => {
       changeDirectory(args[0]);
-    }
-  }), [pushToHistory, resetTerminal, listDirectory, changeDirectory]);
+    },
+    'pwd': async () => {
+      pushToHistory(
+        <div>{currentDir}</div>
+      );
+    },
+    'cat': async (args) => {
+      const fileContent = getFileContent(currentDir + args[0]);
+      pushToHistory(
+        <div>{fileContent}</div>
+      );
+    },
+
+    // Secret commands
+    'yippee': async () => {
+      pushToHistory(<>
+        <div>🎉🎉🎉</div>
+        <audio controls autoPlay className='hidden'>
+          <source src="/sounds/yippee.mp3" type="audio/mpeg" />
+          Your browser does not support the audio tag.
+        </audio>
+      </>);
+    },
+  }), [pushToHistory, resetTerminal, currentDir, listDirectory, changeDirectory, getFileContent]);
 
   useEffect(() => {
     resetTerminal();

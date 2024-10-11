@@ -44,14 +44,14 @@ const Terminal = forwardRef(
             setInputValue('');
         }
       },
-      [commands, input]
+      [commands, input, prompt, pushToHistory]
     );
 
     return (
         // the background image is 16:9 aspect ratio
         <div  onClick={focusInput} className="w-[1080px] h-[608px] bg-bash-terminal bg-no-repeat bg-cover font-ibm-mono overflow-y-hidden">
             <div className='text-white ml-10 my-[6px] text-sm'>
-                <h2>MINGW64:/c/Users/Joel</h2>
+                <h2 className='select-none'>MINGW64:/c/Users/Joel</h2>
             </div>
             <div className='overflow-y-hidden max-h-[90%] mt-4 ml-4' ref={ref}>
                 <div className='text-green-400 flex flex-col'>
