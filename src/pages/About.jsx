@@ -38,7 +38,7 @@ const About = () => {
         {Object.entries(commandDescriptions).map(([command, description]) => {
           return (
             <div className='flex w-full' key={`command-desc-${command}`}>
-              <p className='min-w-40'>{command}</p>
+              <p className='min-w-44'>{command}</p>
               <p className='text-left'>{description}</p>
             </div>
           );
@@ -83,7 +83,7 @@ const About = () => {
       );
     },
     '8ball': async () => {
-      const responses = ['Yes!', 'No!', 'Maybe?', 'Ask again later.', 'I don\'t know.', 'Probably', 'Unlikely.', '101% Chance.', 'Absolutely not.', 'Oh yeah!', 'Sure.', 'You shouldn\'t have to ask', 'Nuh uh.', 'Yuh huh.', 'I think so.'];
+      const responses = ['Yes!', 'No!', 'Maybe?', 'Ask again later.', 'I don\'t know.', 'Probably', 'Unlikely.', '101% Chance.', 'Absolutely not.', 'Oh yeah!', 'Sure.', 'You shouldn\'t even have to ask.', 'Nuh uh.', 'Yuh huh.', 'I think so.', 'I wouldn\'t count on it'];
       const response = responses[Math.floor(Math.random() * responses.length)];
       pushToHistory(
         <div>{response}</div>
