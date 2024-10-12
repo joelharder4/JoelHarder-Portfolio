@@ -109,7 +109,7 @@ const About = () => {
       </>);
       await pushToHistoryWithDelay(<div>Mmmmm... Oh no I don&apos;t understand this</div>, 300);
       await pushToHistoryWithDelay(<div>Grilled Cheese Obama Sandwich</div>, 3500);
-      await pushToHistoryWithDelay(<div>My calories won&apos;t stand this</div>, 2500);
+      await pushToHistoryWithDelay(<div>My calories won&apos;t stand this</div>, 2800);
       await pushToHistoryWithDelay(<div>My stomach will reject it</div>, 3500);
       await pushToHistoryWithDelay(<div>Mmmmm... Oh no I don&apos;t understand this</div>, 3200);
     },
