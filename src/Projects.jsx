@@ -11,6 +11,7 @@ const Projects = () => {
 		'StudyBuddy',
 		'Hoi4DoubleEverything',
 		'WordFrequencySearch',
+		'DiscordBot',
 	]
 
     return (
