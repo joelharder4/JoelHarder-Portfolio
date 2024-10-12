@@ -90,7 +90,31 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   };
 
-  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, h4: h4, p: p, code: code, blockquote: blockquote, pre: pre, img: img }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
+  const ol = ({children}) => {
+    return (
+      <ol className='list-decimal list-inside leading-3'>
+        {children}
+      </ol>
+    );
+  }
+
+  const ul = ({children}) => {
+    return (
+      <ul className='list-decimal list-inside leading-3'>
+        {children}
+      </ul>
+    );
+  }
+
+  const li = ({children}) => {
+    return (
+      <li className='leading-normal md:text-lg text-sm'>
+        {children}
+      </li>
+    );
+  }
+
+  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, h4: h4, p: p, code: code, blockquote: blockquote, pre: pre, img: img, ol: ol, ul: ul, li: li }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
 };
 
 export default MarkdownReader;
