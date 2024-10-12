@@ -3,17 +3,24 @@ import {useCallback, useEffect, useState} from 'react';
 
 const files = {
   'skills/': {
-    'programming-languages.txt': 'JavaScript, TypeScript, Python, Java, PHP',
-    'web-development.txt': 'React.js, Next.js, Tailwind CSS',
+    'programming-languages.txt': 'I am most experienced with JavaScript and TypeScript, but I have also used Python, Java, and PHP.',
+    'web-development.txt': 'I have experience with both front-end and back-end web development and I love both, but I usually prefer front-end.',
+    'frameworks.txt': "I've used React.js framework in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js and Spring Boot at least once."
   },
   'contact/': {
-    'email.txt': 'My email address is: joelharder4@gmail.com',
+    'email.txt': 'My email address is joelharder4@gmail.com',
     'phone.txt': 'You can contact me on my mobile phone: (+1) 226-218-9358.',
     'linkedin.txt': 'https://www.linkedin.com/in/joel-harder/',
   },
   'hobbies/': {
-    'sports.txt': 'I go rock climbing 3 days a week and play intramural dodgeball at university',
-    'video-game.txt': 'I play a lot of different games, but my current favourite is Baldurs Gate 3.',
+    'sports.txt': 'I go Rock Climbing 3 days a week and play intramural dodgeball at university on Wednesdays.',
+    'video-games.txt': 'I play a lot of different games, but my current favourite is Baldurs Gate 3.',
+    'board-games.txt': 'I love board games, my favourite is Settlers of Catan, but I will play anything. I own every expansion for Catan except for the latest New Engergies expansion.',
+    'tabletop.dnd': "I regularly play Dungeons and Dragons with my friends, I have been a DM in the past but I am currently a player. My favourite character that I have played is a delusional wood elf ranged named Zyvan Woodfoot, who insists that he should be called 'The Dragon Slayer' despite never having killed a dragon. He doesn't even do it as a joke, he genuinely believes his life's purpose is to kill all dragons.",
+    'mods.txt': 'I love modding games, I have made mods for Hearts of Iron IV, Sid Meyers Civilization 6, Stellaris, and more!',
+  },
+  'pets/': {
+    'ponyo.txt': 'I have a dog named Ponyo, she is a 13 year old shorkie and loves to cuddle. If you have your own pet, sorry but Ponyo is cuter.',
   },
 }
 
@@ -62,11 +69,7 @@ const useTerminal = () => {
    * @param executeBefore The function to be executed before the text is printed
    * @param executeAfter The function to be executed after the text is printed
    */
-  const pushToHistoryWithDelay = useCallback(
-    ({
-       delay = 0,
-       content,
-     }) =>
+  const pushToHistoryWithDelay = useCallback((content, delay = 0) =>
       new Promise((resolve) => {
         setTimeout(() => {
           pushToHistory(content);
@@ -110,29 +113,39 @@ const useTerminal = () => {
 
 
   const changeDirectory = useCallback((dir) => {
-    if (dir === '..') {
+    const segments = dir?.split('/');
+    if (!segments) return;
+    let dirCopy = currentDir;
 
-      if (currentDir === '~/') return;
+    for (const segment of segments) {
+      if (segment === '..') {
+        if (dirCopy === '~/') {
+          pushToHistory(`Can not go above root directory.`);
+          return;
+        }
 
-      const newDir = currentDir.split('/').slice(0, -2).join('/') + '/';
-      setCurrentDir(newDir || '~/');
+        const newDir = dirCopy.split('/').slice(0, -2).join('/') + '/';
+        dirCopy = newDir || '~/';
 
-    } else {
-
-      const newDir = currentDir + dir + '/';
-      const directory = getDirectory(newDir);
-      if (directory) {
-        setCurrentDir(newDir);
       } else {
-        pushToHistory(`cd: ${dir}: No such directory`);
+
+        const newDir = dirCopy + segment + '/';
+        const directory = getDirectory(newDir);
+        if (directory) {
+          dirCopy = newDir;
+        } else {
+          pushToHistory(`cd: ${dir}: No such directory`);
+          return;
+        }
       }
     }
-  }, [getDirectory, currentDir, pushToHistory]);
+    setCurrentDir(dirCopy);
+  }, [getDirectory, currentDir, setCurrentDir, pushToHistory]);
 
 
 
-  const listDirectory = useCallback(() => {
-    const directory = getDirectory(currentDir);
+  const listDirectory = useCallback((targetDir = currentDir) => {
+    const directory = getDirectory(targetDir);
     if (!directory) {
       console.error('Invalid directory');
       return;
@@ -157,6 +170,25 @@ const useTerminal = () => {
   }, [getFile]);
 
 
+
+  const getAllFileContents = useCallback((targetDir = currentDir) => {
+    const dir = getDirectory(targetDir);
+    if (!dir) {
+      return 'Invalid directory';
+    }
+    let result = '';
+    for (const file in dir) {
+      if (typeof(dir[file]) != 'string') {
+        continue;
+      }
+      result += `${file}:\n`;
+      result += getFileContent(targetDir + file) + '\n\n';
+    }
+
+    return result;
+  }, [getFileContent, currentDir, getDirectory]);
+
+
   return {
     history,
     pushToHistory,
@@ -170,6 +202,7 @@ const useTerminal = () => {
     changeDirectory,
     listDirectory,
     getFileContent,
+    getAllFileContents,
   };
 };
 

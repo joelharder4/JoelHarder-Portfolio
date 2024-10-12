@@ -16,7 +16,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
     backend: {
         loadPath: '/locales/{{lng}}/translation.yaml',
         parse: (data) => require('js-yaml').load(data),

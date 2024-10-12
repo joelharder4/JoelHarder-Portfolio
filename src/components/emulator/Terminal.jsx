@@ -12,6 +12,7 @@ const Terminal = forwardRef(
 
     const inputRef = useRef();
     const [input, setInputValue] = useState('');
+    const [running, setRunning] = useState(false);
     
     useEffect(() => {
         inputRef.current?.focus();
@@ -23,28 +24,32 @@ const Terminal = forwardRef(
 
     const handleInputChange = useCallback(
         (e) => {
+            if (running) return;
             setInputValue(e.target.value);
         },
-        []
+        [running]
     );
 
     const handleInputKeyDown = useCallback(
-      (e) => {
+      async (e) => {
+        if (running) return;
         if (e.key === 'Enter') {
             pushToHistory(prompt + input);
             if (!input) return;
 
             const commandToExecute = commands?.[input.split(' ')[0].toLowerCase()];
+            setRunning(true);
+            setInputValue('');
             if (commandToExecute) {
                 const args = input.split(' ').slice(1);
-                commandToExecute?.(args);
+                await commandToExecute?.(args);
             } else {
                 commands?.['nocommand']?.();
             }
-            setInputValue('');
+            setRunning(false);
         }
       },
-      [commands, input, prompt, pushToHistory]
+      [commands, input, prompt, pushToHistory, running, setRunning]
     );
 
     return (
@@ -53,7 +58,7 @@ const Terminal = forwardRef(
             <div className='text-white ml-10 my-[6px] text-sm'>
                 <h2 className='select-none'>MINGW64:/c/Users/Joel</h2>
             </div>
-            <div className='overflow-y-hidden max-h-[90%] mt-4 ml-4' ref={ref}>
+            <div className='overflow-y-scroll no-scrollbar max-h-[90%] max-w-[95%] mt-4 ml-4' ref={ref}>
                 <div className='text-green-400 flex flex-col'>
                     {history.map((line, index) => (
                         <div key={`terminal-line-${index}-${line}`}>
@@ -61,7 +66,7 @@ const Terminal = forwardRef(
                         </div>
                     ))}
                     <div className='flex'>
-                        <p className='min-w-max'>{prompt}</p>
+                        <p className='min-w-max'>{running ? '' : prompt}</p>
                         <div className="text-white flex items-center pl-[0.65rem] pr-12 w-full">
                             <input
                                 className='flex bg-transparent border-none w-full focus:outline-none'
