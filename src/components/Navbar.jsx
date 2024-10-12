@@ -1,12 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full fixed top-0 h-16 text-primary z-50 bg-white border-b-2">
       <div className="flex w-full h-full items-center justify-center">
         <div className="md:w-[80%] w-[95%] h-full flex align-middle items-center">
-          <h1 className="text-4xl md:block hidden font-['Lalezar'] mt-2">
+          <h1 
+            className="text-4xl md:block hidden font-['Lalezar'] mt-2 cursor-pointer"
+            onClick={() => { navigate('/') }}
+          >
             Joel Harder
           </h1>
           <div className="grow">
