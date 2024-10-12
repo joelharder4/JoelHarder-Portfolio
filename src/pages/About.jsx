@@ -38,7 +38,7 @@ const About = () => {
         {Object.entries(commandDescriptions).map(([command, description]) => {
           return (
             <div className='flex w-full' key={`command-desc-${command}`}>
-              <p className='min-w-44'>{command}</p>
+              <p className='min-w-[30%] md:min-w-44'>{command}</p>
               <p className='text-left'>{description}</p>
             </div>
           );
@@ -135,7 +135,7 @@ const About = () => {
   }, [resetTerminal, pushToHistory]);
 
   return (
-    <div className='text-primary mt-32'>
+    <div className='text-primary pt-32 xl:pt-24'>
       <div className='flex justify-center'>
         <Terminal 
           history={history}

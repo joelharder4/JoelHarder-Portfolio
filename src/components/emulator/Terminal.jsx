@@ -52,10 +52,10 @@ const Terminal = forwardRef(
       [commands, input, prompt, pushToHistory, running, setRunning]
     );
 
-    return (
-        // the background image is 16:9 aspect ratio
-        <div  onClick={focusInput} className="w-[1080px] h-[608px] bg-bash-terminal bg-no-repeat bg-cover font-ibm-mono overflow-y-hidden">
-            <div className='text-white ml-10 my-[6px] text-sm'>
+    return (<>
+        {/* the background image is 16:9 aspect ratio*/}
+        <div onClick={focusInput} className="w-full h-[100vh] md:w-[768px] md:h-[432px] lg:w-[1024px] lg:h-[576px] xl:w-[1280px] xl:h-[720px] bg-black md:bg-bash-terminal bg-no-repeat bg-cover font-ibm-mono overflow-y-hidden mt-[-4rem] md:mt-0  text-xs lg:text-sm">
+            <div className='hidden md:block text-white ml-10 my-[6px] text-sm'>
                 <h2 className='select-none'>MINGW64:/c/Users/Joel</h2>
             </div>
             <div className='overflow-y-scroll no-scrollbar max-h-[90%] max-w-[95%] mt-4 ml-4' ref={ref}>
@@ -81,7 +81,7 @@ const Terminal = forwardRef(
                 </div>
             </div>
         </div>
-    );
+    </>);
 });
 
 export default Terminal;
