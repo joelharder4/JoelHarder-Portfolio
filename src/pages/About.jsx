@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Terminal from '../components/emulator/Terminal.jsx';
 import useTerminal from '../tools/useTerminal.jsx';
+import ViewFileModal from '../components/ViewFileModal.jsx';
 
 const About = () => {
   const {
@@ -15,6 +16,8 @@ const About = () => {
     getFileContent,
     getAllFileContents,
   } = useTerminal();
+  const [popupName, setPopupName] = useState(null);
+  const [popupContent, setPopupContent] = useState(null);
 
   const terminalCommands = useMemo(() => ({
     'help': async (args) => {
@@ -31,7 +34,8 @@ const About = () => {
         'pwd': 'Prints the current directory path.',
         'cat [file]': 'Prints the content of the file [file].',
         'catdir': 'Prints the content of all files in the current directory.',
-        '8ball [question]': 'Ask the magic 8-ball a question.',
+        'view [file]': 'View the content of a file [file] in a new window.',
+        '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
       }
 
       pushToHistory(<>
@@ -72,7 +76,11 @@ const About = () => {
     'cat': async (args) => {
       pushToHistory(
         args.map((arg) => {
-          return <div key={`file-${arg}`}>{getFileContent(currentDir + arg)}</div>
+          const content = getFileContent(currentDir + arg);
+          if (typeof(content) != 'string') {
+            return `'${currentDir + arg}' is not a text file.`;
+          }
+          return <div key={`file-${arg}`}>{content}</div>
         })
       );
     },
@@ -81,6 +89,17 @@ const About = () => {
       pushToHistory(
         <pre className='text-wrap'>{files}</pre>
       );
+    },
+    'view': async (args) => {
+      const content = getFileContent(currentDir + args[0]);
+      if (content.length === 0 || content === `File '${currentDir + args[0]}' not found.`) {
+        pushToHistory(
+          <div>{content}</div>
+        );
+        return;
+      }
+      setPopupName(args[0]);
+      setPopupContent(content);
     },
     '8ball': async () => {
       const responses = ['Yes!', 'No!', 'Maybe?', 'Ask again later.', 'I don\'t know.', 'Probably', 'Unlikely.', '101% Chance.', 'Absolutely not.', 'Oh yeah!', 'Sure.', 'You shouldn\'t even have to ask.', 'Nuh uh.', 'Yuh huh.', 'I think so.', 'I wouldn\'t count on it'];
@@ -134,7 +153,14 @@ const About = () => {
     );
   }, [resetTerminal, pushToHistory]);
 
-  return (
+
+  return (<>
+    <ViewFileModal
+      open={Boolean(popupContent)}
+      onClose={() => setPopupContent(null)}
+      title={popupName}
+      fileContent={popupContent}
+    />
     <div className='text-primary pt-32 xl:pt-24'>
       <div className='flex justify-center'>
         <Terminal 
@@ -146,7 +172,7 @@ const About = () => {
         />
       </div>
     </div>
-  );
+  </>);
 };
 
 export default About;

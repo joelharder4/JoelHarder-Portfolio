@@ -21,6 +21,7 @@ const files = {
   },
   'pets/': {
     'ponyo.txt': 'I have a dog named Ponyo, she is a 13 year old shorkie and loves to cuddle. If you have your own pet, sorry but Ponyo is cuter.',
+    'ponyo.jpg': <img src='img/ponyo_silly.jpg' alt='A very silly picture of a very silly girl.'/>
   },
 }
 
@@ -161,9 +162,6 @@ const useTerminal = () => {
     const file = getFile(filepath);
     if (!file) {
       return `File '${filepath}' not found.`;
-    }
-    if (typeof(file) != 'string') {
-      return `'${filepath}' is not a readable file.`;
     }
 
     return file;

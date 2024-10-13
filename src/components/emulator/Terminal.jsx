@@ -70,7 +70,8 @@ const Terminal = forwardRef(
                         <div className="text-white flex items-center pl-[0.65rem] pr-12 w-full">
                             <input
                                 className='flex bg-transparent border-none w-full focus:outline-none'
-                                type="text"
+                                type='text'
+                                label='Command Line'
                                 value={input}
                                 ref={inputRef}
                                 onKeyDown={handleInputKeyDown}
