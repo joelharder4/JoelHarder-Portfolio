@@ -5,7 +5,7 @@ const files = {
   'skills/': {
     'programming-languages.txt': 'I am most experienced with JavaScript and TypeScript, but I have also used Python, Java, and PHP.',
     'web-development.txt': 'I have experience with both front-end and back-end web development and I love both, but I usually prefer front-end.',
-    'frameworks.txt': "I've used React.js framework in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js and Spring Boot at least once."
+    'frameworks.txt': "I've used React.js framework in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js and Spring Boot in the past."
   },
   'experience/': {
     'education.txt': "I am currently completing a Bachelor's degree in Computer Science at the University of Guelph. I started in 2021 and I am expected to graduate in May 2026.",
