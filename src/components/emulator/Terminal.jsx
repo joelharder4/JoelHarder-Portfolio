@@ -13,10 +13,19 @@ const Terminal = forwardRef(
     const inputRef = useRef();
     const [input, setInputValue] = useState('');
     const [running, setRunning] = useState(false);
+    const [cmdHistory, setCmdHistory] = useState([]);
+    const [cmdHistoryIndex, setCmdHistoryIndex] = useState(-1);
     
     useEffect(() => {
         inputRef.current?.focus();
     });
+
+    useEffect(() => {
+        inputRef.current?.setSelectionRange(
+            inputRef.current?.value?.length,
+            inputRef.current?.value?.length
+        );
+    }, [cmdHistoryIndex]);
 
     const focusInput = useCallback(() => {
         inputRef.current?.focus();
@@ -34,6 +43,8 @@ const Terminal = forwardRef(
       async (e) => {
         if (running) return;
         if (e.key === 'Enter') {
+
+            e.preventDefault();
             pushToHistory(prompt + input);
             if (!input) return;
 
@@ -46,10 +57,35 @@ const Terminal = forwardRef(
             } else {
                 commands?.['nocommand']?.();
             }
+            setCmdHistory((old) => {return [input, ...old]});
+            setCmdHistoryIndex(-1);
             setRunning(false);
+
+        } else if (e.key === 'ArrowUp') {
+
+            e.preventDefault();
+            if (cmdHistory.length <= 0) return;
+            if (cmdHistoryIndex + 1 >= cmdHistory.length) return;
+
+            setInputValue(cmdHistory[cmdHistoryIndex + 1]);
+            setCmdHistoryIndex((old) => {return old + 1});
+
+        } else if (e.key === 'ArrowDown') {
+
+            e.preventDefault();
+            if (cmdHistory.length <= 0) return;
+            if (cmdHistoryIndex <= 0) {
+                setInputValue('');
+                setCmdHistoryIndex(-1);
+                return;
+            }
+
+            setInputValue(cmdHistory[cmdHistoryIndex - 1]);
+            setCmdHistoryIndex((old) => {return old - 1});
+
         }
       },
-      [commands, input, prompt, pushToHistory, running, setRunning]
+      [commands, input, prompt, pushToHistory, running, cmdHistory, cmdHistoryIndex]
     );
 
     return (<>
