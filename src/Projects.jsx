@@ -9,9 +9,9 @@ const Projects = () => {
 		'MoleculeViewer',
 		'Tucon',
 		'StudyBuddy',
+		'DiscordBot',
 		'Hoi4DoubleEverything',
 		'WordFrequencySearch',
-		'DiscordBot',
 	]
 
     return (
