@@ -1,4 +1,4 @@
-import './styles/Stories.css';
+import '../styles/Stories.css';
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,6 @@ const thumbnails = [
 	'/img/thumbnails/tulip_retail.png'
 ];
 
-// const GridBreak = () => {return <Box sx={{width: "100%"}}/>};
 
 const ReportPanel = ({storyNum = -1}) => {
 	// const { t } = useTranslation();

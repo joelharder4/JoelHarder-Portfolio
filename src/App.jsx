@@ -3,10 +3,10 @@ import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
-import Projects from './Projects.jsx';
-import Stories from './Stories.jsx'
+import Projects from './pages/Projects.jsx';
+import Stories from './pages/Stories.jsx'
 import StoryPage from './pages/StoryPage.jsx';
-import Reports from './Reports.jsx';
+import Reports from './pages/Reports.jsx';
 import ReportPage from './pages/ReportPage.jsx';
 import { Route, Routes } from 'react-router-dom';
 import ProjectPage from './pages/ProjectPage.jsx';
