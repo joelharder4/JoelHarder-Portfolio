@@ -121,11 +121,19 @@ const useTerminal = () => {
 
   const changeDirectory = useCallback((dir) => {
     const segments = dir?.split('/');
-    if (!segments) return;
+
+    if (segments?.[segments?.length - 1] === '') {
+      segments.pop();
+    }
     let dirCopy = currentDir;
 
     for (const segment of segments) {
-      if (segment === '..') {
+      if (segment.length === 0) {
+
+        pushToHistory(`No such directory '${dir}'`);
+        return;
+
+      } else if (segment === '..') {
         if (dirCopy === '~/') {
           pushToHistory(`Can not go above root directory.`);
           return;
@@ -141,7 +149,7 @@ const useTerminal = () => {
         if (directory) {
           dirCopy = newDir;
         } else {
-          pushToHistory(`cd: ${dir}: No such directory`);
+          pushToHistory(`No such directory '${dir}'`);
           return;
         }
       }

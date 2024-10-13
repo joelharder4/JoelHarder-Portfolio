@@ -40,7 +40,6 @@ const Terminal = forwardRef(
             setInputValue(newInput);
 
             const options = Object.keys(commands).filter((cmd) => {return cmd.startsWith(newInput)});
-            console.log('updating options');
             setAutocompleteOptions(options);
             setAutocompleteIndex(0);
         },

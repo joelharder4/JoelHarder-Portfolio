@@ -69,6 +69,11 @@ const About = () => {
       );
     },
     'cd': async (args) => {
+      if (args.length === 0) {
+        pushToHistory(<div>Usage: cd [dir]</div>);
+        return;
+      }
+
       changeDirectory(args[0]);
     },
     'pwd': async () => {
