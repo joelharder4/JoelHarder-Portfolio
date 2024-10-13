@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Terminal from '../components/emulator/Terminal.jsx';
 import useTerminal from '../tools/useTerminal.jsx';
 import ViewFileModal from '../components/ViewFileModal.jsx';
+import FullScreenGif from '../components/FullscreenGif.jsx';
 
 const About = () => {
   const {
@@ -18,6 +19,7 @@ const About = () => {
   } = useTerminal();
   const [popupName, setPopupName] = useState(null);
   const [popupContent, setPopupContent] = useState(null);
+  const [gifSrc, setGifSrc] = useState(null);
 
   const terminalCommands = useMemo(() => ({
     'help': async (args) => {
@@ -26,6 +28,7 @@ const About = () => {
       ) ? {
         'yippee': 'Yippee!!!',
         'obama': 'Grilled Cheese Obama Sandwich Singalong!',
+        'explode': '💥 BOOM! 💥',
       } : {
         'help [--secret]': 'Shows a list of all supported commands.',
         'clear': 'Clears all previous commands in the terminal.',
@@ -132,6 +135,12 @@ const About = () => {
       await pushToHistoryWithDelay(<div>My stomach will reject it</div>, 3500);
       await pushToHistoryWithDelay(<div>Mmmmm... Oh no I don&apos;t understand this</div>, 3200);
     },
+    'explode': () => {
+      setGifSrc('/img/explosion.gif');
+      pushToHistory(
+        <div>💥💥💥</div>
+      );
+    },
   }), [pushToHistory, pushToHistoryWithDelay, resetTerminal, currentDir, listDirectory, changeDirectory, getFileContent, getAllFileContents]);
 
   useEffect(() => {
@@ -154,7 +163,9 @@ const About = () => {
   }, [resetTerminal, pushToHistory]);
 
 
+
   return (<>
+    <FullScreenGif src={gifSrc} onFinish={() => {setGifSrc(null)}}/>
     <ViewFileModal
       open={Boolean(popupContent)}
       onClose={() => setPopupContent(null)}
