@@ -35,9 +35,9 @@ const About = () => {
         'ls': 'Lists all folders and files in the current directory.',
         'cd [dir]': 'Changes the current directory to [dir] if it exists. Parent directory is `..`',
         'pwd': 'Prints the current directory path.',
-        'cat [file]': 'Prints the content of the file [file].',
+        'cat [file]': 'Prints the content of any text file [file]. Multiple files can be specified.',
         'catdir': 'Prints the content of all files in the current directory.',
-        'view [file]': 'View the content of a file [file] in a new window.',
+        'view [file]': 'View the content of a file [file] in a new window. [file] may be a text file or an image.',
         '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
       }
 
