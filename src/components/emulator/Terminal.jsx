@@ -15,6 +15,8 @@ const Terminal = forwardRef(
     const [running, setRunning] = useState(false);
     const [cmdHistory, setCmdHistory] = useState([]);
     const [cmdHistoryIndex, setCmdHistoryIndex] = useState(-1);
+    const [autocompleteOptions, setAutocompleteOptions] = useState([]);
+    const [autocompleteIndex, setAutocompleteIndex] = useState(0);
     
     useEffect(() => {
         inputRef.current?.focus();
@@ -34,11 +36,18 @@ const Terminal = forwardRef(
     const handleInputChange = useCallback(
         (e) => {
             if (running) return;
-            setInputValue(e.target.value);
+            const newInput = e.target.value;
+            setInputValue(newInput);
+
+            const options = Object.keys(commands).filter((cmd) => {return cmd.startsWith(newInput)});
+            console.log('updating options');
+            setAutocompleteOptions(options);
+            setAutocompleteIndex(0);
         },
-        [running]
+        [running, commands]
     );
 
+    // This needs to get broken down into smaller useCallback functions
     const handleInputKeyDown = useCallback(
       async (e) => {
         if (running) return;
@@ -83,9 +92,17 @@ const Terminal = forwardRef(
             setInputValue(cmdHistory[cmdHistoryIndex - 1]);
             setCmdHistoryIndex((old) => {return old - 1});
 
+        } else if (e.key === 'Tab') {
+
+            e.preventDefault();
+            if (!input) return;
+            if (autocompleteOptions.length === 0) return;
+            
+            setInputValue(autocompleteOptions[autocompleteIndex]);
+            setAutocompleteIndex((old) => {return (old + 1) % autocompleteOptions.length});
         }
       },
-      [commands, input, prompt, pushToHistory, running, cmdHistory, cmdHistoryIndex]
+      [commands, input, prompt, pushToHistory, running, cmdHistory, cmdHistoryIndex, autocompleteOptions, autocompleteIndex]
     );
 
     return (<>
