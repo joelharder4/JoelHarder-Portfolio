@@ -7,6 +7,12 @@ const files = {
     'web-development.txt': 'I have experience with both front-end and back-end web development and I love both, but I usually prefer front-end.',
     'frameworks.txt': "I've used React.js framework in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js and Spring Boot at least once."
   },
+  'experience/': {
+    'education.txt': "I am currently completing a Bachelor's degree in Computer Science at the University of Guelph. I started in 2021 and I am expected to graduate in May 2026.",
+    'work/': {
+      'tulip-retail.txt': 'I worked at Tulip Retail as a Software Developer Co-op in the Fall of 2023 (4 months). I worked on the checkout team which mostly deals with payment processing and helped to develop new features for the Tulip Retail mobile app and web portal. I did the full-stack development for the features I worked on, but I enjoyed developing the front-end in React.js the most.',
+    },
+  },
   'contact/': {
     'email.txt': 'My email address is joelharder4@gmail.com',
     'phone.txt': 'You can contact me on my mobile phone: (+1) 226-218-9358.',
