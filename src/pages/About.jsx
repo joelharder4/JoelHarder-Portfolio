@@ -37,7 +37,7 @@ const About = () => {
         'pwd': 'Prints the current directory path.',
         'cat [file]': 'Prints the content of any text file [file]. Multiple files can be specified.',
         'catdir': 'Prints the content of all files in the current directory.',
-        'view [file]': 'View the content of a file [file] in a new window. [file] may be a text file or an image.',
+        'view [file]': 'View the content of a file [file] in a new window. Supports image and text files.',
         '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
       }
 
