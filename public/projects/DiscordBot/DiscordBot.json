@@ -1,6 +1,6 @@
 {
     "id": "DiscordBot",
-    "title": "Clash Royale Discord Bot",
+    "title": "Discord Bot",
     "teaser": "Javascript, Node.js, Discord.js, Clash Royale API",
     "date": "October 12, 2024",
     "thumbnail": "/img/thumbnails/discord_bot.jpg"
