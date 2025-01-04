@@ -182,7 +182,7 @@ const About = () => {
       fileContent={popupContent}
     />
     <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] flex flex-row mx-auto justify-end items-center pt-16 md:pt-28 xl:pt-16 z-[40]">
-      <p className='text-gray-400'>How does this work?</p>
+      <p className='text-gray-400 hidden md:block'>How does this work?</p>
       <IconButton onClick={() => {setHelpOpen(true)}}>
         <HelpOutlineIcon sx={{color: 'rgb(156, 163, 175);'}}/>
       </IconButton>
