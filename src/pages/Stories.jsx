@@ -1,4 +1,3 @@
-import '../styles/Stories.css';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import StoryCard from '../components/cards/StoryCard';

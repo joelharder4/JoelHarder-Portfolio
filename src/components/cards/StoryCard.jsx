@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
+import { fetchJson } from '../../tools/fetchJson';
 
 const StoryCard = ({storyId = ''}) => {
 	const [storyInfo, setStoryInfo] = useState({});
 	const filePath = `/stories/${storyId}/${storyId}.json`;
 
 	useEffect(() => {
-		fetch(filePath)
-		.then((response) => response.text())
-		.then((text) => {
-			setStoryInfo(JSON.parse(text))
+		fetchJson(filePath)
+		.then((info) => {
+			setStoryInfo(info);
 		})
 	}, [filePath]);
 

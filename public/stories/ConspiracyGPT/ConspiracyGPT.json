@@ -1,5 +1,6 @@
 {
     "id": "ConspiracyGPT",
+    "author": "Joel Harder",
     "title": "Turning ChatGPT into a Conspiracy Theorist (WIP)",
     "teaser": "Using the instructions I made, ChatGPT will try to convince you that ridiculous conspiracy theories are real!",
     "date": "",

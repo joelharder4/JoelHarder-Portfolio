@@ -39,8 +39,9 @@ const Terminal = forwardRef(
             const newInput = e.target.value;
             setInputValue(newInput);
 
-            const options = Object.keys(commands).filter((cmd) => {return cmd.startsWith(newInput)});
-            setAutocompleteOptions(options);
+            const cmdOptions = Object.keys(commands).filter((cmd) => {return cmd.startsWith(newInput)});
+            console.log(`options: ${cmdOptions}     commands: ${Object.keys(commands)}`);
+            setAutocompleteOptions(cmdOptions);
             setAutocompleteIndex(0);
         },
         [running, commands]
@@ -95,6 +96,7 @@ const Terminal = forwardRef(
 
             e.preventDefault();
             if (!input) return;
+            console.log(autocompleteOptions);
             if (autocompleteOptions.length === 0) return;
             
             setInputValue(autocompleteOptions[autocompleteIndex]);

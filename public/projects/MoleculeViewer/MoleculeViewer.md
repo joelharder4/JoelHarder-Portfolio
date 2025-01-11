@@ -13,15 +13,15 @@ This is the final project for the course *CIS\*2750* at the University of Guelph
 
 The project was divided into four assignments. First I developed a library of functions written in C that established the complex data structures for molecules, performed any necessary mathematical calculations, and enabled for construction and deletion of molecules.
 
-After finishing the C library, I created the SQLite3 database with various tables for elements, molecules, bonds, and more. The database was created and interfaced with using Python and the sqlite3 library. In order to access the functions that I had written in C, I used the [SWIG](https://www.swig.org/) software development tool to connect the Python script to my library.
+After finishing the C library, I created the SQL database with various tables for elements, molecules, bonds, and more. The database was created and interfaced with using Python and the sqlite3 library. In order to access the functions that I had written in C, I used the [SWIG](https://www.swig.org/) software development tool to connect the Python script to my library.
 
-The next step is to set up the actual web server (backend only). I accomplished this by utilizing `HTTPServer` and `BaseHTTPRequestHandler` from the `http.server` Python library. I created a `server.py` file using those classes that hosts a local webserver to allow network GET and POST requests that will be used by the frontend in the future.
+The next step is to set up the backend for the web server. I accomplished this by utilizing `HTTPServer` and `BaseHTTPRequestHandler` from the `http.server` Python library. I created a `server.py` file using those classes that hosts a local web server to allow network GET and POST requests that will be used by the frontend in the future.
 
-Finally, using HTML, CSS, and Javscript with jQuery, I created a frontend for the webserver to allow the user to interact with everything that I have created up to this point. It features a Home page, Molecules and Elements pages to show the user what is in the database, and a View page where it shows the molecule and allows it to be rotated in three dimensions. In addition to everything just listed, it has the ability to parse and generated molecules straight from the official scientific `.sdf` file format.
+Finally, using HTML, CSS, and Javscript with jQuery, I created a frontend for the web server to allow the user to interact with everything that I have created up to this point. It features a Home page, Molecules and Elements pages to show the user what is in the database, and a View page where it shows the molecule and allows it to be rotated in three dimensions. In addition to everything just listed, it has the ability to parse and generated molecules directly from the official scientific `.sdf` file format.
 
 ## Screenshots
 ### Home Page
-Here is what the home page of my webserver looks like. I am very proud of the ui design, which I planned in a Figma project before programming in HTML.
+Here is what the home page of my web server looks like. I am very proud of the ui design, which I designed in Figma before programming in HTML/CSS.
 
 ![A screenshot of the home page](/projects/MoleculeViewer/home_page.png?raw=true "Home Page")
 

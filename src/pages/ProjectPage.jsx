@@ -14,7 +14,7 @@ const ProjectPage = () => {
         </Button>
       </div>
       <div className='w-full justify-center flex text-primary'>
-        <div className='md:w-[80vw] lg:w-[70vw] w-[90vw] bg-gray-200'>
+        <div className='md:w-[70vw] lg:w-[50vw] w-[90vw]'>
           <MarkdownReader filePath={`/projects/${projectName}/${projectName}.md`} className='p-12'/>
         </div>
       </div>

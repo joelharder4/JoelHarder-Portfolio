@@ -18,7 +18,7 @@ const App = () => {
       <div className='flex flex-col min-h-[100vh]'>
         <Navbar/>
         <Routes>
-          <Route path="/"> 
+          <Route path="/">
             <Route index element={<Home />} />
             <Route path="home" index element={<Home />} />
             <Route path="about" element={<About />} />

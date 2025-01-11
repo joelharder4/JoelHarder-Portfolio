@@ -1,5 +1,3 @@
-# How I got ChatGPT to Ignore You
-
 In the realm of AI programming, the ability to customize an AI's behavior is a powerful tool, showcasing the adaptability and flexibility of these systems. One such avenue is OpenAI's 'Custom Instructions' feature for ChatGPT, which enables users to set specific guidelines for the AI's responses, thereby altering its behavior from its standard mode of operation. Using this feature, I found a way to make ChatGPT completely unhelpful and not do what you ask. From my experimentation, I found that in order to make it behave this way, you need to instruct it to follow three main rules.
 
 ![A screenshot of an example conversation with the AI](/img/screenshots/chat_gpt_ignore_prompt.png "Example Conversation")

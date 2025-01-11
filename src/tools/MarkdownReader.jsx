@@ -20,7 +20,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h1 = ({children}) => {
     return (
-      <h1 className='text-5xl text-center font-bold py-4'>
+      <h1 className='text-5xl font-bold py-4'>
         {children}
       </h1>
     );
@@ -44,7 +44,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h4 = ({children}) => {
     return (
-      <h4 className='md:text-md text-sm text-center mt-[-18px]'>
+      <h4 className='md:text-md text-sm mt-[-18px]'>
         {children}
       </h4>
     );
@@ -60,7 +60,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const code = ({children}) => {
     return (
-      <code className='bg-gray-700 text-white p-1 rounded-sm'>
+      <code className='bg-gray-500 text-white p-1 rounded-sm'>
         {children}
       </code>
     );
@@ -68,7 +68,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const blockquote = ({children}) => {
     return (
-      <blockquote className='px-6 bg-gray-300 border-l-4 border-gray-700'>
+      <blockquote className='px-6 bg-gray-100 border-l-4 border-gray-400'>
         {children}
       </blockquote>
     );

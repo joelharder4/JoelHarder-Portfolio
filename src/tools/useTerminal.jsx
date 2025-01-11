@@ -26,9 +26,12 @@ const files = {
     'mods.txt': 'I love modding games, I have made mods for Hearts of Iron IV, Sid Meyers Civilization 6, Stellaris, and more!',
   },
   'pets/': {
-    'ponyo.txt': 'I have a dog named Ponyo, she is a 13 year old shorkie and loves to cuddle. If you have your own pet, sorry but Ponyo is cuter.',
+    'ponyo.txt': 'I have a dog named Ponyo, she is a 14 year old (as of Jan 2025) shorkie and loves to cuddle. If you have your own pet, I would love to see then but I am sorry to say that Ponyo will always be cuter.',
     'ponyo.jpg': <img src='img/ponyo_silly.jpg' alt='A very silly picture of a very silly girl.'/>
   },
+  'ai-music/': {
+    'were-cooked.mp3': <audio controls><source src='audio/cooked.mp3' type='audio/mpeg'/></audio>,
+  }
 }
 
 const useTerminal = () => {
