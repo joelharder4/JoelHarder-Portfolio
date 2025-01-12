@@ -113,6 +113,7 @@ const Terminal = forwardRef(
             
             setInputValue(autocompleteOptions[autocompleteIndex]);
             setAutocompleteIndex((old) => {return (old + 1) % autocompleteOptions.length});
+
         }
       },
       [commands, input, prompt, pushToHistory, running, cmdHistory, cmdHistoryIndex, autocompleteOptions, autocompleteIndex]

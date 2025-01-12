@@ -47,6 +47,7 @@ const About = () => {
         'cat [file]': 'Prints the content of any text file [file]. Multiple files can be specified.',
         'catdir': 'Prints the content of all files in the current directory.',
         'view [file]': 'View the content of a file [file] in a new window. Supports image and text files.',
+        'play [file]': 'Plays an audio file [file].',
         '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
       }
 
@@ -144,14 +145,14 @@ const About = () => {
       const source = content.props.children.props.src;
 
       pushToHistory(<>
-        <div>Now playing {args[0]}. Press Ctrl+C to stop.</div>
-        <BackgroundAudioPlayer source={source} volume={0.1} ref={audioPlayerRef}/>
+        <div>Now playing {args[0]}. To cancel, refresh the page.</div>
+        <BackgroundAudioPlayer source={source} volume={0.2} ref={audioPlayerRef}/>
       </>);
       let audioLength = 0;
 
       while (!audioLength) {
         audioLength = await audioPlayerRef.current?.getAudioLength();
-        await new Promise((resolve) => setTimeout(resolve, 50));
+        await new Promise((resolve) => setTimeout(resolve, 10)); // wait 10ms
       }
       
       await pushToHistoryWithDelay(<></>, audioLength * 1000);
