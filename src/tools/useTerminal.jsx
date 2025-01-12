@@ -204,6 +204,15 @@ const useTerminal = () => {
   }, [getFileContent, currentDir, getDirectory]);
 
 
+
+  const isTextFile = useCallback((fileName) => {
+    if (fileName.endsWith('.txt') || fileName.endsWith('.dnd')) {
+      return true;
+    }
+    return false;
+  }, []);
+
+
   return {
     history,
     pushToHistory,
@@ -218,6 +227,7 @@ const useTerminal = () => {
     listDirectory,
     getFileContent,
     getAllFileContents,
+    isTextFile,
   };
 };
 

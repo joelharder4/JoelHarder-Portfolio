@@ -8,6 +8,7 @@ const Terminal = forwardRef(
         commands = {},
         prompt = '~/  $ ',
         pushToHistory,
+        commandAutocompletes,
     } = props;
 
     const inputRef = useRef();
@@ -40,11 +41,23 @@ const Terminal = forwardRef(
             setInputValue(newInput);
 
             const cmdOptions = Object.keys(commands).filter((cmd) => {return cmd.startsWith(newInput)});
-            console.log(`options: ${cmdOptions}     commands: ${Object.keys(commands)}`);
-            setAutocompleteOptions(cmdOptions);
+            if (cmdOptions.length > 0) {
+                setAutocompleteOptions(cmdOptions);
+            } else {
+                const cmdName = newInput.split(' ')[0];
+                if (cmdName in commandAutocompletes) {
+                    const options = commandAutocompletes[cmdName]
+                        .filter((name) => {return name.startsWith(newInput.split(' ')[1])}) // filter options that dont match
+                        .map((name) => {return `${cmdName} ${name}`}); // add the command name as a prefix
+                    
+                    setAutocompleteOptions(options);
+                } else {
+                    setAutocompleteOptions([]);
+                }
+            }
             setAutocompleteIndex(0);
         },
-        [running, commands]
+        [running, commands, commandAutocompletes]
     );
 
     // This needs to get broken down into smaller useCallback functions
@@ -96,7 +109,6 @@ const Terminal = forwardRef(
 
             e.preventDefault();
             if (!input) return;
-            console.log(autocompleteOptions);
             if (autocompleteOptions.length === 0) return;
             
             setInputValue(autocompleteOptions[autocompleteIndex]);

@@ -19,6 +19,7 @@ const About = () => {
     listDirectory,
     getFileContent,
     getAllFileContents,
+    isTextFile,
   } = useTerminal();
   const [popupName, setPopupName] = useState(null);
   const [popupContent, setPopupContent] = useState(null);
@@ -152,6 +153,15 @@ const About = () => {
     },
   }), [pushToHistory, pushToHistoryWithDelay, resetTerminal, currentDir, listDirectory, changeDirectory, getFileContent, getAllFileContents]);
 
+
+  const commandAutocompletes = useMemo(() => ({
+    'help': ['--secret', ''],
+    'cd': listDirectory().filter((name) => {return name.endsWith('/')}),
+    'cat': listDirectory().filter((name) => {return isTextFile(name)}),
+    'view': listDirectory(),
+  }), [listDirectory, isTextFile]);
+
+
   useEffect(() => {
     resetTerminal();
 
@@ -195,6 +205,7 @@ const About = () => {
           commands={terminalCommands}
           prompt={`${currentDir} $ `}
           pushToHistory={pushToHistory}
+          commandAutocompletes={commandAutocompletes}
         />
       </div>
     </div>
