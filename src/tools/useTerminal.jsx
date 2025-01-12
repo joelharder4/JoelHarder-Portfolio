@@ -30,7 +30,7 @@ const files = {
     'ponyo.jpg': <img src='img/ponyo_silly.jpg' alt='A very silly picture of a very silly girl.'/>
   },
   'ai-music/': {
-    'were-cooked.mp3': <audio controls><source src='audio/cooked.mp3' type='audio/mpeg'/></audio>,
+    'cooked.mp3': <audio controls><source src='sounds/cooked.mp3' type='audio/mpeg'/></audio>,
   }
 }
 
@@ -212,6 +212,13 @@ const useTerminal = () => {
     return false;
   }, []);
 
+  const isAudioFile = useCallback((fileName) => {
+    if (fileName.endsWith('.mp3')) {
+      return true;
+    }
+    return false;
+  }, []);
+
 
   return {
     history,
@@ -228,6 +235,7 @@ const useTerminal = () => {
     getFileContent,
     getAllFileContents,
     isTextFile,
+    isAudioFile,
   };
 };
 

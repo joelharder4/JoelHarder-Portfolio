@@ -2,12 +2,12 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
-const ViewFileModal = ({ open, onClose, title, fileContent }) => {
+const ViewFileModal = ({ open, onClose, title, fileContent, type }) => {
   return (
     <Dialog
       open={open}
       onClose={onClose}
-      maxWidth='md'
+      maxWidth={type == 'audio' ? 'xs' : 'md'}
       fullWidth
     >
       <DialogTitle>
