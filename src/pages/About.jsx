@@ -28,6 +28,7 @@ const About = () => {
   const [popupName, setPopupName] = useState(null);
   const [popupContent, setPopupContent] = useState(null);
   const [gifSrc, setGifSrc] = useState(null);
+  const [gifSize, setGifSize] = useState('full');
   const [helpOpen, setHelpOpen] = useState(false);
 
   const terminalCommands = {
@@ -38,6 +39,7 @@ const About = () => {
         'yippee': 'Yippee!!!',
         'obama': 'Grilled Cheese Obama Sandwich Singalong!',
         'explode': '💥 BOOM! 💥',
+        'milli': 'She Wiggies!!!',
       } : {
         'help [--secret]': 'Shows a list of all supported commands.',
         'clear': 'Clears all previous commands in the terminal.',
@@ -205,9 +207,17 @@ const About = () => {
       await pushToHistoryWithDelay(<div>Mmmmm... Oh no I don&apos;t understand this</div>, 3200);
     },
     'explode': () => {
+      setGifSize('full');
       setGifSrc('/img/explosion.gif');
       pushToHistory(
         <div>💥💥💥</div>
+      );
+    },
+    'milli': () => {
+      setGifSize('half');
+      setGifSrc('/img/milli_wiggles.gif');
+      pushToHistory(
+        <div>Silly Milli! She Wiggies!!!</div>
       );
     },
   };
@@ -245,7 +255,7 @@ const About = () => {
 
 
   return (<>
-    <FullScreenGif src={gifSrc} onFinish={() => {setGifSrc(null)}}/>
+    <FullScreenGif src={gifSrc} size={gifSize} onFinish={() => {setGifSrc(null)}}/>
     <ViewFileModal
       open={Boolean(popupContent)}
       onClose={() => setPopupContent(null)}

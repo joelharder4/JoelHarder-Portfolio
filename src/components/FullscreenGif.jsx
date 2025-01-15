@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const FullScreenGif = ({ src, onFinish, duration = 5000 }) => {
+const FullScreenGif = ({ src, onFinish, size='full', duration = 5000 }) => {
   const [showGif, setShowGif] = useState(false);
 
     useEffect(() => {
@@ -25,7 +25,9 @@ const FullScreenGif = ({ src, onFinish, duration = 5000 }) => {
           <img
             src={src}
             alt="Gif covering the entire screen"
-            className="w-full h-full object-cover"
+            className={' h-full object-cover' + 
+                (size === 'full' ? 'w-full' : 
+                 size === 'half' ? 'w-1/2'  : 'w-2/3')}
           />
         </div>
       )}
