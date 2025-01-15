@@ -40,8 +40,24 @@ const logos = [
         path: '/img/logos/mongodb.webp',
     },
     {
+        name: 'Spring Boot',
+        path: '/img/logos/springboot.png',
+    },
+    {
+        name: 'Docker',
+        path: '/img/logos/docker.png',
+    },
+    {
+        name: 'Alteryx',
+        path: '/img/logos/alteryx.png',
+    },
+    {
         name: 'PHP',
         path: '/img/logos/php.png',
+    },
+    {
+        name: 'PowerBI',
+        path: '/img/logos/powerbi.png',
     },
 ];
 

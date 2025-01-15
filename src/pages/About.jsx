@@ -51,7 +51,7 @@ const About = () => {
         'view [file]': 'View the content of a file [file] in a new window. Supports image and text files.',
         'play [file]': 'Plays an audio file [file].',
         'loop [file]': 'Plays an audio file [file] on repeat. It doesn\'t stop until you refresh the page.',
-        '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
+        '8ball [question]': 'Ask the magic 8-ball any yes/no question. [question] can be in any format.',
       }
 
       pushToHistory(<>
