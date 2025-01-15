@@ -219,6 +219,7 @@ const About = () => {
     'cat': listDirectory().filter((name) => {return isTextFile(name)}),
     'view': listDirectory(),
     'play': listDirectory().filter((name) => {return isAudioFile(name)}),
+    'loop': listDirectory().filter((name) => {return isAudioFile(name)}),
   }), [listDirectory, isTextFile, isAudioFile]);
 
 
