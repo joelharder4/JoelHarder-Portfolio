@@ -30,16 +30,17 @@ const files = {
     'ponyo.jpg': <img src='img/ponyo_silly.jpg' alt='A very silly picture of a very silly girl.'/>
   },
   'ai-music/': {
-    'cooked.mp3': <audio controls><source src='sounds/cooked.mp3' type='audio/mpeg'/></audio>,
-    'bhaals-chosen.mp3': <audio controls><source src='sounds/bhaals-chosen.mp3' type='audio/mpeg'/></audio>,
-    'joe-sawada.mp3': <audio controls><source src='sounds/joe-sawada.mp3' type='audio/mpeg'/></audio>,
-    'grilled-cheese-sussy-fish-sandwich.mp3': <audio controls><source src='sounds/grilled-cheese-sussy-fish-sandwich.mp3' type='audio/mpeg'/></audio>,
-    'joel-vs-docker.mp3': <audio controls><source src='sounds/joel-vs-docker.mp3' type='audio/mpeg'/></audio>,
-    'spooky-chess.mp3': <audio controls><source src='sounds/spooky-chess.mp3' type='audio/mpeg'/></audio>,
-    'five-lines-of-code.mp3': <audio controls><source src='sounds/five-lines-of-code.mp3' type='audio/mpeg'/></audio>,
-    'the-among-us-man.mp3': <audio controls><source src='sounds/the-among-us-man.mp3' type='audio/mpeg'/></audio>,
-    'we-take-it-to-the-max.mp3': <audio controls><source src='sounds/we-take-it-to-the-max.mp3' type='audio/mpeg'/></audio>,
-    'echoes-of-joel.mp3': <audio controls><source src='sounds/echoes-of-joel.mp3' type='audio/mpeg'/></audio>,
+    'cooked.mp3': <source src='sounds/cooked.mp3' type='audio/mpeg'/>,
+    'bhaals-chosen.mp3': <source src='sounds/bhaals-chosen.mp3' type='audio/mpeg'/>,
+    'joe-sawada.mp3': <source src='sounds/joe-sawada.mp3' type='audio/mpeg'/>,
+    'myron-invasion.mp3': <source src='sounds/myron-invasion.mp3' type='audio/mpeg'/>,
+    'grilled-cheese-sussy-fish-sandwich.mp3': <source src='sounds/grilled-cheese-sussy-fish-sandwich.mp3' type='audio/mpeg'/>,
+    'joel-vs-docker.mp3': <source src='sounds/joel-vs-docker.mp3' type='audio/mpeg'/>,
+    'spooky-chess.mp3': <source src='sounds/spooky-chess.mp3' type='audio/mpeg'/>,
+    'five-lines-of-code.mp3': <source src='sounds/five-lines-of-code.mp3' type='audio/mpeg'/>,
+    'the-among-us-man.mp3': <source src='sounds/the-among-us-man.mp3' type='audio/mpeg'/>,
+    'we-take-it-to-the-max.mp3': <source src='sounds/we-take-it-to-the-max.mp3' type='audio/mpeg'/>,
+    'echoes-of-joel.mp3': <source src='sounds/echoes-of-joel.mp3' type='audio/mpeg'/>,
   }
 }
 

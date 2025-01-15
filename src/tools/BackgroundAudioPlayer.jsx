@@ -1,6 +1,6 @@
 import { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 
-const BackgroundAudioPlayer = forwardRef(({ source, volume }, ref) => {
+const BackgroundAudioPlayer = forwardRef(({ source, volume, loopAudio=false }, ref) => {
   const audioRef = useRef();
 
   useImperativeHandle(ref, () => ({
@@ -14,8 +14,8 @@ const BackgroundAudioPlayer = forwardRef(({ source, volume }, ref) => {
   }, [volume]);
 
   return (
-    <audio ref={audioRef} controls autoPlay className="hidden">
-      <source src={source} type="audio/mpeg" />
+    <audio ref={audioRef} controls autoPlay loop={loopAudio} className="hidden">
+      {source}
       Your browser does not support the audio tag.
     </audio>
   );

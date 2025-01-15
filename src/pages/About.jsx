@@ -48,6 +48,7 @@ const About = () => {
         'catdir': 'Prints the content of all files in the current directory.',
         'view [file]': 'View the content of a file [file] in a new window. Supports image and text files.',
         'play [file]': 'Plays an audio file [file].',
+        'loop [file]': 'Plays an audio file [file] on repeat. It doesn\'t stop until you refresh the page.',
         '8ball [question]': 'Ask the magic 8-ball a question. [question] can be anything.',
       }
 
@@ -142,11 +143,10 @@ const About = () => {
         return;
       }
       if (!isAudioFile(args[0])) return;
-      const source = content.props.children.props.src;
 
       pushToHistory(<>
         <div>Now playing {args[0]}. To cancel, refresh the page.</div>
-        <BackgroundAudioPlayer source={source} volume={0.2} ref={audioPlayerRef}/>
+        <BackgroundAudioPlayer source={content} volume={0.6} ref={audioPlayerRef}/>
       </>);
       let audioLength = 0;
 
@@ -156,6 +156,20 @@ const About = () => {
       }
       
       await pushToHistoryWithDelay(<></>, audioLength * 1000);
+    },
+
+    'loop': async (args) => {
+      const content = getFileContent(currentDir + args[0]);
+      if (content === `File '${currentDir + args[0]}' not found.` || args.length <= 0) {
+        pushToHistory(content);
+        return;
+      }
+      if (!isAudioFile(args[0])) return;
+
+      pushToHistory(<>
+        <div>Now playing {args[0]} on repeat. To cancel, refresh the page.</div>
+        <BackgroundAudioPlayer source={content} volume={0.6} loopAudio={true} ref={audioPlayerRef}/>
+      </>);
     },
 
     '8ball': async () => {
