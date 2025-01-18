@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 
 const files = {
@@ -19,7 +19,7 @@ const files = {
     'linkedin.txt': 'https://www.linkedin.com/in/joel-harder/',
   },
   'hobbies/': {
-    'sports.txt': 'I go Rock Climbing 3 days a week and play intramural dodgeball at university on Wednesdays.',
+    'sports.txt': 'I go Rock Climbing multiple days a week and play intramural dodgeball at university. Besides climbing, my favourite sport is Badminton.',
     'video-games.txt': 'I play a lot of different games, but my current favourite is Baldurs Gate 3.',
     'board-games.txt': 'I love board games, my favourite is Settlers of Catan, but I will play anything. I own every expansion for Catan except for the latest New Engergies expansion.',
     'tabletop.dnd': "I regularly play Dungeons and Dragons with my friends, I have been a DM in the past but I am currently a player. My favourite character that I have played is a delusional wood elf ranged named Zyvan Woodfoot, who insists that he should be called 'The Dragon Slayer' despite never having killed a dragon. He doesn't even do it as a joke, he genuinely believes his life's purpose is to kill all dragons.",
@@ -230,6 +230,30 @@ const useTerminal = () => {
   }, []);
 
 
+
+  const removeDescendantsByType = (element, type) => {
+    if (!React.isValidElement(element)) {
+      return element;
+    }
+
+    const filteredChildren = React.Children.map(element.props.children, (child) => {
+      return child && (child.type === type || child.type?.displayName === type) ? undefined : removeDescendantsByType(child, type);
+    });
+
+    return React.cloneElement(element, { ...element.props, children: filteredChildren });
+  }
+
+
+
+  const removeComponentTypeFromHistory = (type) => {
+    const filteredHistory = history.map((item) => {
+      return removeDescendantsByType(item, type);
+    }).filter(item => item !== undefined);
+    
+    setHistory(filteredHistory);
+  }
+
+
   return {
     history,
     pushToHistory,
@@ -246,6 +270,8 @@ const useTerminal = () => {
     getAllFileContents,
     isTextFile,
     isAudioFile,
+    removeDescendantsByType,
+    removeComponentTypeFromHistory,
   };
 };
 

@@ -4,7 +4,7 @@ const BackgroundAudioPlayer = forwardRef(({ source, volume, loopAudio=false }, r
   const audioRef = useRef();
 
   useImperativeHandle(ref, () => ({
-    getAudioLength: () => audioRef.current?.duration,
+    getAudioLength: () => {audioRef.current?.duration},
   }));
 
   useEffect(() => {

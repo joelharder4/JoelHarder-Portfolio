@@ -23,6 +23,7 @@ const About = () => {
     getAllFileContents,
     isTextFile,
     isAudioFile,
+    removeComponentTypeFromHistory,
   } = useTerminal();
   const audioPlayerRef = useRef(null);
   const [popupName, setPopupName] = useState(null);
@@ -49,8 +50,9 @@ const About = () => {
         'cat [file]': 'Prints the content of any text file [file]. Multiple files can be specified.',
         'catdir': 'Prints the content of all files in the current directory.',
         'view [file]': 'View the content of a file [file] in a new window. Supports image and text files.',
-        'play [file]': 'Plays an audio file [file].',
-        'loop [file]': 'Plays an audio file [file] on repeat. It doesn\'t stop until you refresh the page.',
+        'play [file]': 'Plays an audio file [file]. It stops when the audio ends or when you use the command `stop`.',
+        'stop': 'Stops all currently playing audio files.',
+        'loop [file]': 'Plays an audio file [file] on repeat. It doesn\'t stop until you use the command `stop`.',
         '8ball [question]': 'Ask the magic 8-ball any yes/no question. [question] can be in any format.',
       }
 
@@ -147,17 +149,17 @@ const About = () => {
       if (!isAudioFile(args[0])) return;
 
       pushToHistory(<>
-        <div>Now playing {args[0]}. To cancel, refresh the page.</div>
+        <div>Now playing {args[0]}. To cancel, use the command `stop`.</div>
         <BackgroundAudioPlayer source={content} volume={0.6} ref={audioPlayerRef}/>
       </>);
-      let audioLength = 0;
+      // let audioLength = 0;
 
-      while (!audioLength) {
-        audioLength = await audioPlayerRef.current?.getAudioLength();
-        await new Promise((resolve) => setTimeout(resolve, 10)); // wait 10ms
-      }
+      // while (!audioLength) {
+      //   audioLength = await audioPlayerRef.current?.getAudioLength();
+      //   await new Promise((resolve) => setTimeout(resolve, 10)); // wait 10ms
+      // }
       
-      await pushToHistoryWithDelay(<></>, audioLength * 1000);
+      // await pushToHistoryWithDelay(<></>, audioLength * 1000);
     },
 
     'loop': async (args) => {
@@ -172,6 +174,10 @@ const About = () => {
         <div>Now playing {args[0]} on repeat. To cancel, refresh the page.</div>
         <BackgroundAudioPlayer source={content} volume={0.6} loopAudio={true} ref={audioPlayerRef}/>
       </>);
+    },
+
+    'stop': async () => {
+      removeComponentTypeFromHistory('BackgroundAudioPlayer');
     },
 
     '8ball': async () => {
