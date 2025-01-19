@@ -26,7 +26,7 @@ const StoryPage = () => {
         </Button>
       </div>
       <div className='w-full justify-center flex text-primary'>
-        <div className='md:w-[70vw] lg:w-[50vw] w-[90vw]'>
+        <div className='md:w-[70vw] lg:w-[55vw] xl:w-[45vw] w-[90vw]'>
           {/* title */}
           <h1 className='text-5xl font-bold py-4 px-12'>{storyInfo['title'] ?? 'Untitled Story'}</h1>
           <p className='px-12 text-sm'>by <span className='font-bold'>{storyInfo['author'] ?? 'Unknown'}</span></p>

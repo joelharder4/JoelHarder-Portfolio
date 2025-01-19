@@ -5,6 +5,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
   const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
+    console.log('fetching');
     fetch(filePath)
       .then(response => response.text())
       .then(text => {setMarkdown(text)})
@@ -117,4 +118,4 @@ const MarkdownReader = ({ filePath, className = '' }) => {
   return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, h4: h4, p: p, code: code, blockquote: blockquote, pre: pre, img: img, ol: ol, ul: ul, li: li }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
 };
 
-export default MarkdownReader;
+export default React.memo(MarkdownReader);

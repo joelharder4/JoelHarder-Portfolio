@@ -8,9 +8,10 @@ const Stories = () => {
 	const projects = [
 		'ChatGPTIgnoreYou',
 		'AIForDND',
-		'ConspiracyGPT',
-		'MacHaterGPT',
-		'ForgetfulGPT',
+    'FutureOfAI',
+		// 'ConspiracyGPT',
+		// 'MacHaterGPT',
+		// 'ForgetfulGPT',
 	]
 
 	return (
