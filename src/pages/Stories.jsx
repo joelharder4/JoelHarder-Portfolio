@@ -6,9 +6,9 @@ const Stories = () => {
 	const { t } = useTranslation();
 
 	const projects = [
+    'FutureOfAI',
 		'ChatGPTIgnoreYou',
 		'AIForDND',
-    'FutureOfAI',
 		// 'ConspiracyGPT',
 		// 'MacHaterGPT',
 		// 'ForgetfulGPT',
