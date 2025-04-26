@@ -77,7 +77,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const pre = ({children}) => {
     return (
-      <pre className='bg-gray-700 p-2'>
+      <pre className='bg-gray-500 p-2'>
         {children}
       </pre>
     );

@@ -21,7 +21,7 @@ const Stories = () => {
         <p className="text-center font-['Lalezar'] md:text-xl text-lg md:w-[60vw] w-[85vw]"> {t('storiesDesc')} </p>
       </div>
       <div className='flex flex-col w-full items-center'>
-        <div className="mt-20 lg:w-[75vw] md:w-[85vw] w-[70vw] font-['Lalezar']">
+        <div className="mt-20 xl:w-[50vw] md:w-[75vw] w-[70vw] font-['Lalezar']">
           <h1 className="w-full items-left text-left z-10 text-2xl">Stories</h1>
           <hr className="w-full border-t-2 border-[#363636]"/>
 

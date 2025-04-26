@@ -20,7 +20,7 @@ const StoryPage = () => {
   
   return (
     <div className='w-full m-0'>
-      <div className='mt-20 md:w-[80vw] lg:w-[70vw] w-[90vw] mx-auto'>
+      <div className='mt-20 md:w-[70vw] lg:w-[50vw] w-[90vw] mx-auto'>
         <Button variant="text" sx={{zIndex: 3, 'textTransform': 'none', float: 'right'}} href="/stories">
           Other Stories
         </Button>
