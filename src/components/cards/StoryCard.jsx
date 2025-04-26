@@ -21,7 +21,7 @@ const StoryCard = ({storyId = ''}) => {
 		<Grid item xs={4}>
 			<Grid container spacing={2} sx={{fontFamily: ['sans-serif']}}>
 				<Grid item xs={12}>
-					<ButtonBase sx={{ width: '100%', height: '25rem', borderRadius: '2%' }} href={linkTo}>
+					<ButtonBase sx={{ width: '100%', height: '100%', borderRadius: '2%' }} href={linkTo}>
 						<img alt="complex" src={storyInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md border-2' />
 					</ButtonBase>
 				</Grid>

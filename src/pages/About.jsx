@@ -152,14 +152,6 @@ const About = () => {
         <div>Now playing {args[0]}. To cancel, use the command `stop`.</div>
         <BackgroundAudioPlayer source={content} volume={0.6} ref={audioPlayerRef}/>
       </>);
-      // let audioLength = 0;
-
-      // while (!audioLength) {
-      //   audioLength = await audioPlayerRef.current?.getAudioLength();
-      //   await new Promise((resolve) => setTimeout(resolve, 10)); // wait 10ms
-      // }
-      
-      // await pushToHistoryWithDelay(<></>, audioLength * 1000);
     },
 
     'loop': async (args) => {
@@ -250,7 +242,7 @@ const About = () => {
 &nbsp;      / /___  ___  / /  / / / /___ __________/ /__  __________/ /_ <br/>
 &nbsp; __  / / __ \/ _ \/ /  / /_/ / __ `/ ___/ __  / _ \/ ___/ ___/ __ \<br/>
 &nbsp;/ /_/ / /_/ /  __/ /  / __  / /_/ / /  / /_/ /  __/ /  (__  ) / / /<br/>
-&nbsp;\____/\____/\___/_/  /_/ /_/\__,_/_/   \__,_/\___/_(_)/____/_/ /_/ <br/><br/>
+&nbsp;\____/\____/\___/_/  /_/ /_/\__,_/_/   \__,_/\___/_/(_)/____/_/ /_/ <br/><br/>
           </pre>
           Use `help` to see a list of all supported commands.
         </div>

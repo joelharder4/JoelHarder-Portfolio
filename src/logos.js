@@ -12,6 +12,10 @@ const logos = [
         path: '/img/logos/react.png',
     },
     {
+        name: 'Vite.js',
+        path: '/img/logos/vitejs.png',
+    },
+    {
         name: 'Next.js',
         path: '/img/logos/nextjs.webp',
     },
@@ -28,9 +32,13 @@ const logos = [
         path: '/img/logos/tailwind.png',
     },
     {
-        name: 'MySQL',
-        path: '/img/logos/mysql.png',
+        name: 'PostgreSQL',
+        path: '/img/logos/postgresql.png',
     },
+    // {
+    //     name: 'MySQL',
+    //     path: '/img/logos/mysql.png',
+    // },
     {
         name: 'Java',
         path: '/img/logos/java.webp',
