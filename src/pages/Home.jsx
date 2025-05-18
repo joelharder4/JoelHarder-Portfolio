@@ -6,7 +6,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import logos from '../logos';
 
 const Home = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //test comment
 
   return (
     <div className="font-['Lalezar'] text-primary bg-white">
