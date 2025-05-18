@@ -115,7 +115,29 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   }
 
-  return <ReactMarkdown components={{ a: Link, h1: h1, h2: h2, h3: h3, h4: h4, p: p, code: code, blockquote: blockquote, pre: pre, img: img, ol: ol, ul: ul, li: li }} className={className + ' whitespace-pre-wrap font-[sans-serif]'}>{markdown}</ReactMarkdown>;
+  return (
+    <div className={className + ' whitespace-pre-wrap font-[sans-serif]'}>
+      <ReactMarkdown 
+        components={{ 
+          a: Link, 
+          h1: h1, 
+          h2: h2, 
+          h3: h3, 
+          h4: h4, 
+          p: p, 
+          code: code, 
+          blockquote: blockquote, 
+          pre: pre, 
+          img: img, 
+          ol: ol, 
+          ul: ul, 
+          li: li 
+        }}
+      >
+        {markdown}
+      </ReactMarkdown>
+    </div>
+  );
 };
 
 export default React.memo(MarkdownReader);

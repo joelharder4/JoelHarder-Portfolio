@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ScrollingImages from '../components/ScrollingImages';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import logos from '../logos';
+import logos from '../tools/logos';
 
 const Home = () => {
   const navigate = useNavigate();

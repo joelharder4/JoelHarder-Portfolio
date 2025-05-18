@@ -6,8 +6,6 @@ import About from './pages/About.jsx';
 import Projects from './pages/Projects.jsx';
 import Stories from './pages/Stories.jsx'
 import StoryPage from './pages/StoryPage.jsx';
-import Reports from './pages/Reports.jsx';
-import ReportPage from './pages/ReportPage.jsx';
 import { Route, Routes } from 'react-router-dom';
 import ProjectPage from './pages/ProjectPage.jsx';
 
@@ -26,8 +24,8 @@ const App = () => {
             <Route path="projects/:projectName" element={<ProjectPage />} />
             <Route path="stories" element={<Stories />} />
             <Route path="stories/:storyId" element={<StoryPage />} />
-            <Route path="reports" element={<Reports />} />
-            <Route path="reports/:reportNum" element={<ReportPage />} />
+            {/* <Route path="reports" element={<Reports />} />
+            <Route path="reports/:reportNum" element={<ReportPage />} /> */}
           </Route>
         </Routes>
         <Footer/>
