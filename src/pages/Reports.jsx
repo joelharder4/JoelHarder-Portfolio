@@ -1,4 +1,3 @@
-import '../styles/Stories.css';
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
