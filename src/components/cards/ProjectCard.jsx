@@ -31,16 +31,16 @@ const ProjectCard = ({project = ''}) => {
 						style={{ width: '100%', textDecoration: 'none' }}
 						underline="none"
 					>
-						<p className="text-primary text-xl">
+						<p className="text-primary-text text-xl">
 							{projectInfo['title'] || 'Unnamed Project'}
 						</p>
-						<p className="text-primary text-sm overflow-hidden h-10 opacity-50">
+						<p className="text-primary-text text-sm overflow-hidden h-10 opacity-50">
 							{projectInfo['teaser'] || 'Something went wrong'}
 						</p>
 					</Link>
 				</Grid>
 				<Grid item xs="auto">
-                    <p className="text-primary opacity-50 text-right md:text-xs text-sm">
+                    <p className="text-primary-text opacity-50 text-right md:text-xs text-sm">
                         {projectInfo['date'] || 'Unknown Date'}
                     </p>
 				</Grid>

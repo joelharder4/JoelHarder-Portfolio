@@ -25,7 +25,7 @@ const StoryPage = () => {
           Other Stories
         </Button>
       </div>
-      <div className='w-full justify-center flex text-primary'>
+      <div className='w-full justify-center flex text-primary-text'>
         <div className='md:w-[70vw] lg:w-[55vw] xl:w-[45vw] w-[90vw]'>
           {/* title */}
           <h1 className='text-5xl font-bold py-4 px-12'>{storyInfo['title'] ?? 'Untitled Story'}</h1>

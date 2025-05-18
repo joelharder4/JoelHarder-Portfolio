@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
-@config "../tailwind.config.js";
+@theme {
+  --text-primary-text: #343A40;
+  --text-secondary-text: #6AA9D4;
+  --color-primary: #4195CC;
+  --color-secondary: #007BFF;
+  --color-tertiary: #41CC7A;
+  
+  --font-ibm-mono: 'IBM Plex Mono', monospace;
+  --animation-scroll: scroll 25s linear infinite;
+}
+
+/* @config "../tailwind.config.js"; */
 
 body {
   margin: 0;
@@ -29,4 +40,15 @@ code {
 .animated-gradient {
   background-size: 200% 200%;
   animation: gradient-move 5s linear infinite;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge, Opera */
+  }
 }

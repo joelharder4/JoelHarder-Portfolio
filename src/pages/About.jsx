@@ -267,7 +267,7 @@ const About = () => {
         <HelpOutlineIcon sx={{color: 'rgb(156, 163, 175);'}}/>
       </IconButton>
     </div>
-    <div className='text-primary mt-4 md:mt-0'>
+    <div className='text-primary-text mt-4 md:mt-0'>
       <div className='flex justify-center'>
         <Terminal 
           history={history}

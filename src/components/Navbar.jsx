@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full fixed top-0 h-16 text-primary z-50 bg-white border-b-2">
+    <div className="w-full fixed top-0 h-16 text-primary-text z-50 bg-white border-b-2">
       <div className="flex w-full h-full items-center justify-center">
         <div className="md:w-[80%] w-[95%] h-full flex align-middle items-center">
           <h1 
