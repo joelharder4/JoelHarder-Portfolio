@@ -42,6 +42,11 @@ code {
   animation: gradient-move 5s linear infinite;
 }
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @layer utilities {
   .no-scrollbar {
     scrollbar-width: none; /* Firefox */

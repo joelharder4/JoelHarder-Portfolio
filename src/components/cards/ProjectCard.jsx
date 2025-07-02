@@ -18,14 +18,20 @@ const ProjectCard = ({project = ''}) => {
 	const linkTo = '/projects/' + project.toString();
 
 	return (
-		<Grid item xs={4}>
-			<Grid container spacing={2} sx={{fontFamily: ['sans-serif']}}>
-				<Grid item xs={12}>
-					<ButtonBase sx={{ width: '100%', height: '20rem', borderRadius: '2%' }} href={linkTo}>
+			<Grid container spacing={2} sx={{fontFamily: ['sans-serif'], width: '100%'}}>
+				<Grid item xs={12} sx={{ width: '100%' }}>
+					<ButtonBase sx={{
+						width: '100%',
+						height: '15rem',
+						'@media (max-width: 500px)': {
+							height: '10rem'
+						},
+						borderRadius: '2%'
+					}} href={linkTo} >
 						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md border-2' />
 					</ButtonBase>
 				</Grid>
-				<Grid item xs>
+				<Grid item xs={12}>
 					<Link 
 						to={linkTo}
 						style={{ width: '100%', textDecoration: 'none' }}
@@ -34,18 +40,16 @@ const ProjectCard = ({project = ''}) => {
 						<p className="text-primary-text text-xl">
 							{projectInfo['title'] || 'Unnamed Project'}
 						</p>
-						<p className="text-primary-text text-sm overflow-hidden h-10 opacity-50">
+						<p className="text-primary-text text-sm mb-1 opacity-50">
 							{projectInfo['teaser'] || 'Something went wrong'}
 						</p>
 					</Link>
-				</Grid>
-				<Grid item xs="auto">
-                    <p className="text-primary-text opacity-50 text-right md:text-xs text-sm">
+
+                    <p className="text-primary-text opacity-50 md:text-xs text-sm">
                         {projectInfo['date'] || 'Unknown Date'}
                     </p>
 				</Grid>
 			</Grid>
-		</Grid>
 	);
 };
 

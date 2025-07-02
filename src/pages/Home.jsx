@@ -20,7 +20,7 @@ const Home = () => {
                 </font>
               </p>
               <p className="px-12 pb-12 text-xl lg:text-2xl">
-                I am a <font className='bg-gradient-to-r from-secondary via-primary/70 to-secondary bg-clip-text text-transparent animated-gradient' style={{ animationDelay: '2000ms' }}>Computer Science</font> Student at the University of Guelph, and a Software Developer interested in front-end.
+                I am a Computer Science Student at the University of Guelph, and a Software Developer interested in front-end.
               </p>
             </div>
             <div className='w-full flex flex-row items-center justify-center gap-6 mt-4'>
@@ -43,7 +43,7 @@ const Home = () => {
           </div>
           <div className="max-w-96 md:w-fit w-[80vw] md:mr-12">
             <img
-              alt="A picture of Joel Harder (as the Rizz God)"
+              alt="A picture of Joel Harder"
               src="/img/rizz_god.jpg"
               className="relative z-10 drop-shadow-[25px_30px_0px_rgba(65,149,204,1)]"
             />
