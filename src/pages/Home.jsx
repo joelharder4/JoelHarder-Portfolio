@@ -3,7 +3,9 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ScrollingImages from '../components/ScrollingImages';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import DownloadIcon from '@mui/icons-material/Download';
 import logos from '../tools/logos';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,7 +15,8 @@ const Home = () => {
       <div className="w-full min-h-[100vh] pb-8">
         <div className="w-fit flex md:flex-row flex-col-reverse lg:gap-16 gap-12 items-center mx-auto md:pt-[30vh] pt-[15vh]">
           <div className='md:w-full w-[90%] flex flex-col md:ml-8 items-center'>
-            <div className="bg-gray-200 md:max-w-[700px] w-full">
+            <motion.div className="bg-gray-200 md:max-w-[700px] w-full" initial={{ opacity: 0, x: -1000 }}
+              animate={{ opacity: 1, x: 0 }}>
               <p className="px-12 pt-12 text-5xl lg:text-7xl">
                 Hi! I&apos;m <font className='bg-gradient-to-r from-secondary via-primary/70 to-secondary bg-clip-text text-transparent animated-gradient'>
                   Joel Harder
@@ -22,30 +25,38 @@ const Home = () => {
               <p className="px-12 pb-12 text-xl lg:text-2xl">
                 I am a Computer Science Student at the University of Guelph, and a Software Developer interested in front-end.
               </p>
-            </div>
-            <div className='w-full flex flex-row items-center justify-center gap-6 mt-4'>
+            </motion.div>
+            <motion.div 
+              className='w-full flex flex-row items-center justify-center gap-6 mt-4'
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+            >
               <Button
                 variant='contained'
-                color='primary'
-                onClick={() => {navigate('/about')}}
-              >
-                About Me
-              </Button>
-              <Button
-                variant='outlined'
                 color='primary'
                 onClick={() => {navigate('/projects')}}
               >
                 My Projects →
               </Button>
-            </div>
-            
+              <Button
+                variant='outlined'
+                color='primary'
+                startIcon={<DownloadIcon />}
+                download
+                component='a'
+                href='/files/Joel_Harder_Resume.pdf'
+              >
+                Resume
+              </Button>
+            </motion.div>
           </div>
-          <div className="max-w-96 md:w-fit w-[80vw] md:mr-12">
-            <img
+          <div className="max-w-96 z-10">
+            <motion.img
               alt="A picture of Joel Harder"
-              src="/img/rizz_god.jpg"
-              className="relative z-10 drop-shadow-[25px_30px_0px_rgba(65,149,204,1)]"
+              src="/img/joel_headshot.jpeg"
+              className="relative drop-shadow-[25px_30px_0px_rgba(65,149,204,1)]"
+              initial={{ scale: 0, x: 300 }}
+              animate={{ scale: 1, x: 0 }}
             />
           </div>
         </div>
