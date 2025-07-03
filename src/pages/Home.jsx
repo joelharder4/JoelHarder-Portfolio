@@ -5,7 +5,7 @@ import ScrollingImages from '../components/ScrollingImages';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import DownloadIcon from '@mui/icons-material/Download';
 import logos from '../tools/logos';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Home = () => {
   const navigate = useNavigate();
