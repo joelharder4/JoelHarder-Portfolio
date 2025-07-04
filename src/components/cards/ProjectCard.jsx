@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
+import { motion } from 'motion/react';
 
 const ProjectCard = ({project = ''}) => {
 	const [projectInfo, setProjectInfo] = useState({});
@@ -18,6 +19,7 @@ const ProjectCard = ({project = ''}) => {
 	const linkTo = '/projects/' + project.toString();
 
 	return (
+		<motion.div whileHover={{ scale: 1.02 }}>
 			<Grid container spacing={2} sx={{fontFamily: ['sans-serif'], width: '100%'}}>
 				<Grid item xs={12} sx={{ width: '100%' }}>
 					<ButtonBase sx={{
@@ -45,11 +47,12 @@ const ProjectCard = ({project = ''}) => {
 						</p>
 					</Link>
 
-                    <p className="text-primary-text opacity-50 md:text-xs text-sm">
-                        {projectInfo['date'] || 'Unknown Date'}
-                    </p>
+					<p className="text-primary-text opacity-50 md:text-xs text-sm">
+						{projectInfo['date'] || 'Unknown Date'}
+					</p>
 				</Grid>
 			</Grid>
+		</motion.div>
 	);
 };
 
