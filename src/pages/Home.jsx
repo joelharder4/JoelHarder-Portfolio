@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from "antd";
-import { DownloadOutlined } from '@ant-design/icons';
+import { DownloadOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import ScrollingImages from '../components/ScrollingImages';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import logos from '../tools/logos';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -51,20 +50,22 @@ const Home = () => {
               </Button>
             </motion.div>
           </div>
-          <div className="w-70 lg:w-96 flex-shrink-0 relative z-10">
-            <motion.img
+          <motion.div
+            className="w-70 lg:w-96 flex-shrink-0 relative z-10"
+            initial={{ scale: 0, x: 300 }}
+            animate={{ scale: 1, x: 0 }}
+            whileHover={{ scale: 1.02 }}
+            onClick={() => setShowMustache(!showMustache)}
+          >
+            <img
               alt="A picture of Joel Harder"
               src="/img/joel_headshot.jpeg"
-              className="relative drop-shadow-[25px_30px_0px_rgba(65,149,204,1)]"
-              initial={{ scale: 0, x: 300 }}
-              animate={{ scale: 1, x: 0 }}
-              whileHover={{ scale: 1.02 }}
-              onClick={() => setShowMustache(!showMustache)}
+              className="relative drop-shadow-[20px_25px_0px_rgba(65,149,204,1)]"
             />
             <AnimatePresence>
               {showMustache && (
                 <motion.div
-                className="absolute top-[40%] left-1/2 -translate-x-5/7 w-1/4 pointer-events-none"
+                className="absolute top-[40%] left-1/2 -translate-x-8/11 w-1/4 pointer-events-none"
                 initial={{ opacity: 0.6, clipPath: 'inset(0 100% 0 0)' }}
                 animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)' }}
                 exit={{ opacity: 0.8, clipPath: 'inset(0 100% 0 0)' }}
@@ -78,11 +79,11 @@ const Home = () => {
               </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className='absolute left-1/2 -translate-x-1/2 -mt-12 animate-bounce hidden md:block'>
-        <ArrowDownwardIcon />
+        <ArrowDownOutlined />
       </div>
       <ScrollingImages
         images={logos}
