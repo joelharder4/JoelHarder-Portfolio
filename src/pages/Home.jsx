@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from '@mui/material';
+import { Button } from "antd";
+import { DownloadOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import ScrollingImages from '../components/ScrollingImages';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import DownloadIcon from '@mui/icons-material/Download';
 import logos from '../tools/logos';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -33,18 +33,18 @@ const Home = () => {
               animate={{ scale: 1 }}
             >
               <Button
-                variant='contained'
-                color='primary'
+                type='primary'
+                size='large'
                 onClick={() => {navigate('/projects')}}
               >
                 My Projects →
               </Button>
               <Button
                 variant='outlined'
-                color='primary'
-                startIcon={<DownloadIcon />}
+                type='default'
+                icon={<DownloadOutlined />}
+                size={'large'}
                 download
-                component='a'
                 href='/files/Joel_Harder_Resume.pdf'
               >
                 Resume
