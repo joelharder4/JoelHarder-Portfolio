@@ -19,7 +19,7 @@ const Home = () => {
             <motion.div className="bg-gray-200 md:max-w-[700px] w-full" initial={{ opacity: 0, x: -1000 }}
               animate={{ opacity: 1, x: 0 }}>
               <p className="px-12 pt-12 text-5xl lg:text-7xl">
-                Hi! I&apos;m <font className='bg-gradient-to-r from-secondary via-primary/70 to-secondary bg-clip-text text-transparent animated-gradient'>
+                Hi! I&apos;m <font className='bg-gradient-to-r from-secondary via-primary/90 to-secondary bg-clip-text text-transparent animated-gradient'>
                   Joel Harder
                 </font>
               </p>
