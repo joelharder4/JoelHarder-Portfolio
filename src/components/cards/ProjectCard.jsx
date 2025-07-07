@@ -29,8 +29,13 @@ const ProjectCard = ({project = ''}) => {
 							height: '10rem'
 						},
 						borderRadius: '2%'
-					}} href={linkTo} >
-						<img alt="complex" src={projectInfo['thumbnail']} className='m-0 block object-cover h-full w-full rounded-md border-2' />
+					}} href={linkTo}
+					>
+						<img 
+                            alt="complex"
+                            src={projectInfo['thumbnail']}
+                            className='m-0 block object-cover h-full w-full rounded-md border-2 transition-transform duration-300 ease-out hover:scale-103'
+                        />
 					</ButtonBase>
 				</Grid>
 				<Grid item xs={12}>
