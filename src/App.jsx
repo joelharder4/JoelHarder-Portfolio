@@ -8,6 +8,7 @@ import Stories from './pages/Stories.jsx'
 import StoryPage from './pages/StoryPage.jsx';
 import { Route, Routes } from 'react-router-dom';
 import ProjectPage from './pages/ProjectPage.jsx';
+import NotFound404 from './pages/NotFound404.jsx';
 
 
 const App = () => {
@@ -16,17 +17,17 @@ const App = () => {
       <div className='flex flex-col min-h-[100vh]'>
         <Navbar/>
         <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="home" index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/:projectName" element={<ProjectPage />} />
-            <Route path="stories" element={<Stories />} />
-            <Route path="stories/:storyId" element={<StoryPage />} />
-            {/* <Route path="reports" element={<Reports />} />
-            <Route path="reports/:reportNum" element={<ReportPage />} /> */}
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="home" index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:projectName" element={<ProjectPage />} />
+          <Route path="stories" element={<Stories />} />
+          <Route path="stories/:storyId" element={<StoryPage />} />
+          {/* <Route path="reports" element={<Reports />} />
+          <Route path="reports/:reportNum" element={<ReportPage />} /> */}
+          <Route path="*" element={<NotFound404 />} />
         </Routes>
         <Footer/>
       </div>

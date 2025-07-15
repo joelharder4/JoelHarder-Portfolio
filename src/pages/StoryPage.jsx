@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import { Button } from 'antd';
 import MarkdownReader from '../tools/MarkdownReader';
 import { fetchJson } from '../tools/fetchJson';
-
+import { useNavigate } from 'react-router-dom';
 
 const StoryPage = () => {
   const { storyId } = useParams();
   const filePath = `/stories/${storyId}/${storyId}.json`;
   const [storyInfo, setStoryInfo] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchJson(filePath)
@@ -21,7 +22,13 @@ const StoryPage = () => {
   return (
     <div className='w-full m-0'>
       <div className='mt-20 md:w-[70vw] lg:w-[50vw] w-[90vw] mx-auto'>
-        <Button variant="text" sx={{zIndex: 3, 'textTransform': 'none', float: 'right'}} href="/stories">
+        <Button
+          color='primary'
+          variant='link'
+          size='large'
+          onClick={() => navigate('/stories')}
+          className='float-right'
+        >
           Other Stories
         </Button>
       </div>

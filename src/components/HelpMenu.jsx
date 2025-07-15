@@ -1,4 +1,5 @@
-import { Dialog, DialogActions, Button, DialogTitle, DialogContentText, DialogContent } from '@mui/material';
+import { Dialog, DialogActions, DialogTitle, DialogContentText, DialogContent } from '@mui/material';
+import { Button } from "antd";
 
 const HelpMenu = ({helpOpen, setHelpOpen}) => {
     return (<Dialog
@@ -45,7 +46,14 @@ const HelpMenu = ({helpOpen, setHelpOpen}) => {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={() => {setHelpOpen(false)}}>Close</Button>
+          <Button
+            color='default'
+            variant='text'
+            size='large'
+            onClick={() => setHelpOpen(false)}
+          >
+            Close
+          </Button>
         </DialogActions>
     </Dialog>
     );

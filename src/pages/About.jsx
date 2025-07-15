@@ -3,8 +3,8 @@ import Terminal from '../components/emulator/Terminal.jsx';
 import useTerminal from '../tools/useTerminal.jsx';
 import ViewFileModal from '../components/ViewFileModal.jsx';
 import FullScreenGif from '../components/FullscreenGif.jsx';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import { IconButton } from '@mui/material';
+import { FloatButton } from 'antd';
+import { QuestionCircleOutlined } from '@ant-design/icons';
 import HelpMenu from '../components/HelpMenu.jsx';
 import BackgroundAudioPlayer from '../tools/BackgroundAudioPlayer.jsx';
 
@@ -261,23 +261,25 @@ const About = () => {
       fileContent={popupContent}
       type={popupName?.endsWith('.mp3') ? 'audio' : 'default'}
     />
-    <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] flex flex-row mx-auto justify-end items-center pt-16 md:pt-28 xl:pt-16 z-[40]">
-      <p className='text-gray-400 hidden md:block'>How does this work?</p>
-      <IconButton onClick={() => {setHelpOpen(true)}}>
-        <HelpOutlineIcon sx={{color: 'rgb(156, 163, 175);'}}/>
-      </IconButton>
-    </div>
-    <div className='text-primary-text mt-4 md:mt-0'>
-      <div className='flex justify-center'>
-        <Terminal 
-          history={history}
-          ref={setTerminalRef}
-          commands={terminalCommands}
-          prompt={`${currentDir} $ `}
-          pushToHistory={pushToHistory}
-          commandAutocompletes={commandAutocompletes}
-        />
-      </div>
+    <FloatButton 
+      icon={<QuestionCircleOutlined />}
+      type='default'
+      onClick={() => setHelpOpen(true)}
+      tooltip={{
+        title: 'Help',
+        placement: 'left'
+      }}
+      style={{ insetBlockEnd: 120, insetInlineEnd: 40 }}
+    />
+    <div className='text-primary-text flex justify-center pt-32 md:pt-24'>
+      <Terminal 
+        history={history}
+        ref={setTerminalRef}
+        commands={terminalCommands}
+        prompt={`${currentDir} $ `}
+        pushToHistory={pushToHistory}
+        commandAutocompletes={commandAutocompletes}
+      />
     </div>
 
     <HelpMenu helpOpen={helpOpen} setHelpOpen={setHelpOpen}/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button } from 'antd';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
 const ViewFileModal = ({ open, onClose, title, fileContent, type }) => {
@@ -18,7 +18,7 @@ const ViewFileModal = ({ open, onClose, title, fileContent, type }) => {
       </DialogContent>
       <DialogActions>
         <Button
-          variant='contained'
+          variant='solid'
           color='primary'
           onClick={onClose}
         >
