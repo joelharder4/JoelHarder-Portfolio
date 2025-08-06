@@ -4,6 +4,7 @@ import StoryCard from '../components/cards/StoryCard';
 const Stories = () => {
 
 	const projects = [
+    'TheDragonSlayer',
     'FutureOfAI',
 		'ChatGPTIgnoreYou',
 		'AIForDND',
