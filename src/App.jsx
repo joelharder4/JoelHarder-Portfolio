@@ -8,7 +8,6 @@ import Stories from './pages/Stories.jsx'
 import StoryPage from './pages/StoryPage.jsx';
 import { Route, Routes } from 'react-router-dom';
 import ProjectPage from './pages/ProjectPage.jsx';
-import NotFound404 from './pages/NotFound404.jsx';
 
 
 const App = () => {
@@ -27,7 +26,7 @@ const App = () => {
           <Route path="stories/:storyId" element={<StoryPage />} />
           {/* <Route path="reports" element={<Reports />} />
           <Route path="reports/:reportNum" element={<ReportPage />} /> */}
-          <Route path="*" element={<NotFound404 />} />
+          {/* <Route path="*" element={<NotFound404 />} /> */}
         </Routes>
         <Footer/>
       </div>

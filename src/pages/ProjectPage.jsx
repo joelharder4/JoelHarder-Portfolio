@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import MarkdownReader from '../tools/MarkdownReader';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import NotFound404 from './NotFound404';
 
 const ProjectPage = () => {
   const { projectName } = useParams();
@@ -25,16 +26,18 @@ const ProjectPage = () => {
       .catch(() => setFileExists(false));
   }, [projectName, filePath]);
 
+
   const renderContent = () => {
     console.log(fileExists, filePath);
     if (fileExists === null) {
-      return <div>Loading...</div>; // Or a spinner component
+      return <div>Loading...</div>;
     }
     if (fileExists) {
       return <MarkdownReader filePath={filePath} className='p-12'/>;
     }
-    return <div>404 - Project Not Found</div>; // Or a dedicated 404 component
+    return <NotFound404 />;
   };
+
 
   return (
     <div className='w-full m-0 text-primary-text'>
