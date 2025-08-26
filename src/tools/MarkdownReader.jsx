@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Image } from 'antd';
 
 const MarkdownReader = ({ filePath, className = '' }) => {
   const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
-    console.log('fetching');
     fetch(filePath)
       .then(response => response.text())
       .then(text => {setMarkdown(text)})
@@ -52,11 +52,10 @@ const MarkdownReader = ({ filePath, className = '' }) => {
   };
 
   const p = ({children}) => {
-    return (
-      <p className='md:text-lg text-sm text-justify'>
-        {children}
-      </p>
-    );
+    if (typeof children === 'object' && children?.key?.startsWith("img")) {
+      return <>{children}</>;
+    }
+    return <p className="md:text-lg text-sm text-justify">{children}</p>;
   };
 
   const code = ({children}) => {
@@ -83,11 +82,15 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   };
 
-  const img = ({src, children}) => {
+  const img = ({src, alt}) => {
     return (
-      <img src={src} className='mx-auto'>
-        {children}
-      </img>
+      <div className="block my-2 rounded border border-gray-200 bg-white shadow-sm overflow-hidden [&>.ant-image]:!block">
+        <Image
+          src={src}
+          alt={alt}
+          className="!block w-full"
+        />
+      </div>
     );
   };
 

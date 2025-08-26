@@ -14,11 +14,9 @@ As ChatGPT has become an integral part of our daily lives, we found that many we
 Our project "Study Buddy" allows users to upload their notes to our advanced database so that ChatGPT can help develop and create various test questions to help promote their learning. By allowing users to share and explore the test creations of others, our website provides an all-inclusive website that can help them prepare themselves for their future tests and exams. All users have to do is paste (or type) in notes about any subject and Study Buddy will generate a quiz based on the information in the notes.
 
 ## Screenshots
-![A screenshot of the home page](/projects/StudyBuddy/home_page.png?raw=true "Home Page")
-#### *The Home Page*
+![The Home Page](/projects/StudyBuddy/home_page.png?raw=true "Home Page")
 
-![A screenshot of the test creation page](/projects/StudyBuddy/create_test.png?raw=true "Create Test Page")
-#### *The Create Test Page*
+![The Test Creation Page](/projects/StudyBuddy/create_test.png?raw=true "Create Test Page")
 
 ## After the Hackathon
 I mentioned in the project background that I came back to the project in July/August 2024 and continued development of the project solo. In reality, it wasn't so much 'continued' as I had to rebuild and redesign the entire application, which I did. It turns out that building an entire full-stack application in 36 hours doesn't produce very clean or efficient code, who would have thought? 

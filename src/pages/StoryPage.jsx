@@ -39,7 +39,6 @@ const StoryPage = () => {
 
 
   const renderContent = () => {
-    console.log(fileExists, filePath);
     if (fileExists === null) {
       return <div>Loading...</div>;
     }
