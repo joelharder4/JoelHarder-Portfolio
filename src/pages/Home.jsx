@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ScrollingImages from '../components/ScrollingImages';
 import logos from '../tools/logos';
 import { motion, AnimatePresence } from 'motion/react';
+import Timeline from '../components/Timeline';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -85,9 +86,14 @@ const Home = () => {
       <div className='absolute left-1/2 -translate-x-1/2 -mt-12 animate-bounce hidden md:block'>
         <ArrowDownOutlined />
       </div>
+
       <ScrollingImages
         images={logos}
       />
+
+      {/* <hr className='w-1/3 mx-auto border-gray-300 my-6'/>
+
+      <Timeline /> */}
     </div>
   );
 };
