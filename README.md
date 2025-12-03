@@ -1,10 +1,38 @@
-# Personal Website
-
-This is the source code for my personal website hosted on [joelharder.ca](https://joelharder.ca/). I purchased and currently own the domain and host this website using Google's Firebase hosting service.
+# Joel Harder's Portfolio
 
 **Author:** Joel Harder <br>
-**Last Edited:** February 8, 2024
+**Last Edited:** December 3rd, 2025
 
-## Compiling and Running Locally
+This is the source code for my personal website hosted on [joelharder.ca](https://joelharder.ca/). I currently own the domain and host this website on Google Firebase.
 
-TODO
+## Requirements
+
+- [Node.js](https://nodejs.org/) (v22 or higher)
+
+
+## Running Locally
+
+Install all dependencies:
+```bash
+npm install
+```
+
+To run for development with hot reload:
+```bash
+npm run dev
+```
+
+
+## Deploying
+
+Log in to the firebase CLI:
+```bash
+npx firebase login
+```
+
+Configure `firebase.json` and `.firebaserc`.
+
+Then build and deploy:
+```bash
+npm run deploy
+```
