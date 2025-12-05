@@ -1,7 +1,10 @@
 {
     "id": "DiscordBot",
     "title": "Discord Bot",
+    "author": "Joel Harder",
+    "collaborators": "",
     "teaser": "Javascript, Node.js, Discord.js, Clash Royale API",
     "date": "October 12, 2024",
-    "thumbnail": "/img/thumbnails/discord_bot.jpg"
+    "thumbnail": "/img/thumbnails/discord_bot.jpg",
+    "link": "https://github.com/joelharder4/DiscordBotClashRoyale/"
 }

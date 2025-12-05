@@ -19,44 +19,45 @@ const ProjectCard = ({project = ''}) => {
 	const linkTo = '/projects/' + project.toString();
 
 	return (
-		<motion.div whileHover={{ scale: 1.02 }}>
-			<Grid container spacing={2} sx={{fontFamily: ['sans-serif'], width: '100%'}}>
-				<Grid item xs={12} sx={{ width: '100%' }}>
-					<ButtonBase sx={{
-						width: '100%',
-						height: '15rem',
-						'@media (max-width: 500px)': {
-							height: '10rem'
-						},
-						borderRadius: '2%'
-					}} href={linkTo}
-					>
-						<img 
-                            alt="complex"
-                            src={projectInfo['thumbnail']}
-                            className='m-0 block object-cover h-full w-full rounded-md border-2 transition-transform duration-300 ease-out hover:scale-103'
-                        />
-					</ButtonBase>
-				</Grid>
-				<Grid item xs={12}>
-					<Link 
-						to={linkTo}
-						style={{ width: '100%', textDecoration: 'none' }}
-						underline="none"
-					>
-						<p className="text-primary-text text-xl">
-							{projectInfo['title'] || 'Unnamed Project'}
-						</p>
-						<p className="text-primary-text text-sm mb-1 opacity-50">
-							{projectInfo['teaser'] || 'Something went wrong'}
-						</p>
-					</Link>
-
-					<p className="text-primary-text opacity-50 md:text-xs text-sm">
-						{projectInfo['date'] || 'Unknown Date'}
-					</p>
-				</Grid>
-			</Grid>
+		<motion.div
+			className='flex flex-row w-full'
+			whileHover={{ scale: 1.01 }}
+		>
+			<div className='w-full'>
+				<ButtonBase sx={{
+					width: '100%',
+					height: '12rem',
+					'@media (max-width: 1000px)': {
+						height: '7rem'
+					},
+					borderRadius: '2%'
+				}} href={linkTo}
+				>
+					<img
+						alt="complex"
+						src={projectInfo['thumbnail']}
+						className='m-0 block object-cover h-full w-full rounded-md border-2 transition-transform duration-300 ease-out hover:scale-101'
+					/>
+				</ButtonBase>
+			</div>
+      <Link 
+        to={linkTo}
+        style={{ width: '100%', textDecoration: 'none' }}
+        underline="none"
+      >
+        <div className='w-full ml-4 mt-2'>
+          
+          <p className="text-primary-text text-2xl">
+            {projectInfo['title'] || 'Unnamed Project'}
+          </p>
+          <p className="text-primary-text text-sm mb-1 opacity-50">
+            {projectInfo['teaser'] || 'Something went wrong'}
+          </p>
+          <p className="text-primary-text opacity-50 md:text-xs text-sm">
+            {projectInfo['date'] || 'Unknown Date'}
+          </p>
+        </div>
+      </Link>
 		</motion.div>
 	);
 };

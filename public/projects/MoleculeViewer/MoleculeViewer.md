@@ -1,10 +1,3 @@
-# Molecule Viewer
-> Created for Course: **CIS\*2750**
-> Last Edited: **April 5, 2023**
-> Github: [github.com/joelharder4/MoleculeViewer](https://github.com/joelharder4/MoleculeViewer/)
-
-## About this Project
-
 The goal of this project was to develop a full stack application that allows users to upload molecule files, save them in a database, and then be able to view them in three dimensions. 
 
 This is the final project for the course *CIS\*2750* at the University of Guelph, sometimes called *The Angel of Death* for it's reputation as a difficult course.

@@ -1,7 +1,10 @@
 {
     "id": "MoleculeViewer",
     "title": "Molecule Viewer",
+    "author": "Joel Harder",
+    "collaborators": "",
     "teaser": "Python, C, Javscript, HTML, CSS",
     "date": "April 5, 2023",
-    "thumbnail": "/img/thumbnails/molecule_viewer.png"
+    "thumbnail": "/img/thumbnails/molecule_viewer.png",
+    "link": "https://github.com/joelharder4/MoleculeViewer/"
 }

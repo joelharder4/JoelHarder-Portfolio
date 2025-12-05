@@ -21,11 +21,11 @@ const Projects = () => {
 				This page demonstrates the various coding projects that I have created or significantly contributed to. This includes University Assignments, Personal Projects, Video Game Mods, and Hackathon projects. It takes a lot of time and work to write everything so this page is a constant work in progress and it may not be the most up to date.
 				</p>
 
-				<div className="mt-20 lg:w-[60vw] md:w-[85vw] w-[70vw]">
+				<div className="mt-20 xl:w-[50vw] lg:w-[60vw] md:w-[75vw] w-[70vw] xl:min-w-[1000px] lg:min-w-[900px] md:min-w-[700px] font-['Lalezar']">
 					<h1 className="w-full items-left text-left z-10 text-2xl">Projects</h1>
 					<hr className="w-full border-t-2  border-[#363636]"/>
 
-					<div className="mt-4 w-full grid md:grid-cols-2 grid-cols-1 gap-8 flex">
+					<div className="mt-4 w-full grid md:grid-cols-2 grid-cols-1 gap-8">
 						{projects.map((project) => {
 							return (
 								<ProjectCard key={project} project={project}/>

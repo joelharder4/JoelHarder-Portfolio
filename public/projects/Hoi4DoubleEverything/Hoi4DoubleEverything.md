@@ -1,10 +1,3 @@
-# Hoi4 Mod: Double Everything
-> Game: **Hearts of Iron IV**
-> Last Edited: **April 5, 2023**
-> Steam Workshop: [steamcommunity.com](https://steamcommunity.com/sharedfiles/filedetails/?id=3258563107)
-
-## Background
-
 Hearts of Iron IV is a grand strategy wargame that takes place during World War II. You take control of a nation from the time period, build up industrial and military power, establish aliances, and even offers non-fiction alternative history options. The amount of depth to the game can be intimidating to new players, but it's also what I love about it. The best part is that every single feature in it can be modded to add, change, or completely overhaul the game. This is one of the many mods that I have made for Hearts of Iron IV, and I only plan to make more in the future!
 
 ## Features

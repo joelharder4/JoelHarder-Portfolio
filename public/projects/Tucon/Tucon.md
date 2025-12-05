@@ -1,13 +1,3 @@
-# Tutor Connect (Tucon)
-> Author: **Joel Harder**
-> Created for Course: **CIS\*3750**
-> Last Edited: **March 25, 2024**
-> Team Members: **Myron Ladyjenko, Eric Buys, Ben Sengupta, Joshua Fonseca, Gavin Eugenio**
-> Website: [tucon.ca](https://tucon.ca/)
-> Github: [github.com/tutor-conn/tucon](https://github.com/tutor-conn/tucon)
-
-## About this Project
-
 The goal of this project was to give University students a fast and intuitive platform to discover tutors or be discovered as a tutor.
 
 This is the final project for the course *CIS\*3750* at the University of Guelph, which is a course focused on learning the entire Software Development process starting from thinking of an idea, to planning, designing, and then finally implementation and reflection.

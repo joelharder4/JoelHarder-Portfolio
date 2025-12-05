@@ -1,10 +1,3 @@
-# Study Buddy
-> Author: **Joel Harder**
-> Created for: **Hawkhacks 2024**
-> Team Members: **Daniel Wang, Kirisan Suthanthireswaran**
-> Github: [github.com/DanWang725/Hawkhacks-2024](https://github.com/DanWang725/Hawkhacks-2024)
-
-## Background
 This project was created by me and 2 others for the Hawkhacks 2024 hackathon. The hackathon took place in person at Wilfred Laurier University from May 17th to May 19th. We had 36 hours to create a project that would make a positive impact. There wasn't a whole lot of time to sleep, but it was a great experience where I learned a lot and was able to build this amazing project that I am very proud of. A couple of months after the hackathon, in July/August 2024, I came back to the project and continued development of it solo where I basically rebuilt it from scratch.
 
 ## Inspirations

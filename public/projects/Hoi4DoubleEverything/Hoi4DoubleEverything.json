@@ -1,7 +1,10 @@
 {
     "id": "Hoi4DoubleEverything",
-    "title": "Double Everything - HOI4 Mod",
+    "title": "Double Everything - Hoi4 Mod",
+    "author": "Joel Harder",
+    "collaborators": "",
     "teaser": "HOI4, Python, Modding",
     "date": "June 2, 2024",
-    "thumbnail": "/img/thumbnails/hoi4_double_everything.png"
+    "thumbnail": "/img/thumbnails/hoi4_double_everything.png",
+    "steamLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=3258563107"
 }

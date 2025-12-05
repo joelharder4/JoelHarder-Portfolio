@@ -14,7 +14,7 @@ const Stories = () => {
 	]
 
 	return (
-    <div className="stories text-primary-text pb-16">
+    <div className= "text-primary-text pb-16">
       <div className="flex flex-col items-center h-min">
         <h1 className="drop-shadow-xl mt-40 mb-6 md:text-8xl text-6xl text-center font-['Lalezar']">Blog Stories</h1>
         <p className="text-center font-['Lalezar'] md:text-xl text-lg md:w-[60vw] w-[85vw]">

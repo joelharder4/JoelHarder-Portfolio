@@ -1,7 +1,10 @@
 {
     "id": "Tucon",
     "title": "Tutor Connect",
+    "author": "Joel Harder",
+    "collaborators": "Myron Ladyjenko, Eric Buys, Ben Sengupta, Joshua Fonseca, Gavin Eugenio",
     "teaser": "Typescript, Next.js, Tailwind css, Python, Google Cloud Platform, Redis",
     "date": "March 25, 2024",
-    "thumbnail": "/img/thumbnails/tucon.png"
+    "thumbnail": "/img/thumbnails/tucon.png",
+    "link": "https://github.com/tutor-conn/tucon"
 }

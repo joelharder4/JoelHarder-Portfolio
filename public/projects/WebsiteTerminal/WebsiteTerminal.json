@@ -1,7 +1,10 @@
 {
     "id": "WebsiteTerminal",
     "title": "React.js Command Line Interface",
+    "author": "Joel Harder",
+    "collaborators": "",
     "teaser": "This is a teaser that is kind of long",
     "date": "January 26, 2025",
-    "thumbnail": "/img/thumbnails/joel-harder-sh.png"
+    "thumbnail": "/img/thumbnails/joel-harder-sh.png",
+    "link": "https://github.com/joelharder4/JoelHarder-Portfolio/blob/main/src/components/emulator/Terminal.jsx"
 }

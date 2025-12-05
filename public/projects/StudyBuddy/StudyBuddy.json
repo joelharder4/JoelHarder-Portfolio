@@ -1,7 +1,10 @@
 {
     "id": "StudyBuddy",
     "title": "Study Buddy",
+    "author": "Joel Harder",
+    "collaborators": "Daniel Wang, Kirisan Suthanthireswaran",
     "teaser": "Python, Javascript, React, OpenAI API",
     "date": "May 19, 2024",
-    "thumbnail": "/img/thumbnails/study_buddy.jpg"
+    "thumbnail": "/img/thumbnails/study_buddy.jpg",
+    "link": "https://github.com/joelharder4/Study-Buddy/"
 }
