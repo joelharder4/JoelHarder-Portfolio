@@ -19,7 +19,7 @@ const ProjectCard = ({project = ''}) => {
 
 	return (
 		<motion.div
-			className='w-full h-40'
+			className='w-full md:h-40 h-30'
 			whileHover={{ scale: 1.02 }}
 		>
       <Link 
@@ -30,7 +30,7 @@ const ProjectCard = ({project = ''}) => {
         <img
           alt='Thumbnail for project'
           src={projectInfo['thumbnail']}
-          className='m-0 block w-full h-40 object-cover rounded-md border-2'
+          className='m-0 block w-full md:h-40 h-30 object-cover rounded-md border-2'
         />
 
         <div className='mt-2 font-inter'>
@@ -45,41 +45,6 @@ const ProjectCard = ({project = ''}) => {
           </p>
         </div>
       </Link>
-			{/* <div className='w-full'>
-				<ButtonBase sx={{
-					width: '100%',
-					height: '-webkit-fill-available',
-					overflow: 'hidden',
-					// '@media (max-width: 1000px)': {
-					// 	height: '200px'
-					// },
-					borderRadius: '2%'
-				}} href={linkTo}
-				>
-					<img
-						alt='Thumbnail for project'
-						src={projectInfo['thumbnail']}
-						className='m-0 block object-cover h-auto w-full rounded-md border-2'
-					/>
-				</ButtonBase>
-			</div>
-      <Link 
-        to={linkTo}
-        style={{ width: '100%', textDecoration: 'none' }}
-        underline="none"
-      >
-        <div className='w-full ml-4 mt-2 font-inter'>
-          <p className="text-primary-text text-2xl font-bold">
-            {projectInfo['title'] || 'Unnamed Project'}
-          </p>
-          <p className="text-primary-text text-sm mb-1 opacity-50">
-            {projectInfo['teaser'] || 'Something went wrong'}
-          </p>
-          <p className="text-primary-text opacity-50 md:text-xs text-sm">
-            {projectInfo['date'] || 'Unknown Date'}
-          </p>
-        </div>
-      </Link> */}
 	</motion.div>
 	);
 };
