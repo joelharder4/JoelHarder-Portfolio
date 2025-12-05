@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
 import { motion } from 'motion/react';
@@ -20,23 +19,47 @@ const ProjectCard = ({project = ''}) => {
 
 	return (
 		<motion.div
-			className='flex flex-row w-full'
-			whileHover={{ scale: 1.01 }}
+			className='w-full h-40'
+			whileHover={{ scale: 1.02 }}
 		>
-			<div className='w-full'>
+      <Link 
+        to={linkTo}
+        style={{ width: '100%', height: '100%', textDecoration: 'none', display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '12px' }}
+        underline="none"
+      >
+        <img
+          alt='Thumbnail for project'
+          src={projectInfo['thumbnail']}
+          className='m-0 block w-full h-40 object-cover rounded-md border-2'
+        />
+
+        <div className='mt-2 font-inter'>
+          <p className="text-primary-text md:text-2xl text-lg font-bold">
+            {projectInfo['title'] || 'Unnamed Project'}
+          </p>
+          <p className="text-primary-text md:text-sm text-xs mb-1 opacity-50">
+            {projectInfo['teaser'] || 'Something went wrong'}
+          </p>
+          <p className="text-primary-text opacity-50 text-xs">
+            {projectInfo['date'] || 'Unknown Date'}
+          </p>
+        </div>
+      </Link>
+			{/* <div className='w-full'>
 				<ButtonBase sx={{
 					width: '100%',
-					height: '12rem',
-					'@media (max-width: 1000px)': {
-						height: '7rem'
-					},
+					height: '-webkit-fill-available',
+					overflow: 'hidden',
+					// '@media (max-width: 1000px)': {
+					// 	height: '200px'
+					// },
 					borderRadius: '2%'
 				}} href={linkTo}
 				>
 					<img
-						alt="complex"
+						alt='Thumbnail for project'
 						src={projectInfo['thumbnail']}
-						className='m-0 block object-cover h-full w-full rounded-md border-2 transition-transform duration-300 ease-out hover:scale-101'
+						className='m-0 block object-cover h-auto w-full rounded-md border-2'
 					/>
 				</ButtonBase>
 			</div>
@@ -45,9 +68,8 @@ const ProjectCard = ({project = ''}) => {
         style={{ width: '100%', textDecoration: 'none' }}
         underline="none"
       >
-        <div className='w-full ml-4 mt-2'>
-          
-          <p className="text-primary-text text-2xl">
+        <div className='w-full ml-4 mt-2 font-inter'>
+          <p className="text-primary-text text-2xl font-bold">
             {projectInfo['title'] || 'Unnamed Project'}
           </p>
           <p className="text-primary-text text-sm mb-1 opacity-50">
@@ -57,8 +79,8 @@ const ProjectCard = ({project = ''}) => {
             {projectInfo['date'] || 'Unknown Date'}
           </p>
         </div>
-      </Link>
-		</motion.div>
+      </Link> */}
+	</motion.div>
 	);
 };
 
