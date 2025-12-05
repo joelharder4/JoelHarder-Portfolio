@@ -8,6 +8,7 @@
   --color-tertiary: #41CC7A;
   
   --font-ibm-mono: 'IBM Plex Mono', monospace;
+  --font-inter: 'Inter', sans-serif;
   --animation-scroll: scroll 25s linear infinite;
 }
 
