@@ -12,7 +12,7 @@ We implemented Protobufs to solve this, defining our messages once in a single `
 
 We also focused heavily on improving the developer experience. Midway through the project, we encountered a bottleneck where the Flame engine’s lack of hot reload support caused the game to reset completely upon every code save, losing inventory and position data. To increase our velocity, we implemented a system that periodically syncs the player's position to the server. This allowed us to disconnect via hot reload and reconnect exactly where we left off, drastically tightening our feedback loop.
 
-## Challenges & Learning Outcomes
+## Challenges & Solutions
 
 ### Collision Detection
 Working with the Flame engine provided distinct physics challenges, as its native collision API is relatively basic and lacks built-in handling for complex multi-hitbox scenarios, such as a player moving into a corner.
