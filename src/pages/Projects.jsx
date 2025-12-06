@@ -22,7 +22,7 @@ const Projects = () => {
 				This page demonstrates the various coding projects that I have created or significantly contributed to. This includes University Assignments, Personal Projects, Video Game Mods, and Hackathon projects. It takes a lot of time and work to write everything so this page is a constant work in progress and it may not be the most up to date.
 				</p>
 
-				<div className="mt-20 xl:w-[50vw] lg:w-[60vw] w-[75vw] xl:min-w-[1000px] lg:min-w-[900px] md:min-w-[700px] font-['Lalezar']">
+				<div className="mt-20 xl:w-[1000px] lg:w-[60vw] md:w-[50vw] sm:w-[60vw] w-[80vw] lg:min-w-[900px] md:min-w-[500px] font-['Lalezar']">
 					<h1 className="w-full items-left text-left z-10 text-2xl">Projects</h1>
 					<hr className="w-full border-t-2  border-[#363636]"/>
 
