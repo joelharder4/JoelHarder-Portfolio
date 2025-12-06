@@ -14,7 +14,7 @@ const Projects = () => {
 		// 'WordFrequencySearch',
 	]
 
-    return (
+  return (
 		<div className="font-['Lalezar'] text-primary-text min-h-[100vh]">
 			<div className="flex flex-col items-center w-full mb-16">
 				<h1 className="drop-shadow-xl mt-40 mb-6 md:text-8xl text-6xl text-center">Projects</h1>

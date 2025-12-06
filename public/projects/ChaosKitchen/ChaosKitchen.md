@@ -27,7 +27,7 @@ We initially aimed for a 2D style similar to *Among Us*, but finding consistent 
 
 With the map established, the original 2D player placeholders felt disconnected, so I created and rendered 3D versions of our characters at the exact same angle to unify the lighting and perspective. The final hurdle was a depth rendering issue where upright objects like fridge doors needed to appear *in front* of the player, while the floor remained *behind*. We solved this by rendering the scenes into two distinct image layers: a "base" layer for the floor and an "overlay" layer for walls and appliances. By sandwiching the player sprite between these static images, we achieved a convincing 2.5D effect without the performance overhead of a real-time 3D engine.
 
-![A screenshot of the Blender World](/projects/ChaosKitchen/blender_world.png?raw=true "The entire Blender World in an annotated screenshot")
+![A screenshot of the Blender World](/projects/ChaosKitchen/blender_world.png?raw=true "")
 
 ## Conclusion
 This project was a comprehensive exercise in full-stack mobile development. Beyond the game design itself, it demanded solutions for network latency, cross-language type safety, and complex asset pipelines. We structured our workflow using Agile practices, relying on GitHub for version control and daily Discord standups to manage dependencies and concurrent work.
