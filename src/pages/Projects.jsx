@@ -4,6 +4,7 @@ import ProjectCard from '../components/cards/ProjectCard';
 const Projects = () => {
 
 	const projects = [
+		'ChaosKitchen',
 		'MoleculeViewer',
 		'Tucon',
 		'StudyBuddy',

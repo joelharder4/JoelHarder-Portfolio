@@ -1,0 +1,10 @@
+{
+    "id": "ChaosKitchen",
+    "title": "Chaos Kitchen",
+    "author": "Joel Harder",
+    "collaborators": "Ben Sengupta, Jyothir Krishnan",
+    "teaser": "Flutter, Dart, Python, Flame Engine",
+    "date": "December 5, 2025",
+    "thumbnail": "/img/thumbnails/molecule_viewer.png",
+    "link": "https://github.com/chaos-kitchen/chaos-kitchen/"
+}
