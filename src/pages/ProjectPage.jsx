@@ -51,6 +51,12 @@ const ProjectPage = () => {
             <p className='px-12 text-xs'>{projectInfo['date'] ?? 'Unknown'}</p>
           </div>
           <div className='ml-auto mt-auto flex'>
+            { projectInfo['siteLink'] ? 
+              <a className='text-md underline mr-4 flex' href={projectInfo['siteLink']}>
+                <img src='/img/logos/web.png' className='w-auto h-5 my-auto mr-1'/>
+                Website
+              </a> 
+              : null }
             { projectInfo['steamLink'] ? 
               <a className='text-md underline mr-4 flex' href={projectInfo['steamLink']} target="_blank">
                 <img src='/img/logos/steam.png' className='w-auto h-5 my-auto mr-1'/>

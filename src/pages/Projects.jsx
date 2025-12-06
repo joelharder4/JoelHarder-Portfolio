@@ -8,7 +8,7 @@ const Projects = () => {
 		'MoleculeViewer',
 		'Tucon',
 		'StudyBuddy',
-		// 'WebsiteTerminal',
+		'WebsiteTerminal',
 		//'DiscordBot',
 		'Hoi4DoubleEverything',
 		// 'WordFrequencySearch',

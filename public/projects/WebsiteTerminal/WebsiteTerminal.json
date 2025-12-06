@@ -1,10 +1,11 @@
 {
     "id": "WebsiteTerminal",
-    "title": "React.js Command Line Interface",
+    "title": "Web-based Terminal",
     "author": "Joel Harder",
     "collaborators": "",
-    "teaser": "This is a teaser that is kind of long",
+    "teaser": "React components that emulate a terminal interface for my website",
     "date": "January 26, 2025",
-    "thumbnail": "/img/thumbnails/joel-harder-sh.png",
-    "link": "https://github.com/joelharder4/JoelHarder-Portfolio/blob/main/src/components/emulator/Terminal.jsx"
+    "thumbnail": "/img/thumbnails/terminal.png",
+    "link": "https://github.com/joelharder4/JoelHarder-Portfolio/blob/main/src/pages/About.jsx",
+    "siteLink": "/about"
 }

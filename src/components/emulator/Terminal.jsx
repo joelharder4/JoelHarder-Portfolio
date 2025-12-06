@@ -1,6 +1,8 @@
 /* eslint-disable react/display-name */
 import {forwardRef, useCallback, useEffect, useRef, useState} from 'react';
 
+
+// NOTE: Command definitions are handled in the parent pages/About.jsx component
 const Terminal = forwardRef(
   (props, ref) => {
     const {

@@ -61,7 +61,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const code = ({children}) => {
     return (
-      <code className='bg-gray-500 text-white p-1 rounded-sm'>
+      <code className='bg-gray-500 text-white p-1 rounded-sm text-wrap break-normal leading-5'>
         {children}
       </code>
     );
@@ -77,7 +77,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const pre = ({children}) => {
     return (
-      <pre className='bg-gray-500 p-2'>
+      <pre className='bg-gray-500 p-2 overflow-y-scroll no-scrollbar md:text-lg text-sm'>
         {children}
       </pre>
     );
