@@ -8,19 +8,14 @@ The purpose of this mod is to push the in game bonuses to the extreme. Every mod
 
 Anyone who is familiar with hoi4 will know that at the start of the game, the United States has extremely large penalties from The Great Depression and this mod only makes it worse. With the changes from the mod, the USA wont have any recruitable manpower, they wont be earning politcal power, and all of their factories will be assigned to consumer goods which means they wont be able to construct anything. Thankfully, the Great Depression can be removed eventually, but it is a major setback for the United States and makes the game much more difficult if you are looking for a challenge.
 
-![the modified great depression national spirit](/projects/Hoi4DoubleEverything/great_depression.png?raw=true "The Great Depression Spirit")
-#### *The Great Depression National Spirit*
+![the modified great depression national spirit](/projects/Hoi4DoubleEverything/great_depression.png?raw=true "width=60")
 
-![the modified Leader bonuses from Hirohito](/projects/Hoi4DoubleEverything/hirohito.png?raw=true "Hirohito")
-#### *Hirohito*
+![the modified Leader bonuses from Hirohito](/projects/Hoi4DoubleEverything/hirohito.png?raw=true "width=60")
 
-![the modified disjointed government national spirit](/projects/Hoi4DoubleEverything/disjointed_government.png?raw=true "The Disjointed Government Spirit")
-#### *The Disjointed Government National Spirit*
+![the modified disjointed government national spirit](/projects/Hoi4DoubleEverything/disjointed_government.png?raw=true "width=60")
 
-![the modified civilian economy law](/projects/Hoi4DoubleEverything/civilian_economy.png?raw=true "The Civilian Economy Law")
-#### *The Civilian Economy Law*
+![the modified civilian economy law](/projects/Hoi4DoubleEverything/civilian_economy.png?raw=true "width=60")
 
 If you want an extra hard challenge, use the game settings to strengthen a country, and watch them swarm you with their **-100%** supply consumption, **+100%** political power, **-100%** lack of resources penalty, and more!
 
-![the modified Strengthen Germany bonus](/projects/Hoi4DoubleEverything/strengthen_germany.png?raw=true "Strengthen Germany Bonus")
-#### *The Strengthen Germany Bonus*
+![the modified Strengthen Germany bonus](/projects/Hoi4DoubleEverything/strengthen_germany.png?raw=true "width=60")

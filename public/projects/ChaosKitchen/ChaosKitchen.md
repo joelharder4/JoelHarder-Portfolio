@@ -1,6 +1,7 @@
 For my CIS*4030 "Mobile Development" Capstone project, my team and I built **Chaos Kitchen**, a two-player cooperative mobile game all about communication. The concept blends the information gap mechanics of "Keep Talking and Nobody Explodes" with the frantic kitchen of Overcooked 2. The core loop tasks two players with preparing a Beef Wellington before time runs out, but they operate with completely different views and responsibilities. The "Cook" works inside the kitchen with access to ingredients and appliances such as the oven, stove, and cutting board, but they don't know the recipe. On the other side, the "Instructor" manages the front-of-house and holds the recipe on a clipboard but does not have access to the kitchen.
 
-![A screenshot of the Cook's view in the kitchen](/projects/ChaosKitchen/cook_view.png?raw=true "The Cook's view showing appliances and ingredients")
+![A screenshot of the Cook's view in the kitchen](/projects/ChaosKitchen/cook_view.png?raw=true "no-outline width=70")
+![A screenshot of the Instructor's view in the kitchen](/projects/ChaosKitchen/instructor_view.png?raw=true "no-outline width=70")
 
 Success in the game relies entirely on verbal coordination. For instance, the kitchen oven is powered by a coal furnace located in the Instructor's room, meaning the Cook cannot roast the beef without coordinating fuel timings with their partner. We also wanted to incorporate more random events, such as utility failures like lights going out or water leaks flooding the kitchen, to heighten the pressure and replayability.
 
@@ -17,7 +18,7 @@ We also focused heavily on improving the developer experience. Midway through th
 ### Collision Detection
 Working with the Flame engine provided distinct physics challenges, as its native collision API is relatively basic and lacks built-in handling for complex multi-hitbox scenarios, such as a player moving into a corner.
 
-![A screenshot of the collision debugging view](/projects/ChaosKitchen/debug_view.png?raw=true "Debugging collision boundaries in Flame")
+![](/projects/ChaosKitchen/debug_view.png?raw=true "no-outline width=70")
 
 We dedicated significant time to engineering a robust solution, but ultimately, the player could still clip out of bounds if they hit a sharp angle correctly. While we decided to stick with the basic system to prioritize other gameplay features for the deadline, the experience offered valuable insight into the complexities of building collision systems from scratch in lightweight engines.
 

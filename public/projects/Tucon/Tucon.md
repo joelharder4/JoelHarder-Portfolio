@@ -2,8 +2,7 @@ The goal of this project was to give University students a fast and intuitive pl
 
 This is the final project for the course *CIS\*3750* at the University of Guelph, which is a course focused on learning the entire Software Development process starting from thinking of an idea, to planning, designing, and then finally implementation and reflection.
 
-![A picture of the 6 members of the Tutor Connect team](/projects/Tucon/team_photo.png "Team Photo")
-#### *A picture of the Tutor Connect team.*
+![A picture of the 6 members of the Tutor Connect team](/projects/Tucon/team_photo.png "width=60")
 
 ### The Problem
 Many University students have struggled in a class and tried looking for tutors or wanted to tutor others for a little extra income during the semester to help pay the rising cost of living. The current method promoted for matching students with tutors at the University of Guelph consists of a public Microsoft Excel sheet where a tutor must post each class they want to tutor for. Students must then manually search for a tutor and hope that this list is still up to date. This solution is both complicated to use, unintuitive, and not easily discoverable.

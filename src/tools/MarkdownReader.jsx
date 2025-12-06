@@ -52,7 +52,8 @@ const MarkdownReader = ({ filePath, className = '' }) => {
   };
 
   const p = ({children}) => {
-    if (typeof children === 'object' && children?.key?.startsWith("img")) {
+    console.log(children[0])
+    if ( typeof children === 'object' && (children?.key?.startsWith("img") || children[0]?.key?.startsWith("img"))) {
       return <>{children}</>;
     }
     return <p className="md:text-lg text-sm text-justify">{children}</p>;
@@ -82,9 +83,18 @@ const MarkdownReader = ({ filePath, className = '' }) => {
     );
   };
 
-  const img = ({src, alt}) => {
+  const img = ({src, alt, title}) => {
+    const widthMatch = title ? title.match(/width=(\d+)/) : null;
+    const width = widthMatch ? parseInt(widthMatch[1]) : null;
+    const noOutline = title && title?.includes('no-outline') ? true : false;
+    let imgClass = "my-2 mx-auto rounded bg-white overflow-hidden [&>.ant-image]:!block";
+
+    // if (width) imgClass += ` w-[${width}%]`;
+    if (noOutline) imgClass += " border-0 shadow-none bg-transparent";
+    else imgClass += " border border-gray-200 shadow-sm";
+
     return (
-      <div className="block my-2 rounded border border-gray-200 bg-white shadow-sm overflow-hidden [&>.ant-image]:!block">
+      <div className={imgClass} style={width ? { width: `${width}%` } : {}}>
         <Image
           src={src}
           alt={alt}
