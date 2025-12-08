@@ -46,7 +46,7 @@ const StoryPage = () => {
       return (<>
         <h1 className='text-5xl font-bold py-4 px-12'>{storyInfo['title'] ?? 'Untitled Story'}</h1>
         <p className='px-12 text-sm'>by <span className='font-bold'>{storyInfo['author'] ?? 'Unknown'}</span></p>
-        <p className='px-12 text-xs mb-4'>{storyInfo['date'] ?? 'Unknown'}</p>
+        <p className='px-12 text-xs mb-4'>{storyInfo['date'] ?? 'Unknown'}{storyInfo['updated'] ? ` • Updated: ${storyInfo['updated']}` : null}</p>
         <hr/>
 
         <MarkdownReader filePath={filePath} className='p-12'/>

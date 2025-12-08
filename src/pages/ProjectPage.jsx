@@ -48,7 +48,7 @@ const ProjectPage = () => {
           <div>
             <p className='px-12 text-sm'>by <span className='font-bold'>{projectInfo['author'] ?? 'Unknown'}</span></p>
             { projectInfo['collaborators'] ? <p className='px-12 text-sm'>with <span className='font-bold'>{projectInfo['collaborators'] ?? 'Nobody'}</span></p> : null }
-            <p className='px-12 text-xs'>{projectInfo['date'] ?? 'Unknown'}</p>
+            <p className='px-12 text-xs'>{projectInfo['date'] ?? 'Unknown'}{projectInfo['updated'] ? ` • Updated: ${projectInfo['updated']}` : null}</p>
           </div>
           <div className='ml-auto mt-auto flex'>
             { projectInfo['siteLink'] ? 
