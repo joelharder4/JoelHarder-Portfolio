@@ -45,7 +45,7 @@ const MarkdownReader = ({ filePath, className = '' }) => {
 
   const h4 = ({children}) => {
     return (
-      <h4 className='md:text-md text-sm mt-[-18px]'>
+      <h4 className='text-xl font-semibold mb-[-18px]'>
         {children}
       </h4>
     );

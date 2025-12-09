@@ -1,0 +1,11 @@
+{
+    "id": "MovieRecommendation",
+    "title": "Movie Recomendations",
+    "author": "Joel Harder",
+    "collaborators": "Benjamin Sengupta, Jyothir Krishnan, Gavin Eugenio, Monil Patel",
+    "teaser": "Data Science, Python, Deep Learning",
+    "date": "December 8, 2025",
+    "updated": "",
+    "thumbnail": "/img/thumbnails/movies.png",
+    "link": "https://github.com/joelharder4/movie-recommendations/"
+}

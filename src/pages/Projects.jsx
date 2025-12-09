@@ -5,6 +5,7 @@ const Projects = () => {
 
 	const projects = [
 		'ChaosKitchen',
+		'MovieRecommendation',
 		'MoleculeViewer',
 		'Tucon',
 		'StudyBuddy',

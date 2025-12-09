@@ -25,4 +25,4 @@ code snippet!
 
 ## Test Image
 
-![A screenshot of the home page](../img/screenshots/bing_ai_for_dnd.png?raw=true "Home Page")
+![A screenshot of the home page](../img/screenshots/bing_ai_for_dnd.png?raw=true "width=70 no-outline")
