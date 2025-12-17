@@ -3,14 +3,15 @@ import React, {useCallback, useEffect, useState} from 'react';
 
 const files = {
   'skills/': {
-    'programming-languages.txt': 'I am most experienced with JavaScript and TypeScript, but I have also used Python, Java, and PHP.',
+    'programming-languages.txt': 'I am most experienced with JavaScript and TypeScript, but I also really enjoy Python, Dart, and many more.',
     'web-development.txt': 'I have experience with both front-end and back-end web development and I love both, but I usually prefer front-end.',
-    'frameworks.txt': "I've used React.js framework in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js and Spring Boot in the past."
+    'frameworks.txt': "I've used React.js in most projects, usually with Tailwind CSS. I also have used frameworks like Next.js, FastAPI, Flask, and Spring Boot in the past."
   },
   'experience/': {
-    'education.txt': "I am currently completing a Bachelor's degree in Computer Science at the University of Guelph. I started in 2021 and I am expected to graduate in May 2026.",
+    'education.txt': "I am currently completing a Bachelor's degree in Computer Science at the University of Guelph. I started in 2021 and I graduate in May 2026.",
     'work/': {
       'tulip-retail.txt': 'I worked at Tulip Retail as a Software Developer Co-op in the Fall of 2023 (4 months). I worked on the checkout team which mostly deals with payment processing and helped to develop new features for the Tulip Retail mobile app and web portal. I did the full-stack development for the features I worked on, but I enjoyed developing the front-end in React.js the most.',
+      'scotiabank.txt': 'From January - August 2025, I was a Software/Data Engineer Intern at Scotiabank on the International Banking team within Treasury. My main responsibility was the development of an internal web portal from scratch that would automate the receiving and verification of reports from Scotiabank subsidiaries in Central and South America. While I was there, I developed the entire React.js frontend with vite and tailwindCSS, from planning to UI design, to implementation. I also assisted with development on the backend RESTful API written in Python using FastAPI, and played a major role in setting up the Docker Containers and our development environment.',
     },
   },
   'contact/': {
@@ -19,8 +20,8 @@ const files = {
     'linkedin.txt': 'https://www.linkedin.com/in/joel-harder/',
   },
   'hobbies/': {
-    'sports.txt': 'I go Rock Climbing multiple days a week and play intramural dodgeball at university. Besides climbing, my favourite sport is Badminton.',
-    'video-games.txt': 'I play a lot of different games, but my current favourite is Baldurs Gate 3.',
+    'sports.txt': 'I love to go Rock Climbing multiple days a week. Besides climbing, my favourite sport is Badminton.',
+    'video-games.txt': 'I play a lot of different games, but my current favourite is Baldurs Gate 3. My top 3 ',
     'board-games.txt': 'I love board games, my favourite is Settlers of Catan, but I will play anything. I own every expansion for Catan except for the latest New Engergies expansion.',
     'tabletop.dnd': "I regularly play Dungeons and Dragons with my friends, I have been a DM in the past but I am currently a player. My favourite character that I have played is a delusional wood elf ranged named Zyvan Woodfoot, who insists that he should be called 'The Dragon Slayer' despite never having killed a dragon. He doesn't even do it as a joke, he genuinely believes his life's purpose is to kill all dragons.",
     'mods.txt': 'I love modding games, I have made mods for Hearts of Iron IV, Sid Meyers Civilization 6, Stellaris, and more!',
@@ -38,8 +39,8 @@ const files = {
     'joel-vs-docker.mp3': <source src='sounds/joel-vs-docker.mp3' type='audio/mpeg'/>,
     'spooky-chess.mp3': <source src='sounds/spooky-chess.mp3' type='audio/mpeg'/>,
     'five-lines-of-code.mp3': <source src='sounds/five-lines-of-code.mp3' type='audio/mpeg'/>,
-    'the-among-us-man.mp3': <source src='sounds/the-among-us-man.mp3' type='audio/mpeg'/>,
-    'we-take-it-to-the-max.mp3': <source src='sounds/we-take-it-to-the-max.mp3' type='audio/mpeg'/>,
+    'among-us-man.mp3': <source src='sounds/the-among-us-man.mp3' type='audio/mpeg'/>,
+    'to-the-max.mp3': <source src='sounds/we-take-it-to-the-max.mp3' type='audio/mpeg'/>,
     'echoes-of-joel.mp3': <source src='sounds/echoes-of-joel.mp3' type='audio/mpeg'/>,
   }
 }
